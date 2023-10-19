@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Mulish", sans-serif;
+}
+
+.cta-card {
+  position: relative;
+  width: 100rem;
+  border-radius: 2rem;
+  padding: 8.5rem;
+  text-align: center;
+  background: linear-gradient(to bottom right, #173ab7, #5271e0);
+}
+.cta-card::before {
+  content: "";
+  position: absolute;
+  top: -2.5rem;
+  left: -2.5rem;
+  z-index: -10;
+  display: block;
+  width: calc(100% + 5rem);
+  height: calc(100% + 5rem);
+  border-radius: 2rem;
+  background-color: #dde5f9;
+}
+@media only screen and (max-width: 56.25em) {
+  .cta-card::before {
+    display: none;
+  }
+}
+.cta-card__container {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 56.25em) {
+  .cta-card__container {
+    max-width: 80%;
+  }
+}
+.cta-card__title {
+  margin-bottom: 1rem;
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+.cta-card__description {
+  max-width: 75%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #fff;
+}
+.cta-card__input-box {
+  position: relative;
+}
+.cta-card__input {
+  width: 100%;
+  padding: 2.2rem 2.5rem;
+  display: inline-block;
+  outline: none;
+  border: 2px solid rgba(243, 248, 254, 0.3);
+  border-radius: 10rem;
+  font-size: 2rem;
+  font-family: "Mulish", sans-serif;
+  color: #fff;
+  background-color: rgba(243, 248, 254, 0.4);
+}
+.cta-card__input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.cta-card__input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.cta-card__input:focus {
+  outline: 4px solid rgba(218, 70, 218, 0.4);
+  border: 2px solid transparent;
+}
+.cta-card__button {
+  position: absolute;
+  top: 50%;
+  right: 0.9rem;
+  width: 5.1rem;
+  height: 5.1rem;
+  transform: translateY(-50%);
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.cta-card__button path {
+  transition: all 0.3s ease;
+}
+.cta-card__button:hover path {
+  stroke: rgb(218, 70, 218);
+}
+.cta-card__button:active {
+  transform: translate(0.3rem, -50%);
+}
+@media only screen and (max-width: 37.5em) {
+  .cta-card__button:active {
+    transform: none;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .cta-card__button {
+    position: relative;
+    top: auto;
+    right: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 100rem;
+    margin-top: 1.2rem;
+    padding: 1.6rem;
+    transform: none;
+  }
+}
+.cta-card__img-box {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  transform: translate(-50%, 50%);
+}
+@media only screen and (max-width: 56.25em) {
+  .cta-card__img-box {
+    gap: 0;
+  }
+}
+.cta-card__img {
+  width: 9.4rem;
+  height: 9.4rem;
+  border: 0.8rem solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 1.4rem 2.5rem -1.5rem rgba(82, 113, 224, 0.5);
+  transition: filter 0.3s ease;
+}
+.cta-card__img:hover {
+  filter: grayscale(1);
+}
+@media only screen and (max-width: 56.25em) {
+  .cta-card__img:hover {
+    filter: none;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .cta-card__img:hover {
+    transform: none;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .cta-card__img {
+    margin-right: -2.4rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .cta-card__img {
+    width: 8.4rem;
+    height: 8.4rem;
+    border: 0.4rem solid #fff;
+  }
+}
+@media only screen and (max-width: 67.5em) {
+  .cta-card {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .cta-card {
+    padding: 6rem 0 8.5rem;
+  }
+}/*# sourceMappingURL=index.css.map */

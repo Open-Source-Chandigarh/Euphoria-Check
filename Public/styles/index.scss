@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
+
+$color-white: #fff;
+$color-primary-dark: #173ab7;
+$color-primary-light: #5271e0;
+$color-secondary: rgb(218, 70, 218);
+$font-family: "Mulish", sans-serif;
+$screen-lg: 67.5em;
+$screen-md: 56.25em;
+$screen-sm: 37.5em;
+
+@mixin respond($screen-size) {
+  @media only screen and (max-width: $screen-size) {
+    @content;
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: $font-family;
+}
+
+.cta-card {
+  position: relative;
+  width: 100rem;
+  border-radius: 2rem;
+  padding: 8.5rem;
+  text-align: center;
+  background: linear-gradient(
+    to bottom right,
+    $color-primary-dark,
+    $color-primary-light
+  );
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2.5rem;
+    left: -2.5rem;
+    z-index: -10;
+    display: block;
+    width: calc(100% + 5rem);
+    height: calc(100% + 5rem);
+    border-radius: 2rem;
+    background-color: #dde5f9;
+
+    @include respond($screen-md) {
+      display: none;
+    }
+  }
+
+  &__container {
+    max-width: 46rem;
+    margin: 0 auto;
+
+    @include respond($screen-md) {
+      max-width: 80%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 3.6rem;
+    font-weight: 700;
+    color: $color-white;
+  }
+
+  &__description {
+    max-width: 75%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: $color-white;
+  }
+
+  &__input-box {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 2.2rem 2.5rem;
+    display: inline-block;
+    outline: none;
+    border: 2px solid rgba(243, 248, 254, 0.3);
+    border-radius: 10rem;
+    font-size: 2rem;
+    font-family: "Mulish", sans-serif;
+    color: $color-white;
+    background-color: rgba(243, 248, 254, 0.4);
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    &:focus {
+      outline: 4px solid rgba($color-secondary, 0.4);
+      border: 2px solid transparent;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    right: 0.9rem;
+    width: 5.1rem;
+    height: 5.1rem;
+    transform: translateY(-50%);
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    & path {
+      transition: all 0.3s ease;
+    }
+
+    &:hover path {
+      stroke: $color-secondary;
+    }
+
+    &:active {
+      transform: translate(0.3rem, -50%);
+
+      @include respond($screen-sm) {
+        transform: none;
+      }
+    }
+
+    @include respond($screen-sm) {
+      position: relative;
+      top: auto;
+      right: auto;
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 100rem;
+      margin-top: 1.2rem;
+      padding: 1.6rem;
+      transform: none;
+    }
+  }
+
+  &__img-box {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    transform: translate(-50%, 50%);
+
+    @include respond($screen-md) {
+      gap: 0;
+    }
+  }
+
+  &__img {
+    width: 9.4rem;
+    height: 9.4rem;
+    border: 0.8rem solid $color-white;
+    border-radius: 50%;
+    box-shadow: 0 1.4rem 2.5rem -1.5rem rgba(82, 113, 224, 0.5);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: grayscale(1);
+
+      @include respond($screen-md) {
+        filter: none;
+      }
+
+      @include respond($screen-sm) {
+        transform: none;
+      }
+    }
+
+    @include respond($screen-md) {
+      margin-right: -2.4rem;
+    }
+
+    @include respond($screen-sm) {
+      width: 8.4rem;
+      height: 8.4rem;
+      border: 0.4rem solid $color-white;
+    }
+  }
+
+  @include respond($screen-lg) {
+    width: 90%;
+  }
+
+  @include respond($screen-md) {
+    padding: 6rem 0 8.5rem;
+  }
+}
