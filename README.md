@@ -31,7 +31,7 @@ Euphoria-Check is a part of [Hacktoberfest 2023](https://hacktoberfest.digitaloc
 We appreciate your interest in contributing to **Euphoria-Check**. Here's how you can get started:
 
 
-0. **Find Issues or Create your Own** We appreciate you solving existing issues in the repository in the isssues tab or to create new
+0. **Find Issues or Create your Own** We appreciate you solving existing issues in the repository in the issues tab or to create new
 
 1. **Fork the Repository:** Click the "Fork" button at the top of this repository to create a copy in your GitHub account.
 
