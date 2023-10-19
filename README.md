@@ -60,4 +60,4 @@ Happy Hacking!
 - [npm](https://www.npmjs.com/)
 - Express JS
 
-Maintained By - Aryan Inguz, Technical Head Open Source Chandigarh ()
+Maintained By - Aryan Inguz, Technical Head Open Source Chandigarh (https://github.com/Aryainguz)
