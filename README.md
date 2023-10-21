@@ -4,7 +4,7 @@
 
 Feel free to contribute! 🌈✨
 
-View Web App here : https://euphoria-check-perma-meter-express.vercel.app
+View Web App here : https://euphoria-check.vercel.app
 
 # Euphoria Check - A Modern PERMA Meter
 
