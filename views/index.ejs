@@ -5,15 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Euphoria Check</title>
     <link rel="stylesheet" href="styles/index.css" type="text/css">
+
+    <style>
+       /* CSS for the navigation bar */
+   .navbar {
+    background-color: #333; 
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background-color: #f44336;
+    color: white;
+    border: 1px solid #f44336;
+}
+
+.navbar-item {
+    float: right;
+}
+
+.navbar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+    </style>
 </head>
 <body style="background-image: url(images/vector-purple-light-blue-gradient-260nw-1941567055.jpg);background-repeat: no-repeat;background-position: center;background-size: cover;">
- <!-- Navigation bar -->
- <nav>
-  <ul class="navbar-list">
-    <li class="navbar-item"><a href="#what-is-perma">What is PERMA?</a></li>
-    <li class="navbar-item"><a href="#about-us">About us</a></li>
-  </ul>
-</nav>
+    <!-- Navigation bar -->
+    <nav>
+      <ul class="navbar navbar-list"> <!-- Added "navbar" class here -->
+          <li class="navbar-item"><a href="#what-is-perma">What is PERMA?</a></li>
+          <li class="navbar-item"><a href="#about-us">About us</a></li>
+      </ul>
+  </nav>
+
   <section class="cta-card">
     <div class="cta-card__container">
       <header class="cta-card__header">
