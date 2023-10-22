@@ -34,11 +34,11 @@ app.post("/question",(req,res)=>{
 })
 
 app.post("/result",async (req,res)=>{
-  let p = (parseFloat(req.body.avalue)+parseFloat(req.body.bvalue)+parseFloat(req.body.cvalue)+parseFloat(req.body.dvalue))/2
-  let e = (parseFloat(req.body.evalue)+parseFloat(req.body.fvalue)+parseFloat(req.body.gvalue)+parseFloat(req.body.hvalue))/2
-  let r = (parseFloat(req.body.ivalue)+parseFloat(req.body.jvalue)+parseFloat(req.body.kvalue)+parseFloat(req.body.lvalue))/2
-  let m = (parseFloat(req.body.mvalue)+parseFloat(req.body.nvalue)+parseFloat(req.body.ovalue)+parseFloat(req.body.pvalue))/2
-  let a = (parseFloat(req.body.qvalue)+parseFloat(req.body.rvalue)+parseFloat(req.body.svalue)+parseFloat(req.body.tvalue))/2
+  let p = (parseFloat(req.body.avalue)+parseFloat(req.body.bvalue)+parseFloat(req.body.cvalue)+parseFloat(req.body.dvalue))+parseFloat(req.body.2zvalue))/2
+  let e = (parseFloat(req.body.evalue)+parseFloat(req.body.fvalue)+parseFloat(req.body.gvalue)+parseFloat(req.body.hvalue))+parseFloat(req.body.5zvalue))/2
+  let r = (parseFloat(req.body.ivalue)+parseFloat(req.body.jvalue)+parseFloat(req.body.kvalue)+parseFloat(req.body.lvalue))+parseFloat(req.body.4zvalue))/2
+  let m = (parseFloat(req.body.mvalue)+parseFloat(req.body.nvalue)+parseFloat(req.body.ovalue)+parseFloat(req.body.pvalue))+parseFloat(req.body.zvalue))/2
+  let a = (parseFloat(req.body.qvalue)+parseFloat(req.body.rvalue)+parseFloat(req.body.svalue)+parseFloat(req.body.tvalue))+parseFloat(req.body.3zvalue))/2
 
 
   if(p<e && p<r && p<m && p<a ){
