@@ -193,3 +193,71 @@ body {
     padding: 6rem 0 8.5rem;
   }
 }/*# sourceMappingURL=index.css.map */
+
+
+
+/* Footer */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  /* Position the footer at the bottom of the page */
+  width: 100%;
+  background-color: transparent;
+}
+
+.footerContainer {
+  width: 100%;
+  background-color: transparent;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+}
+
+.socialIcons a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.socialIcons a i {
+  font-size: 1cm;
+  color: black;
+  opacity: 0.9;
+}
+
+.socialIcons a:hover {
+  background-color: #111;
+  transition: 0.5s;
+  color: white;
+}
+
+.FooterBottom {
+  background-color: transparent;
+  padding: 20px;
+  text-align: center;
+}
+
+.FooterBottom p {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 3vh;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.FooterBottom a {
+  color: #ff4081;
+  /* Attractive pink color for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.FooterBottom a:hover {
+  color: #e91e63;
+  /* Lighter shade on hover */
+}
