@@ -261,3 +261,40 @@ footer {
   color: #e91e63;
   /* Lighter shade on hover */
 }
+
+/* Add this CSS to position the navigation at the top */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity as needed */
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a subtle effect */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-right: 15px;
+  height: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333; /* Adjust the color as needed */
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* Add this CSS to style the links */
+nav a:hover {
+  color: #007BFF; /* Adjust the hover color as needed */
+}
+
