@@ -17,6 +17,33 @@ body {
   height: auto;
 }
 
+.cta-card__input-box {
+  position: relative;
+}
+.cta-card__input {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1rem 1rem;
+  display: inline-block;
+  outline: none;
+  border: 2px solid rgba(243, 248, 254, 0.3);
+  border-radius: 3rem;
+  font-size: 2rem;
+  font-family: "Mulish", sans-serif;
+  color: #fff;
+  background-color: rgba(243, 248, 254, 0.4);
+}
+.cta-card__input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.cta-card__input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.cta-card__input:focus {
+  outline: 4px solid rgba(218, 70, 218, 0.4);
+  border: 2px solid transparent;
+}
+
 .container {
   width: 80%;
   max-width: 600px;
