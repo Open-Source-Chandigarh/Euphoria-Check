@@ -231,16 +231,12 @@ footer {
 }
 
 .socialIcons a:hover {
-  background-color: #111;
+  background-color: #d0b2d8;
   transition: 0.5s;
   color: white;
 }
 
-.FooterBottom {
-  background-color: transparent;
-  padding: 20px;
-  text-align: center;
-}
+
 
 .FooterBottom p {
   color: white;
@@ -298,3 +294,29 @@ nav a:hover {
   color: #007BFF; /* Adjust the hover color as needed */
 }
 
+.socialIcons a img {
+  width: 30px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 10px; /* Add spacing between icons */
+}
+
+/* Additional styling for the footer */
+.footerContainer {
+  text-align: center;
+  /* padding: 20px; */
+  background-color: #f0f0f0; 
+  /* Set background color as needed */
+}
+
+.FooterBottom {
+  display: flex;
+  justify-content: center; 
+  background-color: transparent;
+  /* padding: 20px; */
+  text-align: center;
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+}
