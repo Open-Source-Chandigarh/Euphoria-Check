@@ -22,9 +22,6 @@ Key Features:
 📈 Personalized Insights: 
 🎯 Goal Setting:
 
-## GirlScript Summer of Code 2024
-
-Euphoria-Check, a program aimed at promoting open-source contributions among students. You can contribute to Euphoria-Check by participating in GirlScript Summer of Code. Whether you're a seasoned developer or just starting your open-source journey, your contributions are always welcomed by Open Source Chandigarh!
 
 ## Contributing
 
