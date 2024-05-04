@@ -22,7 +22,7 @@ Key Features:
 📈 Personalized Insights: 
 🎯 Goal Setting:
 
-## GSSoc 2023
+## GSSoc 2024
 
 Euphoria-Check is a part of [Girlscript Summer of code](https://gssoc.girlscript.tech/), an annual celebration of open source contributions. You can contribute to **Euphoria-Check** by participating in GSSoc . Whether you're a seasoned developer or just starting your open-source journey, your contributions are always welcomed by Open Source Chandigarh!
 
