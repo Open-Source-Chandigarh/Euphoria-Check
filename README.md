@@ -22,9 +22,9 @@ Key Features:
 📈 Personalized Insights: 
 🎯 Goal Setting:
 
-##Girl script summer of code 2023
+##Girl script summer of code 2024
 
-Euphoria-Check is a part of [Hacktoberfest 2023](https://hacktoberfest.digitalocean.com/), an annual celebration of open source contributions. You can contribute to **Euphoria-Check** by participating in Hacktoberfest. Whether you're a seasoned developer or just starting your open-source journey, your contributions are always welcomed by Open Source Chandigarh!
+Certainly! **GirlScript Summer of Code 2024 (GSSoC)** is a **3-month-long open-source program** organized by the **GirlScript Foundation**. During this period, students and mentors collaborate on real-world projects, learn essential tools like **Git and GitHub**, and contribute to the open-source community. GSSoC provides opportunities for participants to enhance their GitHub profiles, build connections, and win **cash prizes** and **internship opportunities**. Whether you're a contributor, mentor, or organization admin, GSSoC offers a vibrant platform to explore, learn, and make a difference. Join the thriving community and be part of this exciting journey! 🚀 Learn more on the [official GSSoC website](https://gssoc.girlscript.tech/) .
 
 ## Contributing
 
