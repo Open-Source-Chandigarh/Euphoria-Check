@@ -22,7 +22,7 @@ Key Features:
 📈 Personalized Insights: 
 🎯 Goal Setting:
 
-## Hacktoberfest 2023
+##Girl script summer of code 2023
 
 Euphoria-Check is a part of [Hacktoberfest 2023](https://hacktoberfest.digitalocean.com/), an annual celebration of open source contributions. You can contribute to **Euphoria-Check** by participating in Hacktoberfest. Whether you're a seasoned developer or just starting your open-source journey, your contributions are always welcomed by Open Source Chandigarh!
 
