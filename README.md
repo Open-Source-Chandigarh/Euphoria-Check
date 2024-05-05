@@ -22,9 +22,13 @@ Key Features:
 📈 Personalized Insights: 
 🎯 Goal Setting:
 
-GirlScript Summer of Code (GSSoC) is an annual three-month-long open source program initiated by the GirlScript Foundation. It began in 2018 with the goal of assisting beginners in the tech community to engage with open source development, while promoting diversity and inclusion. Throughout the program, participants work on various projects under the guidance of experienced mentors. This provides a great opportunity for novices to gain real-world tech experience and potentially earn rewards and recognition for their contributions? (GitHub)?.
+ 
+## GirlScript Summer of Code (GSSoC):
 
-For more details about the program, you can visit the official GSSoC website
+GirlScript Summer of Code (GSSoC) is an annual three-month-long open source program initiated by the GirlScript Foundation. It began in 2018 with the goal of assisting beginners in the tech community to engage with open source development, while promoting diversity and inclusion. Throughout the program, participants work on various projects under the guidance of experienced mentors. This provides a great opportunity for novices to gain real-world tech experience and potentially earn rewards and recognition for their contributions.
+For more details about the program, you can visit the official GSSoC website.
+
+
 ## Contributing
 
 We appreciate your interest in contributing to **Euphoria-Check**. Here's how you can get started:
