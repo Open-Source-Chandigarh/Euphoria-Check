@@ -25,7 +25,9 @@ Key Features:
  
 ## GirlScript Summer of Code (GSSoC):
 
-GirlScript Summer of Code (GSSoC) is an annual three-month-long open source program initiated by the GirlScript Foundation. It began in 2018 with the goal of assisting beginners in the tech community to engage with open source development, while promoting diversity and inclusion. Throughout the program, participants work on various projects under the guidance of experienced mentors. This provides a great opportunity for novices to gain real-world tech experience and potentially earn rewards and recognition for their contributions.
+EuphoriaCheck is officialy part of GSSoC 24. Contribute to EuphoriaCheck now to get started with EuphoriaCheck and help us make the project even greater.
+
+GirlScript Summer of Code (GSSoC) is an annual three-month-long open source program initiated by the GirlScript Foundation. It began in 2018 with the goal of assisting beginners in the tech community to engage with open source development, while promoting diversity and inclusion. Throughout the program, participants work on various projects under the guidance of experienced mentors. 
 For more details about the program, you can visit the official GSSoC website.
 
 
