@@ -24,6 +24,14 @@ header {
     padding: 1em 0;
     border-bottom: 2px solid white;
 }
+.home{
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    text-decoration: none;
+    display: inline;
+
+}
 
 .intro,
 .features,
