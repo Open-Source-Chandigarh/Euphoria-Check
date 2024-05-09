@@ -264,9 +264,25 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity as needed */
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a subtle effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  margin-left: 2em;
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 5rem; /* Increase the line-height to your preference */
+  height: 5rem; /* Increase the height to match the line-height */
+}
+
+nav h1 a {
+  text-decoration: none;
+  color: #333;
 }
 
 nav ul {
@@ -274,25 +290,21 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: flex-end;
 }
 
 nav ul li {
   margin-right: 15px;
-  height: 25px;
+  height: 55px;
 }
 
 nav a {
   text-decoration: none;
-  color: #333; /* Adjust the color as needed */
+  color: #333;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
-/* Add this CSS to style the links */
-nav a:hover {
-  color: #007BFF; /* Adjust the hover color as needed */
-}
+
 
 .socialIcons a img {
   width: 30px; /* Adjust the width as needed */
