@@ -12,8 +12,8 @@
   style="background-image: url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);background-repeat: no-repeat;background-position: center;background-size: cover;">
 
 
-
-  <form action="/result" method="post">
+<!-- form id added -->
+  <form action="/result" method="post" id="myForm">
 
     <input class="cta-card__input" type="text" placeholder="Enter your name" name="username"
     required />
@@ -382,6 +382,52 @@
       })
     }
   </script>
+  
+<!-- script to handle default clearance of radio buttons issue#50 -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('myForm');
+    const radios = form.querySelectorAll('input[type="radio"]');
+    let selectedRadioIds = [];
+
+    radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        selectedRadioIds = []; // Clear the array
+        radios.forEach(radio => {
+          if (radio.checked) {
+            selectedRadioIds.push(radio.id);
+          }
+        });
+        sessionStorage.setItem('selectedRadioIds', JSON.stringify(selectedRadioIds));
+
+        // Set a timeout to clear session storage after 5 minutes
+        setTimeout(() => {
+          sessionStorage.removeItem('selectedRadioIds');
+          radios.forEach(radio => {
+            radio.checked = false; // Uncheck all radio buttons
+          });
+        }, 5 * 60 * 1000); 
+      });
+    });
+
+    // Check if there are selected radio button IDs in sessionStorage
+    const storedSelectedRadioIds = sessionStorage.getItem('selectedRadioIds');
+    if (storedSelectedRadioIds) {
+      selectedRadioIds = JSON.parse(storedSelectedRadioIds);
+      radios.forEach(radio => {
+        if (selectedRadioIds.includes(radio.id)) {
+          radio.checked = true;
+        }
+      });
+    }
+
+    form.addEventListener('submit', () => {
+      sessionStorage.setItem('selectedRadioIds', JSON.stringify(selectedRadioIds));
+    });
+  });
+</script>
+
+
 
 </body>
 
