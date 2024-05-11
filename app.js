@@ -15,7 +15,7 @@ const reciever_email = []
 
 const verdict = []
 
-app.use(express.static(__dirname+"/Public"));  //use this to use css files insie templates 
+app.use(express.static(__dirname+"/Public")); 
 app.use(bodyParser.urlencoded({extended:true}));
 
 

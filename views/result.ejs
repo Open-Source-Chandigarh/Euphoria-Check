@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Result</title>
     <link rel="stylesheet" href="styles\result.css">
 </head>
 <body style="background-image: url(images/vector-purple-light-blue-gradient-260nw-1941567055.jpg);background-repeat: no-repeat;background-position: center;background-size: cover;">
@@ -55,34 +55,69 @@
         </header>
         
         <main class="leaderboard__profiles">
-          <article class="leaderboard__profile">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrc-7xqfTdSqdX2PgGxAjC3dsX4E74g-N3wff2xz-ejc_teYwx8MyCXTPgSpfcAXCA8iQ&usqp=CAU" alt="Mark Zuckerberg" class="leaderboard__picture">
-            <span class="leaderboard__name">Positive Emotions</span>
-            <span class="leaderboard__value"><%= pos  %></span>
+            <article class="leaderboard__profile">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrc-7xqfTdSqdX2PgGxAjC3dsX4E74g-N3wff2xz-ejc_teYwx8MyCXTPgSpfcAXCA8iQ&usqp=CAU" alt="Mark Zuckerberg" class="leaderboard__picture">
+              <span class="leaderboard__name">Positive Emotions</span>
+              <span class="leaderboard__value"><%= pos %>
+                <% if (pos < 5) { %>
+                    <span class="emoji">&#128532;</span> <!-- sad emoji -->
+                <% } else { %>
+                    <span class="emoji">&#128522;</span> <!-- happy emoji -->
+                <% } %>
+              </span>
           </article>
           
           <article class="leaderboard__profile">
             <img src="https://static-00.iconduck.com/assets.00/regional-indicator-symbol-letter-e-emoji-512x512-2wmpw2k5.png" alt="Dustin Moskovitz" class="leaderboard__picture">
             <span class="leaderboard__name">Engagement</span>
-            <span class="leaderboard__value"><%= eng  %></span>
+            <span class="leaderboard__value"><%= eng %>
+              <% if (eng < 4) { %>
+                  <span class="emoji">&#128241;</span> <!-- 📱 -->
+              <% } else { %>
+                  <span class="emoji">&#127912;</span> <!-- 🎨 -->
+                  <!-- <span class="emoji">&#127947;&#8205;&#9794;&#65039;</span>  -->
+              <% } %>
+            </span>
           </article>
+        
           
-          <article class="leaderboard__profile">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DAXwWRldpM1w1_1nHl58YavrxtMqQLyNTw&usqp=CAU" alt="Elizabeth Holmes" class="leaderboard__picture">
-            <span class="leaderboard__name">Relationships</span>
-            <span class="leaderboard__value"><%= rel  %></span>
-          </article>
+        <article class="leaderboard__profile">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DAXwWRldpM1w1_1nHl58YavrxtMqQLyNTw&usqp=CAU" alt="Elizabeth Holmes" class="leaderboard__picture">
+          <span class="leaderboard__name">Relationships</span>
+          <span class="leaderboard__value"><%= rel %>
+            <% if (rel < 5) { %>
+                <span class="emoji">&#128694;</span> <!-- 🚶‍♂️ -->
+            <% } else { %>
+                <span class="emoji">&#10084;</span> <!-- ❤️ -->
+            <% } %>
+          </span>
+      </article>
+      
 
-          <article class="leaderboard__profile">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4HyyUAp2DyR_D-DuNn3r_E5mV-w3HdMwgLw&usqp=CAU" alt="Dustin Moskovitz" class="leaderboard__picture">
-            <span class="leaderboard__name">Meaning</span>
-            <span class="leaderboard__value"><%= mea  %></span>
-          </article>
+      <article class="leaderboard__profile">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4HyyUAp2DyR_D-DuNn3r_E5mV-w3HdMwgLw&usqp=CAU" alt="Dustin Moskovitz" class="leaderboard__picture">
+        <span class="leaderboard__name">Meaning</span>
+        <span class="leaderboard__value"><%= mea %>
+          <% if (mea < 4) { %>
+              <!-- <span class="emoji">&#129335;</span> -->
+              <span class="emoji">&#128171;</span> <!-- 💭 -->
+          <% } else { %>
+              <span class="emoji">&#11088;</span> <!-- 🌟 -->
+          <% } %>
+        </span>
+    </article>
           
           <article class="leaderboard__profile">
             <img src="data:image/png;base64,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" alt="Evan Spiegel" class="leaderboard__picture">
             <span class="leaderboard__name">Accomplishment</span>
-            <span class="leaderboard__value"><%= acc  %></span>
+            <span class="leaderboard__value"><%= acc  %>
+              <% if (acc < 5) { %>
+                <span class="emoji">&#x1F61E;</span> <!-- 😞 -->
+              <% } else { %>
+                  <span class="emoji">&#x1F3C6;</span> <!-- 🏆 -->
+              <% } %>
+            </span>
+          
           </article>
         </main>
       </div>
