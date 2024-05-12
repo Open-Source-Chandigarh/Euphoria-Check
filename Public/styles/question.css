@@ -161,6 +161,7 @@ button .arrow::before {
   transition: 0.2s;
   padding: 3px;
   transform: rotate(-45deg);
+  
 }
 
 button:hover {
@@ -206,4 +207,33 @@ button:hover .arrow:before {
   background-color: #bbb;
 
 }
+
+#go-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  color: white;
+  opacity: 0.5;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 5px 2px 4px rgb(0, 0, 0, 0.5);
+  transition: all o.2s linear;
+}
+
+#go-to-top-button:hover {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
 

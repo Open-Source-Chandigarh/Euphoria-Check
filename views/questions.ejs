@@ -366,6 +366,10 @@
 
         </div>
       </button>
+      <!-- button to to take user to the top -->
+      <button id="go-to-top-button" class="btn hidden">
+        Go To Top
+      </button>
   </form>
   </div>
 
@@ -425,6 +429,29 @@
       sessionStorage.setItem('selectedRadioIds', JSON.stringify(selectedRadioIds));
     });
   });
+</script>
+<script>
+  const goToTopBtn = document.getElementById("go-to-top-button")
+
+  window.onscroll = () =>{
+    scrollFunction();
+  }
+  function scrollFunction() {
+    if(document.body.scrollTop > 300 || document.documentElement.scrollTop > 300){
+      goToTopBtn.style.display = "block";
+    } else {
+      goToTopBtn.style.display = "none";
+    }
+    goToTopBtn.onclick = () =>{
+      goToTopBtn.style.display = "none"
+      window.scroll({
+        top: 0,
+        behavior: "smooth"
+      })
+
+    }
+
+  }
 </script>
 
 
