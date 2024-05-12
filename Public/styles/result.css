@@ -2,6 +2,7 @@
 
 .leaderboard {
   max-width: 490px;
+  margin: 2% 0px;
   width: 100%;
   border-radius: 12px;
 }
@@ -56,7 +57,7 @@
 }
 .leaderboard__profile {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 3fr 2fr;
   align-items: center;
   padding: 10px 30px 10px 10px;
   overflow: hidden;
@@ -135,20 +136,23 @@
   font-size: 34px;
   text-align: right;
 }
+
 .leaderboard__value > span {
   opacity: 0.8;
   font-weight: 600;
-  font-size: 13px;
   margin-left: 3px;
 }
 
 body {
-  margin: 0;
   background-color: #eaeaea;
+  margin: 0;
   display: grid;
-  height: 100vh;
   place-items: center;
   font-family: "Source Sans Pro", sans-serif;
+}
+
+.emoji{
+  font-size: 30px;
 }
 
 .leaderboard {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Result</title>
     <link rel="stylesheet" href="styles\result.css">
 </head>
 <body style="background-image: url(images/vector-purple-light-blue-gradient-260nw-1941567055.jpg);background-repeat: no-repeat;background-position: center;background-size: cover;">
@@ -56,12 +56,17 @@
         
         <main class="leaderboard__profiles">
           <article class="leaderboard__profile">
-            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrc-7xqfTdSqdX2PgGxAjC3dsX4E74g-N3wff2xz-ejc_teYwx8MyCXTPgSpfcAXCA8iQ&usqp=CAU" alt="Mark Zuckerberg" class="leaderboard__picture"> -->
             <div class="circle" id="P">
               <b>P</b>
             </div>
             <span class="leaderboard__name">Positive Emotions</span>
-            <span class="leaderboard__value"><%= pos  %></span>
+            <span class="leaderboard__value"><%= pos  %>
+              <% if (pos < 5) { %>
+                <span class="emoji">&#128532;</span> <!-- sad emoji -->
+            <% } else { %>
+                <span class="emoji">&#128522;</span> <!-- happy emoji -->
+            <% } %>
+            </span>
           </article>
           
           <article class="leaderboard__profile">
@@ -69,15 +74,29 @@
               <b>E</b>
             </div>
             <span class="leaderboard__name">Engagement</span>
-            <span class="leaderboard__value"><%= eng  %></span>
+            <span class="leaderboard__value"><%= eng %>
+              <% if (eng < 4) { %>
+                  <span class="emoji">&#128241;</span> <!-- 📱 -->
+              <% } else { %>
+                  <span class="emoji">&#127912;</span> <!-- 🎨 -->
+                  <!-- <span class="emoji">&#127947;&#8205;&#9794;&#65039;</span>  -->
+              <% } %>
+            </span>
           </article>
+        
           
           <article class="leaderboard__profile">
             <div class="circle" id="R">
               <b>R</b>
             </div>
             <span class="leaderboard__name">Relationships</span>
-            <span class="leaderboard__value"><%= rel  %></span>
+            <span class="leaderboard__value"><%= rel  %>
+              <% if (rel < 5) { %>
+                <span class="emoji">&#128694;</span> <!-- 🚶‍♂️ -->
+            <% } else { %>
+                <span class="emoji">&#10084;</span> <!-- ❤️ -->
+            <% } %>
+            </span>
           </article>
 
           <article class="leaderboard__profile">
@@ -85,7 +104,13 @@
               <b>M</b>
             </div>
             <span class="leaderboard__name">Meaning</span>
-            <span class="leaderboard__value"><%= mea  %></span>
+            <span class="leaderboard__value"><%= mea  %>
+              <% if (rel < 5) { %>
+                <span class="emoji">&#128694;</span> <!-- 🚶‍♂️ -->
+            <% } else { %>
+                <span class="emoji">&#10084;</span> <!-- ❤️ -->
+            <% } %>            
+            </span>
           </article>
           
           <article class="leaderboard__profile">
@@ -93,7 +118,14 @@
               <b>A</b>
             </div>
             <span class="leaderboard__name">Accomplishment</span>
-            <span class="leaderboard__value"><%= acc  %></span>
+            <span class="leaderboard__value"><%= acc  %>
+              <% if (acc < 5) { %>
+                <span class="emoji">&#x1F61E;</span> <!-- 😞 -->
+              <% } else { %>
+                  <span class="emoji">&#x1F3C6;</span> <!-- 🏆 -->
+              <% } %>
+            </span>
+          
           </article>
         </main>
       </div>
