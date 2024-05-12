@@ -2,24 +2,21 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="styles/question.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <link rel="stylesheet" href="styles/question.css">
+    
 </head>
 
-<body
-  style="background-image: url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);background-repeat: no-repeat;background-position: center;background-size: cover;">
+<body style="background-image: url(https://images.unsplash.com/photo-1579547944082-fac44e416258?q=80&w=1878&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);background-repeat: no-repeat;background-position: center;background-size: cover;">
 
+    <form action="/result" method="post" id="myForm">
+        <!-- Your form content here -->
 
-<!-- form id added -->
-  <form action="/result" method="post" id="myForm">
-
-    <input class="cta-card__input" type="text" placeholder="Enter your name" name="username"
-    required />
-
-
-    <div class="radio-input">
+<input class="cta-card__input" type="text" placeholder="Heya! Enter your name here..." name="username" required />
+    <!-- Your existing question input fields here... -->
+<div class="radio-input">
       <div class="info">
         <span class="question">How often do you find yourself happy?</span>
         <span class="steps">1/20</span>
@@ -359,102 +356,145 @@
     </div>
 
     <div style="margin-left: 40vw; margin-bottom: 20px;">
-      <button type="submit">
-        Submit and Calculate
-        <div class="arrow-wrapper">
-          <div class="arrow"></div>
-
-        </div>
-      </button>
-      <!-- button to to take user to the top -->
-      <button id="go-to-top-button" class="btn hidden">
-        Go To Top
-      </button>
-  </form>
-  </div>
-
-  <script>
-    let a = document.getElementsByTagName("label")
-    for (let i = 0; i < a.length; i++) {
-      a[i].addEventListener("click", () => {
-        a[i].style.backgroundColor = "#bbb";
-        if (i % 2 === 0) {
-          a[i + 1].style.backgroundColor = "#fff"
-        } else {
-          a[i - 1].style.backgroundColor = "#fff"
-        }
-      })
-    }
-  </script>
-  
-<!-- script to handle default clearance of radio buttons issue#50 -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('myForm');
-    const radios = form.querySelectorAll('input[type="radio"]');
-    let selectedRadioIds = [];
-
-    radios.forEach(radio => {
-      radio.addEventListener('change', () => {
-        selectedRadioIds = []; // Clear the array
-        radios.forEach(radio => {
-          if (radio.checked) {
-            selectedRadioIds.push(radio.id);
-          }
+        <button type="submit">
+            Submit and Calculate
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </button>
+    </div>
+    </form>
+    <button id="goToTopBtn" style="position: fixed; bottom: 20px; right: 20px; display: none;">
+      Go to Top
+  </button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+     $(document).ready(function() {
+      // Show or hide the button based on scroll position
+      $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#goToTopBtn').fadeIn();
+                } else {
+                    $('#goToTopBtn').fadeOut();
+                }
+            });
+             // Scroll to top when button is clicked
+             $('#goToTopBtn').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
         });
-        sessionStorage.setItem('selectedRadioIds', JSON.stringify(selectedRadioIds));
+    $('#myForm').on('submit', function(e) {
+        let unansweredQuestion = null;
 
-        // Set a timeout to clear session storage after 5 minutes
-        setTimeout(() => {
-          sessionStorage.removeItem('selectedRadioIds');
-          radios.forEach(radio => {
-            radio.checked = false; // Uncheck all radio buttons
-          });
-        }, 5 * 60 * 1000); 
-      });
-    });
+        // Iterate over all questions
+        $('.radio-input').each(function() {
+            // Check if any radio button in the group is checked
+            if (!$(this).find('input[type="radio"]:checked').length) {
+                // Mark the question as unanswered
+                unansweredQuestion = $(this);
+                // Exit the loop
+                return false;
+            }
+        });
 
-    // Check if there are selected radio button IDs in sessionStorage
-    const storedSelectedRadioIds = sessionStorage.getItem('selectedRadioIds');
-    if (storedSelectedRadioIds) {
-      selectedRadioIds = JSON.parse(storedSelectedRadioIds);
-      radios.forEach(radio => {
-        if (selectedRadioIds.includes(radio.id)) {
-          radio.checked = true;
+        if (unansweredQuestion) {
+            // Scroll to the unanswered question
+            $('html, body').animate({
+                scrollTop: unansweredQuestion.offset().top
+            }, 2000);
+
+            // Check if a prompt element already exists for this unanswered question
+                if (!unansweredQuestion.next().hasClass('prompt')) {
+                // Get the question text
+                const questionText = unansweredQuestion.find('.question').text().trim();
+                // Set the default prompt
+                let promptMessage = "We'd love to hear your answer!";
+                
+            if (questionText === "How often do you find yourself happy?") {
+                promptMessage = "When was the last time you did a happy dance? Let us know!";
+            } else if (questionText === "Do you often experience feelings of excitement and enthusiasm ?") {
+                promptMessage = "Feeling like you're on a rollercoaster of emotions? Share the thrill with us!";
+            } else if (questionText === "How frequently do you feel grateful for the good things in your life?") {
+                promptMessage = "We'd be grateful if you'd answer this!";
+            } else if (questionText === "Do you feel jealous at some times ?") {
+                promptMessage = "Ever get a case of green-eyed monster? Spill the beans!";
+            } else if (questionText === "Do you actively seek out new challenges to keep yourself engaged?") {
+                promptMessage = "Challenge accepted or challenge avoided? Let's talk about your adventure mode.";
+            } else if (questionText === "How often do when you're doing activities you enjoy, you lose track of time?") {
+                promptMessage = "Time flies when you're having fun, right? Share your time-traveling stories!";
+            } else if (questionText === "How often do you get completely absorbed in what you're doing?") {
+                promptMessage = "Ever been in the zone so deep you lost track of reality? We wanna hear all about it!";
+            } else if (questionText === "Can you dance without fear in public?") {
+                promptMessage = "Dance like nobody's watching, or dance like everybody's watching? Tell us your moves!";
+            } else if (questionText === " Do you feel like you have a support system of friends and family?") {
+                promptMessage = "Lone wolf or pack animal? Go ahead and answer!";
+            } else if (questionText === "How often do you spend quality time with people who uplift and inspire you?") {
+                promptMessage = "Surround yourself with people who lift you higher. Who's in your tribe?";
+            } else if (questionText === "Do you feel comfortable sharing your thoughts and feelings with others?") {
+                promptMessage = "Spill the tea or keep it bottled up? Let's chat about opening up!";
+            } else if (questionText === "Do you feel you need a partner?") {
+                promptMessage = "Single and loving it, or ready to mingle? Let's talk about your relationship status!";
+            } else if (questionText === "Do you feel a sense of purpose and direction in your life?") {
+                promptMessage = "Feeling like a sheep or a goat? Think about it.";
+            } else if (questionText === "Do you feel that your life has a deeper meaning beyond just day-to-day activities?") {
+                promptMessage = "Looking for the meaning of life or happy with Netflix and snacks? Let's dive deep!";
+            } else if (questionText === "Do you spend negative time on socials? ?") {
+                promptMessage = "Scrolling through drama or spreading good vibes? ";
+            } else if (questionText === "Do you like going to college/school/office ?") {
+                promptMessage = "School's cool or work's a perk? Let's talk about your daily grind!";
+            } else if (questionText === " Have you achieved any major goals ?") {
+                promptMessage = "Goal getter or goal forgetter? Share your big wins with us!";
+            } else if (questionText === "Do you think your Parents are proud of you?") {
+                promptMessage = "Go ahead and answer!";
+            } else if (questionText === "Do you think people respect you ?") {
+                promptMessage = "Commanding respect or still earning your stripes? Share your respect-o-meter with us!";
+            } else if (questionText === "Do you think you have done good in your life so far ?") {
+                promptMessage = "It's the last questionn dude, let's finish this!";
+            } 
+
+                // Display the customized prompt below the unanswered question
+                const promptElement = $('<div class="prompt">' + promptMessage + '</div>').hide();
+promptElement.css({
+  "background": "linear-gradient(135deg, #11998e, #38ef7d)",
+  "color": "#fff",
+  "border-radius": "10px",
+  "padding": "8px 16px", // Adjusted padding
+  "margin-top": "10px",
+  "margin-bottom": "20px", // Increase margin-bottom to create more space
+  "display": "inline-block", // Make the prompt inline-block
+  "animation": "floating 2s ease-in-out infinite" // Apply floating animation
+});
+
+// Append the prompt element to the DOM
+promptElement.appendTo('body');
+
+// Define the floating animation
+$('<style>').text(`
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+`).appendTo('head');
+
+                unansweredQuestion.after(promptElement);
+                promptElement.slideDown(1000);
+            }
+            
+            // Prevent form submission
+            e.preventDefault();
         }
-      });
-    }
-
-    form.addEventListener('submit', () => {
-      sessionStorage.setItem('selectedRadioIds', JSON.stringify(selectedRadioIds));
     });
-  });
-</script>
-<script>
-  const goToTopBtn = document.getElementById("go-to-top-button")
-
-  window.onscroll = () =>{
-    scrollFunction();
-  }
-  function scrollFunction() {
-    if(document.body.scrollTop > 300 || document.documentElement.scrollTop > 300){
-      goToTopBtn.style.display = "block";
-    } else {
-      goToTopBtn.style.display = "none";
-    }
-    goToTopBtn.onclick = () =>{
-      goToTopBtn.style.display = "none"
-      window.scroll({
-        top: 0,
-        behavior: "smooth"
-      })
-
-    }
-
-  }
-</script>
 
 
+    </script>
 
 </body>
 

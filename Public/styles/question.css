@@ -1,5 +1,5 @@
 * {
-  font-family: 'Arial', sans-serif;
+  font-family: Candara, Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,50 +17,58 @@ body {
   height: auto;
 }
 
+
 .cta-card__input-box {
-  position: relative;
+  margin-bottom: 20px; /* Add margin to the input box */
+  width: 50%; /* Adjust the width */
+  height: 60px; /* Adjust the height */
 }
+
 .cta-card__input {
   margin-top: 1rem;
-  width: 100%;
-  padding: 1rem 1rem;
+  width: 92%;
+  padding: 1rem 2rem; /* Increase padding to adjust size */
   display: inline-block;
   outline: none;
-  border: 2px solid rgba(243, 248, 254, 0.3);
+  border: 2px solid rgb(244, 155, 245); /* Black outline */
   border-radius: 3rem;
   font-size: 2rem;
   font-family: "Mulish", sans-serif;
   color: #fff;
-  background-color: rgba(243, 248, 254, 0.4);
+  background: linear-gradient(to top, #84fab0 0%, #8fd3f4 100%);
+  margin-bottom: 20px; /* Increase margin-bottom to create more space */
 }
+
+
 .cta-card__input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 .cta-card__input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  font-family: Candara, Arial, sans-serif;
+  color: #000; /* Black color */
 }
-.cta-card__input:focus {
-  outline: 4px solid rgba(218, 70, 218, 0.4);
-  border: 2px solid transparent;
+.cta-card__input {
+  font-family: Candara, Arial, sans-serif;
+  color: #000; /* Black color */
 }
 
 .container {
-  width: 80%;
+  width: 100%;
   max-width: 600px;
 }
 
 .radio-input {
   display: flex;
   flex-direction: column;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.8);
+  padding: 20px; /* Increase padding for bigger boxes */
+  background: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
   color: #000;
-  border-radius: 10px;
+  border-radius: 20px; /* Increase border-radius for rounded corners */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  margin-bottom: 15px;
-  margin-top: 15px;
+  margin-bottom: 30px; /* Increase margin for more separation between boxes */
   margin-right: 3rem;
 }
+
 
 .info {
   margin-bottom: 10px;
@@ -161,7 +169,6 @@ button .arrow::before {
   transition: 0.2s;
   padding: 3px;
   transform: rotate(-45deg);
-  
 }
 
 button:hover {
@@ -177,35 +184,33 @@ button:hover .arrow:before {
 }
 .radio-options {
   display: flex;
+  justify-content: center; /* Center the options horizontally */
 }
 
 
 .radio-options label {
-  /* display: flex; */
+  display: flex;
   background-color: #fff;
   padding: 14px;
-  /* margin: 8px 0 0 0; */
   font-size: 13px;
   font-weight: 600;
   border-radius: 10px;
   cursor: pointer;
-  border: 1px solid rgba(187, 187, 187, 0.164);
-  color: #000;
   transition: background-color 0.3s, border 0.3s;
-  margin-left: 1rem;
-  margin-bottom: .5rem;
-  /* display: block; */
-  
+  margin-right: 1.5rem; /* Adjust spacing between options horizontally */
+  margin-bottom: 10px; /* Add vertical space between options */
 }
+
 
 .radio-options label:hover {
   background-color: rgba(24, 24, 24, 0.13);
-  border: 1px solid #bbb;
 }
-
+.radio-options input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
 .radio-options input[type="radio"]:checked + label {
-  background-color: #bbb;
-
+  background: linear-gradient(to top, #4facfe, #00f2fe); /* Light blue gradient */
+  color: #fff; /* Text color */
 }
 
 #go-to-top-button {
@@ -232,8 +237,5 @@ button:hover .arrow:before {
 .hidden {
   display: none;
 }
-
-
-
 
 
