@@ -2,6 +2,9 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const axios = require("axios")
 const sgMail = require("@sendgrid/mail")
+const path=require("path")
+const bcrypt=require("bcrypt")
+const collection=require("./config.js")
 
 require("dotenv").config()
 
@@ -17,13 +20,72 @@ const verdict = []
 
 app.use(express.static(__dirname+"/Public")); 
 app.use(bodyParser.urlencoded({extended:true}));
-
-
 app.set('views', __dirname + '/views');
 app.set("view engine","ejs");
 
-
+app.use(express.json())// As data is stored in json format in mongoDb
 app.get("/",(req,res)=>{
+  res.render("login")
+})
+app.get("/signup",(req,res)=>{
+   res.render("signup")
+})
+//user registration for loging in
+app.post("/signup", async (req, res) => {
+  const data = {
+      email: req.body.email,
+      password: req.body.password,
+  };
+
+  try {
+      // we need to check whether user already exists to avoid duplicates
+      const existing=await collection.findOne({email:data.email});
+      if(existing){
+      return res.status(400).json({ message: "User already exists" });
+      }
+      else{
+         // we need hash password to keep it secure using bcrypt
+         const rounds=10;
+         
+         const hashedPassword=await bcrypt.hash(data.password,rounds);
+         data.password=hashedPassword;
+         const userData = await collection.insertMany(data);
+         console.log(userData);
+         res.render('login');
+      }
+  } catch (error) {
+      if (error.errors && error.errors.email && error.errors.email.kind === 'user defined') {
+          return res.status(400).json({ message: error.errors.email.message });
+      } else {
+          console.error('Error:', error);
+          res.status(500).json({ message: 'Internal server error' });
+      }
+  }
+});
+
+
+app.post('/',async(req,res)=>{
+  try{
+    const exist=await collection.findOne({email:req.body.email});
+    if(!exist){
+      return res.status(400).json({ message: "User doesnot exist please signup" });
+    }
+    //check the password is corect or not
+    const passwordCheck=await bcrypt.compare(req.body.password,exist.password)
+    if(passwordCheck){
+      res.render('index');
+    }
+    else{
+      req.send("wrong password");
+    }
+  }
+  catch{
+    res.send("wrong credentials");
+  }
+})
+
+
+app.get("/index",(req,res)=>{
     res.render("index")
 })
 app.get("/about",(req,res)=>{

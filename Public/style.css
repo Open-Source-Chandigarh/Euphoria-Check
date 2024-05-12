@@ -1,0 +1,39 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    border: 1px solid black;
+    width: 300px;
+}
+.container2{
+    border: 1px solid black;
+    width: 300px;
+    height: 250px;
+}
+.input-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+input{
+    height: 25px;
+    width: 200px;
+
+}
+h2,button{
+    margin-left: 100px;
+}
+button{
+    width: 100px;
+}
+#p1{
+    margin-left: 80px;
+}
+a{
+    margin-left: 20px;
+}
