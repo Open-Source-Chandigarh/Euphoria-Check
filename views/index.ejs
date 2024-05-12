@@ -31,7 +31,7 @@
       <div class="cta-card__input-box">
         <form action="/question" method="post" onsubmit="return validateEmail()">
           <input class="cta-card__input" type="email"  id="emailInput" placeholder="youremail@address.com" name="reciever_email"
-            required />
+            required onfocus="hideError()" />
             <button class="cta-card__button" type="submit"  onsubmit="return validateEmail()">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.66669 16H25.3334" stroke="#3D476D" stroke-width="2" stroke-linecap="round"
@@ -108,6 +108,10 @@
       }
     }
 
+    function hideError() {
+      var emailError = document.getElementById("emailError");
+      emailError.style.display = "none"; // Hide error message
+    }
     
   </script>
 
