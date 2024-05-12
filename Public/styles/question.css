@@ -1,8 +1,9 @@
 * {
-  font-family: 'Arial', sans-serif;
+  font-family: Candara, Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
@@ -17,35 +18,47 @@ body {
   height: auto;
 }
 
+
 .cta-card__input-box {
-  position: relative;
+  margin-bottom: 20px; /* Add margin to the input box */
+  width: 50%; /* Adjust the width */
+  height: 60px; /* Adjust the height */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
 }
+
 .cta-card__input {
   margin-top: 1rem;
-  width: 96%;
-  padding: 1rem 1rem;
+  width: 92%;
+  padding: 1rem 2rem; /* Increase padding to adjust size */
   display: inline-block;
   outline: none;
-  border: 2px solid rgba(243, 248, 254, 0.096);
+  border: 2px solid rgb(244, 155, 245); /* Black outline */
   border-radius: 3rem;
   font-size: 2rem;
   font-family: "Mulish", sans-serif;
   color: #fff;
-  background-color: rgba(243, 248, 254, 0.144);
+  background: linear-gradient(to top, #84f6fa 0%, #9bf48f 100%);
+  margin-bottom: 20px; /* Increase margin-bottom to create more space */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
 }
+
+
 .cta-card__input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 .cta-card__input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  font-family: Candara, Arial, sans-serif;
+  color: #002fff; /* Black color */
 }
-.cta-card__input:focus {
-  outline: 4px solid rgba(218, 70, 218, 0.4);
-  border: 2px solid transparent;
+.cta-card__input {
+  font-family: Candara, Arial, sans-serif;
+  color: #000; /* Black color */
 }
 
 .container {
-  width: 80%;
+  width: 100%;
   max-width: 600px;
 }
 
@@ -53,16 +66,16 @@ body {
   display: flex;
   flex-direction: column;
   padding: 32px;
-  /* background: rgba(255, 255, 255, 0.279); */
-background: rgb(131,58,180);
-background: radial-gradient(circle, rgba(131,58,180,1) 5%, rgba(252,70,128,0.680637220708596) 92%);
-  color: #3e0446;
-  border-radius: 10px;
+
+  background: rgb(131,58,180);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.992) 5%, rgb(156, 238, 238) 92%);
+    color: #3e0446;
+  border-radius: 20px; /* Increase border-radius for rounded corners */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  margin-bottom: 15px;
-  margin-top: 15px;
+  margin-bottom: 30px; /* Increase margin for more separation between boxes */
   margin-right: 3rem;
 }
+
 
 .info {
   margin-bottom: 10px;
@@ -72,18 +85,18 @@ background: radial-gradient(circle, rgba(131,58,180,1) 5%, rgba(252,70,128,0.680
 }
 
 .question {
-  color: #ffffff;
-  font-size: 1.4rem;
-  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 800;
   margin-bottom: 10px;
 }
 
 .steps {
-  background-color: #3333338e;
-  padding: 8px;
+  background-color: #333;
+  padding: 4px;
   color: #fff;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -163,7 +176,6 @@ button .arrow::before {
   transition: 0.2s;
   padding: 3px;
   transform: rotate(-45deg);
-  
 }
 
 button:hover {
@@ -179,37 +191,35 @@ button:hover .arrow:before {
 }
 .radio-options {
   display: flex;
+  justify-content: center; /* Center the options horizontally */
 }
 
 
 .radio-options label {
-  /* display: flex; */
-  background-color: #ffffff8c;
-    /* margin: 8px 0 0 0; */
-  font-size: 18px;
+  display: flex;
+  background-color: #fff;
+  padding: 14px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+  font-size: 13px;
   font-weight: 600;
   border-radius: 10px;
   cursor: pointer;
-  border: 1px solid rgba(187, 187, 187, 0.164);
-  color: #000;
   transition: background-color 0.3s, border 0.3s;
-  margin-left: 1rem;
-  margin-bottom: .5rem;
-  /* display: block; */
-  
+  margin-right: 1.5rem; /* Adjust spacing between options horizontally */
+  margin-bottom: 10px; /* Add vertical space between options */
 }
+
 
 .radio-options label:hover {
   background-color: rgba(24, 24, 24, 0.13);
-  border: 1px solid #bbb;
-  color: #1bd246;
 }
-
+.radio-options input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
 .radio-options input[type="radio"]:checked + label {
-  background-color: #1bd246;
-  color: white;
-  border: 2px solid #047a20;
-
+  background: linear-gradient(to top, #4facfe, #00f2fe); /* Light blue gradient */
+  color: #fff; /* Text color */
 }
 
 #go-to-top-button {
@@ -237,11 +247,4 @@ button:hover .arrow:before {
   display: none;
 }
 
-input[type="radio"] {
-  transform: scale(1.8);
-  margin-right: 6px;
-}
 
-.submit{
-  font-size: 18px;
-}
