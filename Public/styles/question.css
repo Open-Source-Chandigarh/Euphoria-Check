@@ -22,16 +22,16 @@ body {
 }
 .cta-card__input {
   margin-top: 1rem;
-  width: 100%;
+  width: 96%;
   padding: 1rem 1rem;
   display: inline-block;
   outline: none;
-  border: 2px solid rgba(243, 248, 254, 0.3);
+  border: 2px solid rgba(243, 248, 254, 0.096);
   border-radius: 3rem;
   font-size: 2rem;
   font-family: "Mulish", sans-serif;
   color: #fff;
-  background-color: rgba(243, 248, 254, 0.4);
+  background-color: rgba(243, 248, 254, 0.144);
 }
 .cta-card__input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.7);
@@ -52,9 +52,11 @@ body {
 .radio-input {
   display: flex;
   flex-direction: column;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.8);
-  color: #000;
+  padding: 32px;
+  /* background: rgba(255, 255, 255, 0.279); */
+background: rgb(131,58,180);
+background: radial-gradient(circle, rgba(131,58,180,1) 5%, rgba(252,70,128,0.680637220708596) 92%);
+  color: #3e0446;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   margin-bottom: 15px;
@@ -70,18 +72,18 @@ body {
 }
 
 .question {
-  color: #333;
-  font-size: 1rem;
-  font-weight: 800;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
 .steps {
-  background-color: #333;
-  padding: 4px;
+  background-color: #3333338e;
+  padding: 8px;
   color: #fff;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -182,10 +184,9 @@ button:hover .arrow:before {
 
 .radio-options label {
   /* display: flex; */
-  background-color: #fff;
-  padding: 14px;
-  /* margin: 8px 0 0 0; */
-  font-size: 13px;
+  background-color: #ffffff8c;
+    /* margin: 8px 0 0 0; */
+  font-size: 18px;
   font-weight: 600;
   border-radius: 10px;
   cursor: pointer;
@@ -201,10 +202,13 @@ button:hover .arrow:before {
 .radio-options label:hover {
   background-color: rgba(24, 24, 24, 0.13);
   border: 1px solid #bbb;
+  color: #1bd246;
 }
 
 .radio-options input[type="radio"]:checked + label {
-  background-color: #bbb;
+  background-color: #1bd246;
+  color: white;
+  border: 2px solid #047a20;
 
 }
 
@@ -233,7 +237,11 @@ button:hover .arrow:before {
   display: none;
 }
 
+input[type="radio"] {
+  transform: scale(1.8);
+  margin-right: 6px;
+}
 
-
-
-
+.submit{
+  font-size: 18px;
+}
