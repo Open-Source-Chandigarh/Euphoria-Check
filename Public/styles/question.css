@@ -53,6 +53,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 32px;
+  text-align: center;
   /* background: rgba(255, 255, 255, 0.279); */
 background: rgb(131,58,180);
 background: radial-gradient(circle, rgba(131,58,180,1) 5%, rgba(252,70,128,0.680637220708596) 92%);
@@ -61,7 +62,8 @@ background: radial-gradient(circle, rgba(131,58,180,1) 5%, rgba(252,70,128,0.680
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   margin-bottom: 15px;
   margin-top: 15px;
-  margin-right: 3rem;
+  margin-left: 10px;  //added equal margins instead of only rigth
+  margin-right: 10px;
 }
 
 .info {
