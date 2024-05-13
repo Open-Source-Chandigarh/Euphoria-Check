@@ -196,3 +196,33 @@ body {
   color: #fff;
   text-decoration: none;
 }
+
+.recommended-resources {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px; 
+  padding: 1rem;  
+  margin-top: 2rem;  
+}
+
+.recommended-resources h2 {
+  text-align: center;  /* Center align the text inside the header */
+  font-weight: bold;  /* Make the text bold */
+  margin-bottom: 1rem;  /* Add space below the header */
+}
+
+.resource-card {
+  display: inline-block;  /* Make cards appear side-by-side */
+  width: calc(20% - 1rem);  /* Set width to 20% of available space with 1rem margin */
+  margin: 0.5rem;  /* Add some margin between cards */
+  padding: 1rem;  /* Add padding inside cards */
+  border: 1px solid #ddd;  /* Add a thin border */
+  border-radius: 5px;  /* Add rounded corners to cards */
+  background-color: #fff;  /* Set card background color (white) */
+  text-align: center;  /* Center align content within cards */
+}
+
+
+
+
+
+
