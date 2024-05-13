@@ -23,8 +23,11 @@ body {
   margin-bottom: 20px; /* Add margin to the input box */
   width: 50%; /* Adjust the width */
   height: 60px; /* Adjust the height */
+<<<<<<< HEAD
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
+=======
+>>>>>>> 32a4076b17d75edf9af42e7629609c387f35939f
 }
 
 .cta-card__input {
@@ -38,10 +41,15 @@ body {
   font-size: 2rem;
   font-family: "Mulish", sans-serif;
   color: #fff;
+<<<<<<< HEAD
   background: linear-gradient(to top, #84f6fa 0%, #9bf48f 100%);
   margin-bottom: 20px; /* Increase margin-bottom to create more space */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
+=======
+  background: linear-gradient(to top, #84fab0 0%, #8fd3f4 100%);
+  margin-bottom: 20px; /* Increase margin-bottom to create more space */
+>>>>>>> 32a4076b17d75edf9af42e7629609c387f35939f
 }
 
 
@@ -50,7 +58,11 @@ body {
 }
 .cta-card__input::placeholder {
   font-family: Candara, Arial, sans-serif;
+<<<<<<< HEAD
   color: #002fff; /* Black color */
+=======
+  color: #000; /* Black color */
+>>>>>>> 32a4076b17d75edf9af42e7629609c387f35939f
 }
 .cta-card__input {
   font-family: Candara, Arial, sans-serif;
@@ -65,11 +77,17 @@ body {
 .radio-input {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   padding: 32px;
 
   background: rgb(131,58,180);
   background: radial-gradient(circle, rgba(255, 255, 255, 0.992) 5%, rgb(156, 238, 238) 92%);
     color: #3e0446;
+=======
+  padding: 20px; /* Increase padding for bigger boxes */
+  background: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+  color: #000;
+>>>>>>> 32a4076b17d75edf9af42e7629609c387f35939f
   border-radius: 20px; /* Increase border-radius for rounded corners */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   margin-bottom: 30px; /* Increase margin for more separation between boxes */
@@ -199,8 +217,11 @@ button:hover .arrow:before {
   display: flex;
   background-color: #fff;
   padding: 14px;
+<<<<<<< HEAD
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
+=======
+>>>>>>> 32a4076b17d75edf9af42e7629609c387f35939f
   font-size: 13px;
   font-weight: 600;
   border-radius: 10px;
