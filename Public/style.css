@@ -4,15 +4,33 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: aliceblue;
 }
+img{
+    width: 500px;
+}
+#login,#signup{
+    font-size: 30px; 
+    line-height: 50px; 
+    color: rgba(99, 88, 220, 1);
+    font-weight: bold;
+}
+
 .container{
-    border: 1px solid black;
-    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    height: 400px;
+    width: 350px;
+    margin-left: 100px;
 }
 .container2{
-    border: 1px solid black;
-    width: 300px;
-    height: 250px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    height: 400px;
+    width: 350px;
+    margin-left: 100px;
 }
 .input-group{
     display: flex;
@@ -20,20 +38,20 @@ body{
     align-items: center;
     padding: 10px;
 }
-input{
-    height: 25px;
-    width: 200px;
-
-}
-h2,button{
-    margin-left: 100px;
+input,button{
+    height: 30px;
+    width: 80%;
 }
 button{
-    width: 100px;
+    background-color: rgba(99, 88, 220, 1);
+    color: white;
+    border: none;
 }
 #p1{
     margin-left: 80px;
 }
+
 a{
-    margin-left: 20px;
+    
+    text-decoration: none;
 }
