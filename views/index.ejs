@@ -29,19 +29,21 @@
         </p>
       </header>
       <div class="cta-card__input-box">
-        <form action="/question" method="post">
-          <input class="cta-card__input" type="email" placeholder="youremail@address.com" name="reciever_email"
-            required />
-          <button class="cta-card__button" type="submit">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.66669 16H25.3334" stroke="#3D476D" stroke-width="2" stroke-linecap="round"
+        <form action="/question" method="post" onsubmit="return validateEmail()">
+          <input class="cta-card__input" type="email"  id="emailInput" placeholder="youremail@address.com" name="reciever_email"
+            required onfocus="hideError()" />
+            <button class="cta-card__button" type="submit"  onsubmit="return validateEmail()">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.66669 16H25.3334" stroke="#3D476D" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
-              <path d="M20 21.3333L25.3333 16" stroke="#3D476D" stroke-width="2" stroke-linecap="round"
+                <path d="M20 21.3333L25.3333 16" stroke="#3D476D" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
-              <path d="M20 10.6667L25.3333 16" stroke="#3D476D" stroke-width="2" stroke-linecap="round"
+                <path d="M20 10.6667L25.3333 16" stroke="#3D476D" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
-            </svg>
-          </button>
+              </svg>
+            </button>
+            <div id="emailError" class="error__description"  style="display: none;">Please enter a valid email address.</div>
+
         </form>
       </div>
       <div class="cta-card__img-box">
@@ -92,6 +94,25 @@
         $(this).addClass('shadow-2');
       }
     });
+    function validateEmail() {
+
+      var email = document.getElementById("emailInput").value;
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      var emailError = document.getElementById("emailError")
+      if (!emailRegex.test(email)) {
+        emailError.style.display = "block"; // Show error message
+        return false; // Prevent form submission
+      } else {
+        emailError.style.display = "none"; // Hide error message
+        return true; // Allow form submission
+      }
+    }
+
+    function hideError() {
+      var emailError = document.getElementById("emailError");
+      emailError.style.display = "none"; // Hide error message
+    }
+    
   </script>
 
 

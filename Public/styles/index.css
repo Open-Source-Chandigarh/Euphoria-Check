@@ -67,6 +67,7 @@ body {
   font-weight: 300;
   color: #fff;
 }
+
 .cta-card__input-box {
   position: relative;
 }
@@ -117,6 +118,18 @@ body {
 .cta-card__button:active {
   transform: translate(0.3rem, -50%);
 }
+
+.error__description {
+  position: absolute;
+  bottom: -2.5rem;
+  right: 20%;
+  max-width: 80%;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ad1c51;
+}
+
 @media only screen and (max-width: 37.5em) {
   .cta-card__button:active {
     transform: none;
