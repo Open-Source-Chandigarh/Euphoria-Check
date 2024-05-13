@@ -3,7 +3,6 @@ const bodyParser = require("body-parser")
 const axios = require("axios")
 const sgMail = require("@sendgrid/mail")
 const questionsJSON = require("./questions")
-const questions = require("./questions")
 
 require("dotenv").config()
 
