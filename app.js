@@ -5,7 +5,7 @@ const sgMail = require("@sendgrid/mail")
 const path=require("path")
 const bcrypt=require("bcrypt")
 const collection=require("./config.js")
-
+const ExpressError=require("./utils/ExpressError.js")
 require("dotenv").config()
 
 const API_KEY = process.env.SENDGRID_API_KEY
