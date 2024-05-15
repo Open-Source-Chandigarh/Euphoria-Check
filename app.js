@@ -2,17 +2,7 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const axios = require("axios")
 const sgMail = require("@sendgrid/mail")
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-const path=require("path")
-const bcrypt=require("bcrypt")
-const collection=require("./config.js")
 const ExpressError=require("./utils/ExpressError.js")
->>>>>>> Stashed changes
-=======
-const ExpressError=require("./utils/ExpressError.js")
->>>>>>> 5863d9a63eacb84b10eca3dc7563444fd15206a4
 
 require("dotenv").config()
 
