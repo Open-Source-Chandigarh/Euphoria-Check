@@ -2,6 +2,7 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const axios = require("axios")
 const sgMail = require("@sendgrid/mail")
+const ExpressError=require("./utils/ExpressError.js")
 
 require("dotenv").config()
 
@@ -85,3 +86,12 @@ app.post("/result",async (req,res)=>{
 app.listen(process.env.PORT || 3000,function(){
   console.log("Server Started Sucessfully")
 })
+
+app.all("*",(req,res,next)=>{
+  next(new ExpressError(404,"Page not found!"));
+});
+
+app.use((err,req,res,next)=>{
+  let {statusCode=500,message="Something Went Wrong"}=err;
+  res.render("customError.ejs",{message});
+});
