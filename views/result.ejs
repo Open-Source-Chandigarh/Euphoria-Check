@@ -128,7 +128,111 @@
           
           </article>
           <button class="btn-grad" onclick = "window.location.href='/';"">Try Again!!</button>
+
         </main>
-      </div>
+        <section class="recommended-resources">
+          <h2>Recommended Resources</h2>
+          <div class="resource-list">
+            <% if (pos < 5) { %>
+              <article class="resource-card">
+                <h3>Boosting Positivity</h3>
+                <p>Feeling down? Check out these tips for increasing positive emotions.</p>
+                <a href="https://greatergood.berkeley.edu/article/science/what/happiness/how-increase-your-happiness" target="_blank">Visit Resource</a>
+              </article>
+            <% } else if (pos >= 5 && pos <= 7) { %>
+              <article class="resource-card">
+                <h3>Maintaining Positivity</h3>
+                <p>Strategies to keep your positive emotions thriving.</p>
+                <a href="https://www.psychologytoday.com/us/blog/the-athletes-way/201701/9-ways-cultivate-and-maintain-positive-emotions" target="_blank">Visit Resource</a>
+              </article>
+            <% } else { %>
+              <article class="resource-card">
+                <h3>Enhancing Positivity</h3>
+                <p>Take your positive emotions to the next level with these practices.</p>
+                <a href="https://www.headspace.com/science/happiness" target="_blank">Visit Resource</a>
+              </article>
+            <% } %>
+
+            <% if (eng < 5) { %>
+              <article class="resource-card">
+                <h3>Spark Engagement</h3>
+                <p>Feeling disengaged? Explore these tips to find activities that light you up.</p>
+                <a href="https://www.helpguide.org/articles/mental-health/finding-purpose-and-meaning-in-life.htm" target="_blank">Visit Resource</a>
+              </article>
+            <% } else if (eng >= 5 && eng <= 7) { %>
+              <article class="resource-card">
+                 <h3>Deepen Engagement</h3>
+                 <p>Take your engagement to the next level with these strategies.</p>
+                 <a href="https://positivepsychology.com/engagement-activities/" target="_blank">Visit Resource</a>
+              </article>
+            <% } else { %>
+              <article class="resource-card">
+                 <h3>Supercharge Engagement</h3>
+                 <p>Learn how to maximize your flow and motivation.</p>
+                 <a href="https://www.ted.com/talks/mihaly_csikszentmihalyi_on_flow_the_secret_to_happiness" target="_blank">Visit Resource</a>
+              </article>
+            <% } %>
+
+            <% if (rel < 5) { %>
+              <article class="resource-card">
+                 <h3>Strengthen Relationships</h3>
+                 <p>Build stronger connections with these tips for fostering healthy relationships.</p>
+                 <a href="https://www.gottman.com/blog/the-four-horsemen-communication-apocalypse/" target="_blank">Visit Resource</a>
+              </article>
+            <% } else if (rel >= 5 && rel <= 7) { %>
+              <article class="resource-card">
+                 <h3>Nurture Relationships</h3>
+                 <p>Learn how to nurture and deepen your existing connections.</p>
+                 <a href="https://www.psychologytoday.com/us/blog/the-athletes-way/201801/6-ways-nurture-your-relationships" target="_blank">Visit Resource</a>
+              </article>
+            <% } else { %>
+              <article class="resource-card">
+                <h3>Thriving Relationships</h3>
+                <p>Explore advanced strategies for building strong and fulfilling relationships.</p>
+                <a href="https://www.gottman.com/blog/what-makes-love-last-2/" target="_blank">Visit Resource</a>
+              </article>
+            <% } %>
+
+            <% if (mea < 5) { %>
+              <article class="resource-card">
+                <h3>Discover Meaning</h3>
+                <p>Feeling lost? Explore resources to help you find your purpose in life.</p>
+                <a href="https://www.verywellmind.com/how-to-find-meaning-in-life-4160866" target="_blank">Visit Resource</a>
+              </article>
+            <% } else if (mea >= 5 && mea <= 7) { %>
+              <article class="resource-card">
+                <h3>Live a Meaningful Life</h3>
+                <p>Learn how to integrate meaning into your daily life.</p>
+                <a href="https://www.berkeley.edu/greatergood/science/purpose/what-gives-life-meaning" target="_blank">Visit Resource</a>
+              </article>
+            <% } else { %>
+              <article class="resource-card">
+                <h3>Expand Your Purpose</h3>
+                <p>Explore ways to broaden your sense of purpose and make a bigger impact.</p>
+                <a href="https://greatergood.berkeley.edu/article/science/well-being/how-find-your-lifes-purpose" target="_blank">Visit Resource</a>
+              </article>
+            <% } %>
+
+            <% if (acc < 5) { %>
+              <article class="resource-card">
+                <h3>Boost Accomplishment</h3>
+                <p>Feeling stuck? Discover strategies to set and achieve goals effectively.</p>
+                <a href="https://jamesclear.com/articles/goal-setting/" target="_blank">Visit Resource</a>
+              </article>
+            <% } else if (acc >= 5 && acc <= 7) { %>
+              <article class="resource-card">
+                <h3>Maximize Accomplishment</h3>
+                <p>Take your goal-setting skills to the next level with advanced strategies.</p>
+                <a href="https://www.forbes.com/sites/forbescoachescouncil/2019/01/14/10-powerful-goal-setting-tips-for-maximum-achievement/" target="_blank">Visit Resource</a>
+              </article>
+            <% } else { %>
+              <article class="resource-card">
+                <h3>Breakthrough Accomplishment</h3>
+                <p>Explore strategies for tackling ambitious goals and achieving peak performance.</p>
+                <a href="https://www.entrepreneur.com/article/273150" target="_blank">Visit Resource</a>
+              </article>
+            <% } %>
+          </div>
+        </section>
 </body>
 </html>
