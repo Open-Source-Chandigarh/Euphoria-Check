@@ -21,7 +21,7 @@
 
 		<!-- Iterating through questions and rendering each one -->
 		<% questions?.forEach(function(q, index) { %>
-			<div class="radio-input">
+			<div class="radio-input" id="question<%= index %>"> <!-- Assigning different id's here -->
 				<div class="info">
 
 					<span class="question">
@@ -159,7 +159,35 @@
   }
 </script>
 
+<!-- script to Implement Smooth Scrolling to Next Question on Radio Button Selection #111 -->
+<script>
+  function scrollToNext(nextQuestionId) {
+    const nextElement = document.getElementById(nextQuestionId);
+    if (nextElement) {
+      nextElement.scrollIntoView(
+        {
+          behavior: 'smooth', 
+          block: 'start'  // Scroll to the top of the element
+        }
+      ); 
+    }
+  }
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('myForm');
+    const radios = form.querySelectorAll('input[type="radio"]');
+
+    radios.forEach(radio => {
+      radio.addEventListener('change', (event) => {
+        const currentId = event.target.id;
+        const currentIndex = parseInt(currentId.split('-')[2]);
+        const nextQuestionId = `question${currentIndex + 1}`;
+
+        setTimeout(() => scrollToNext(nextQuestionId), 300); // slight delay for visual effect
+      });
+    });
+  });
+</script>
 
 </body>
 
