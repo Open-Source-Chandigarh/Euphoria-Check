@@ -163,7 +163,6 @@
 <script>
   function scrollToNext(nextQuestionId) {
     const nextElement = document.getElementById(nextQuestionId);
-    console.log(nextElement);
     if (nextElement) {
       nextElement.scrollIntoView(
         {
@@ -181,11 +180,8 @@
     radios.forEach(radio => {
       radio.addEventListener('change', (event) => {
         const currentId = event.target.id;
-        console.log(currentId);
         const currentIndex = parseInt(currentId.split('-')[2]);
-        console.log(currentIndex);
         const nextQuestionId = `question${currentIndex + 1}`;
-        console.log(nextQuestionId);
 
         setTimeout(() => scrollToNext(nextQuestionId), 300); // slight delay for visual effect
       });
