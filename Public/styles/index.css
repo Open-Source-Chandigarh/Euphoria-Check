@@ -11,7 +11,18 @@ html {
   font-size: 62.5%;
 }
 
+/* Dark mode body background style */
+body.dark-mode {
+  background-image: radial-gradient(circle, rgb(34, 34, 34), rgb(0, 0, 0)); /* Dark background color */
+  color: white; /* Change text color to white or any other suitable color */
+}
+.cta-card.dark-mode{
+  background-image: radial-gradient(circle, rgb(34, 34, 34), rgb(0, 0, 0)); /* Dark background color */
+  color: white; /* Change text color to white or any other suitable color */
+}
+
 body {
+  background-image: radial-gradient(circle, rgb(34, 34, 210), rgb(95, 4, 200));
   display: flex;
   justify-content: center;
   align-items: center;
