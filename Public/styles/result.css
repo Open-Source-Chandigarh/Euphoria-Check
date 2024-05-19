@@ -210,9 +210,14 @@ body {
   margin-bottom: 1rem;  /* Add space below the header */
 }
 
+.resource-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .resource-card {
   display: inline-block;  /* Make cards appear side-by-side */
-  width: calc(20% - 1rem);  /* Set width to 20% of available space with 1rem margin */
+  width: calc(40% - 1rem);  /* Set width to 20% of available space with 1rem margin */
   margin: 0.5rem;  /* Add some margin between cards */
   padding: 1rem;  /* Add padding inside cards */
   border: 1px solid #ddd;  /* Add a thin border */
