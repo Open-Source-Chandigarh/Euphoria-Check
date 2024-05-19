@@ -20,6 +20,7 @@ body {
 .cta-card__input-box {
   position: relative;
 }
+
 .cta-card__input {
   margin-top: 1rem;
   width: 96%;
@@ -33,12 +34,15 @@ body {
   color: #fff;
   background-color: rgba(243, 248, 254, 0.144);
 }
+
 .cta-card__input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
+
 .cta-card__input::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
+
 .cta-card__input:focus {
   outline: 4px solid rgba(218, 70, 218, 0.4);
   border: 2px solid transparent;
@@ -55,14 +59,16 @@ body {
   padding: 32px;
   text-align: center;
   /* background: rgba(255, 255, 255, 0.279); */
-background: rgb(131,58,180);
-background: radial-gradient(circle, rgb(130, 38, 191) 25%, rgba(218, 62, 229, 0.681) 92%);
+
+  background: rgb(131, 58, 180);
+  background: radial-gradient(circle, rgba(131, 58, 180, 1) 5%, rgba(252, 70, 128, 0.680637220708596) 92%);
+=
   color: #3e0446;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   margin-bottom: 15px;
   margin-top: 15px;
-  margin-left: 10px;  //added equal margins instead of only rigth
+  margin-left: 10px; //added equal margins instead of only rigth
   margin-right: 10px;
 }
 
@@ -165,7 +171,7 @@ button .arrow::before {
   transition: 0.2s;
   padding: 3px;
   transform: rotate(-45deg);
-  
+
 }
 
 button:hover {
@@ -179,6 +185,7 @@ button:hover .arrow {
 button:hover .arrow:before {
   right: 0;
 }
+
 .radio-options {
   display: flex;
 }
@@ -187,7 +194,7 @@ button:hover .arrow:before {
 .radio-options label {
   /* display: flex; */
   background-color: #ffffff8c;
-    /* margin: 8px 0 0 0; */
+  /* margin: 8px 0 0 0; */
   font-size: 18px;
   font-weight: 600;
   border-radius: 10px;
@@ -198,7 +205,7 @@ button:hover .arrow:before {
   margin-left: 1rem;
   margin-bottom: .5rem;
   /* display: block; */
-  
+
 }
 
 .radio-options label:hover {
@@ -207,8 +214,10 @@ button:hover .arrow:before {
   color:#16b73b;
 }
 
-.radio-options input[type="radio"]:checked + label {
-  background-color: #16b73b;
+
+.radio-options input[type="radio"]:checked+label {
+  background-color: #1bd246;
+
   color: white;
   border: 2px solid #047a20;
 
@@ -216,18 +225,12 @@ button:hover .arrow:before {
 
 #go-to-top-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  --primary-color: #645bff;
-  --secondary-color: #fff;
-  --hover-color: #111;
-  color: white;
-  opacity: 0.5;
+  bottom: 37px;
+  right: 85px;
   border: none;
-  border-radius: 20px;
+  border-radius: 60px;
   padding: 10px 20px;
   cursor: pointer;
-  box-shadow: 5px 2px 4px rgb(0, 0, 0, 0.5);
   transition: all o.2s linear;
 }
 
@@ -244,6 +247,6 @@ input[type="radio"] {
   margin-right: 6px;
 }
 
-.submit{
+.submit {
   font-size: 18px;
 }
