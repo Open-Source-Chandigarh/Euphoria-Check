@@ -412,8 +412,10 @@ nav ul li {
 nav a {
   text-decoration: none;
   color: #333;
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 3rem;
+  font-family:sans-fransis;
+  
 }
 
 
@@ -443,4 +445,5 @@ nav a {
 .socialIcons {
   display: flex;
   align-items: center;
+  justify-content:centre;
 }
