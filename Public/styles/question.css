@@ -33,7 +33,7 @@ body {
   font-family: "Mulish", sans-serif;
   color: #fff;
   background-color: rgba(243, 248, 254, 0.144);
-  margin-left: 2px;
+  margin-left: 10px;
 }
 
 .cta-card__input::-moz-placeholder {
@@ -63,9 +63,8 @@ body {
 
   background: rgb(131, 58, 180);
   background: radial-gradient(circle, rgba(131, 58, 180, 1) 5%, rgba(252, 70, 128, 0.680637220708596) 92%);
-=
   color: #3e0446;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   margin-top: 20px;
   padding-left: 15px;
@@ -87,6 +86,8 @@ body {
   border-radius: 20px;
   transition: all .3s;
   margin-top: 20px;
+  margin-left: 10px;
+  margin-right:10px
 }
 .card:hover{
   box-shadow: 0px 0px 30px 1px white;
@@ -269,5 +270,6 @@ input[type="radio"] {
 .submit {
   font-size: 18px;
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  margin-right: 10px;
 }
