@@ -1,225 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Euphoria Check</title>
-    <link rel="stylesheet" href="styles/index.css" type="text/css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
-  </head>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Euphoria Check</title>
+  <link rel="stylesheet" href="styles/index.css" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-
-  <body
-    style="
-      background-image: radial-gradient(
-        circle,
-        rgb(34, 34, 210),
-        rgb(95, 4, 200)
-      );
-    ">
-    <!-- style="background-image: url(images/vector-purple-light-blue-gradient-260nw-1941567055.jpg);background-repeat: no-repeat;background-position: center;background-size: cover;"> -->
-
-    <nav>
-      <h1><a href="/">Euphoria-Check</a></h1>
-      <ul>
-        <li><a href="/about">About Us</a></li>
-      </ul>
-    </nav>
-    <section class="cta-card">
-      <div class="cta-card__container">
-        <header class="cta-card__header">
-          <p class="cta-card__title">Euphoria Check</p>
-          <p class="cta-card__description">
-            An Advance PERMA meter to check your Euphoria and Evolve!
-          </p>
-        </header>
-        <div class="cta-card__input-box">
-          <form
-            action="/question"
-            method="post"
-            onsubmit="return validateEmail()">
-            <input
-              class="cta-card__input"
-              type="email"
-              id="emailInput"
-              placeholder="youremail@address.com"
-              name="reciever_email"
-              required
-              onfocus="hideError()" />
-            <button
-              class="cta-card__button"
-              type="submit"
-              onsubmit="return validateEmail()">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M6.66669 16H25.3334"
-                  stroke="#3D476D"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M20 21.3333L25.3333 16"
-                  stroke="#3D476D"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M20 10.6667L25.3333 16"
-                  stroke="#3D476D"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-
-
-              </svg>
-            </button>
-            <div
-              id="emailError"
-              class="error__description"
-              style="display: none">
-              Please enter a valid email address.
-            </div>
-          </form>
+<body style="background-image: radial-gradient(circle, rgb(34, 34, 210), rgb(95, 4, 200));">
+  <nav>
+    <h1><a href="/">Euphoria-Check</a></h1>
+    <ul>
+      <li class="mx-5">
+        <select id="languageSelect" name="language" onchange="changeLanguage()">
+          <option selected value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="mr">मराठी</option>
+          <option value="ba">বাংলা</option>
+        </select>
+      </li>
+      <li><a href="/about" id="about">About Us</a></li>
+    </ul>
+  </nav>
+  <section class="cta-card">
+    <div class="cta-card__container">
+      <header class="cta-card__header">
+        <p class="cta-card__title">Euphoria Check</p>
+        <p class="cta-card__description">An Advanced PERMA meter to check your Euphoria and Evolve!</p>
+      </header>
+      <div class="cta-card__input-box">
+        <form action="/question" method="post" onsubmit="return validateEmail()">
+          <input class="cta-card__input" type="email" id="emailInput" placeholder="youremail@address.com"
+            name="reciever_email" required onfocus="hideError()" />
+          <input type="hidden" id="selectedLang" name="selectedLang" value="" />
+          <button class="cta-card__button" type="submit" onsubmit="return validateEmail()">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.66669 16H25.3334" stroke="#3D476D" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M20 21.3333L25.3333 16" stroke="#3D476D" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M20 10.6667L25.3333 16" stroke="#3D476D" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div id="emailError" class="error__description" style="display: none">
+            Please enter a valid email address.
+          </div>
+        </form>
+      </div>
+      <div class="cta-card__img-box">
+        <div class="circle" id="P">
+          <b>P</b>
+          <br />
+          <div class="tooltip" style="font-size: small; text-align: center">
+            <b>Positive Emotions</b>: Experiencing positive feelings such as joy, hope, inspiration and love
+          </div>
         </div>
-        <div class="cta-card__img-box">
-          <!-- <img class="cta-card__img"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrc-7xqfTdSqdX2PgGxAjC3dsX4E74g-N3wff2xz-ejc_teYwx8MyCXTPgSpfcAXCA8iQ&usqp=CAU"
-          alt="User" />
-        <img class="cta-card__img"
-          src="https://static-00.iconduck.com/assets.00/regional-indicator-symbol-letter-e-emoji-512x512-2wmpw2k5.png"
-          alt="User" />
-        <img class="cta-card__img"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4HyyUAp2DyR_D-DuNn3r_E5mV-w3HdMwgLw&usqp=CAU"
-          alt="User" />
-        <img class="cta-card__img"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DAXwWRldpM1w1_1nHl58YavrxtMqQLyNTw&usqp=CAU"
-          alt="User" />
-        <img class="cta-card__img"
-          src="data:image/png;base64,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"
-          alt="User" /> -->
-          <div class="circle" id="P">
-            <b>P</b>
-            <br />
-            <div class="tooltip" style="font-size: small; text-align: center">
-              <b>Positive Emotions</b>: Experiencing positive feelings such as
-              joy, hope, inspiration and love
-            </div>
+        <div class="circle" id="E">
+          <b>E</b>
+          <br />
+          <div class="tooltip" style="font-size: small; text-align: center">
+            <b>Engagement</b>: Being fully involved and absorbed in activities
           </div>
-          <div class="circle" id="E">
-            <b>E</b>
-            <br />
-            <div class="tooltip" style="font-size: small; text-align: center">
-              <b>Engagement</b> : Being fully involved and absorbed in
-              activities
-            </div>
+        </div>
+        <div class="circle" id="R">
+          <b>R</b>
+          <br />
+          <div class="tooltip" style="font-size: small; text-align: center">
+            <b>Relationships</b>: Connections we have with others, including family, friends, colleagues, and the
+            broader community
           </div>
-          <div class="circle" id="R">
-            <b>R</b>
-            <br />
-            <div class="tooltip" style="font-size: small; text-align: center">
-              <b>Relationships</b> : Connections we have with others, including
-              family, friends, colleagues, and the broader community
-            </div>
+        </div>
+        <div class="circle" id="M">
+          <b>M</b>
+          <br />
+          <div class="tooltip" style="font-size: small; text-align: center">
+            <b>Meaning</b>: Having a sense of purpose and direction in life
           </div>
-          <div class="circle" id="M">
-            <b>M</b>
-            <br />
-            <div class="tooltip" style="font-size: small; text-align: center">
-              <b>Meaning</b> : Having a sense of purpose and direction in life
-            </div>
-          </div>
-          <div class="circle" id="A">
-            <b>A</b>
-            <br />
-            <div class="tooltip" style="font-size: small; text-align: center">
-              <b>Achievement</b> : Setting and pursuing goals that are
-              personally meaningful and important
-            </div>
+        </div>
+        <div class="circle" id="A">
+          <b>A</b>
+          <br />
+          <div class="tooltip" style="font-size: small; text-align: center">
+            <b>Achievement</b>: Setting and pursuing goals that are personally meaningful and important
           </div>
         </div>
       </div>
-
-    </section>
-    <script>
-      $(".card").on("click", function () {
-        if ($(this).hasClass("open")) {
-          $(".card").removeClass("open");
-          $(".card").removeClass("shadow-2");
-          $(this).addClass("shadow-1");
-          return false;
-        } else {
-          $(".card").removeClass("open");
-          $(".card").removeClass("shadow-2");
-          $(this).addClass("open");
-          $(this).addClass("shadow-2");
-        }
-      });
-      function validateEmail() {
-        var email = document.getElementById("emailInput").value;
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-        var emailError = document.getElementById("emailError");
-        if (!emailRegex.test(email)) {
-          emailError.style.display = "block"; // Show error message
-          return false; // Prevent form submission
-        } else {
-          emailError.style.display = "none"; // Hide error message
-          return true; // Allow form submission
-        }
-
+    </div>
+  </section>
+  <script src="scripts/index.js"></script>
+  <script>
+    const content = {
+      en: {
+        title: "Euphoria Check",
+        description: "An Advanced PERMA meter to check your Euphoria and Evolve!",
+        emailPlaceholder: "youremail@address.com",
+        emailError: "Please enter a valid email address.",
+        pTooltip: "Positive Emotions: Experiencing positive feelings such as joy, hope, inspiration and love",
+        eTooltip: "Engagement: Being fully involved and absorbed in activities",
+        rTooltip: "Relationships: Connections we have with others, including family, friends, colleagues, and the broader community",
+        mTooltip: "Meaning: Having a sense of purpose and direction in life",
+        aTooltip: "Achievement: Setting and pursuing goals that are personally meaningful and important",
+        about: "About Us"
+      },
+      hi: {
+        title: "यूफोरिया चेक",
+        description: "आपके यूफोरिया को चेक करने और विकसित करने के लिए एक उन्नत PERMA मीटर!",
+        emailPlaceholder: "आपकीईमेल@पता.com",
+        emailError: "कृपया एक वैध ईमेल पता दर्ज करें।",
+        pTooltip: "सकारात्मक भावनाएँ: आनंद, आशा, प्रेरणा और प्रेम जैसी सकारात्मक भावनाओं का अनुभव करना",
+        eTooltip: "व्यस्तता: गतिविधियों में पूरी तरह से संलग्न और अवशोषित होना",
+        rTooltip: "संबंध: परिवार, मित्र, सहयोगी और व्यापक समुदाय सहित दूसरों के साथ हमारे संबंध",
+        mTooltip: "अर्थ: जीवन में उद्देश्य और दिशा होना",
+        aTooltip: "उपलब्धि: व्यक्तिगत रूप से महत्वपूर्ण और सार्थक लक्ष्यों को स्थापित करना और उनका पीछा करना",
+        about: "हमारे बारे में"
+      },
+      ba: {
+        title: "ইউফোরিয়া চেক",
+        description: "আপনার ইউফোরিয়া যাচাই করতে এবং বিকাশ করতে একটি উন্নত PERMA মিটার!",
+        emailPlaceholder: "আপনারইমেল@ঠিকানা.com",
+        emailError: "একটি বৈধ ইমেল ঠিকানা প্রবেশ করুন।",
+        pTooltip: "ইতিবাচক অনুভূতি: আনন্দ, আশা, অনুপ্রেরণা এবং ভালবাসার মত ইতিবাচক অনুভূতি অনুভব করা",
+        eTooltip: "সদা ব্যস্ততা: সম্পূর্ণরূপে কাজে লিপ্ত এবং মগ্ন থাকা",
+        rTooltip: "সম্পর্ক: পরিবার, বন্ধু, সহকর্মী এবং বৃহত্তর সম্প্রদায় সহ অন্যদের সাথে আমাদের সংযোগ",
+        mTooltip: "অর্থ: জীবনে উদ্দেশ্য এবং দিকনির্দেশনা থাকা",
+        aTooltip: "সাফল্য: ব্যক্তিগতভাবে গুরুত্বপূর্ণ এবং তাৎপর্যপূর্ণ লক্ষ্য স্থাপন এবং অনুসরণ করা",
+        about: "আমাদের সম্পর্কে"
+      },
+      mr: {
+        title: "युफोरिया तपासणी",
+        description: "आपला युफोरिया तपासण्यासाठी आणि विकसित होण्यासाठी एक प्रगत PERMA मीटर!",
+        emailPlaceholder: "आपलाइमेल@पत्ता.com",
+        emailError: "कृपया एक वैध ईमेल पत्ता प्रविष्ट करा.",
+        pTooltip: "सकारात्मक भावना: आनंद, आशा, प्रेरणा आणि प्रेम यांसारख्या सकारात्मक भावना अनुभवणे",
+        eTooltip: "संपूर्ण गुंतवणूक: क्रियाकलापांमध्ये पूर्णपणे सहभागी आणि गुंतलेले असणे",
+        rTooltip: "संबंध: कुटुंब, मित्र, सहकारी आणि व्यापक समुदाय यांच्यासह इतरांसोबतचे आपले संबंध",
+        mTooltip: "अर्थ: जीवनात उद्देश आणि दिशा असणे",
+        aTooltip: "यश: वैयक्तिकदृष्ट्या महत्वाचे आणि अर्थपूर्ण ध्येय स्थापित करणे आणि त्यांचा पाठपुरावा करणे",
+        about: "आमच्याबद्दल"
       }
+    };
 
-      function hideError() {
-        var emailError = document.getElementById("emailError");
-        emailError.style.display = "none"; // Hide error message
+    function changeLanguage() {
+      const selectedLang = document.getElementById('languageSelect').value;
+      document.querySelector('.cta-card__title').innerText = content[selectedLang].title;
+      document.querySelector('.cta-card__description').innerText = content[selectedLang].description;
+      document.getElementById('emailInput').placeholder = content[selectedLang].emailPlaceholder;
+      document.getElementById('emailError').innerText = content[selectedLang].emailError;
+      document.querySelector('#P .tooltip').innerHTML = `<b>Positive Emotions</b>: ${content[selectedLang].pTooltip}`;
+      document.querySelector('#E .tooltip').innerHTML = `<b>Engagement</b>: ${content[selectedLang].eTooltip}`;
+      document.querySelector('#R .tooltip').innerHTML = `<b>Relationships</b>: ${content[selectedLang].rTooltip}`;
+      document.querySelector('#M .tooltip').innerHTML = `<b>Meaning</b>: ${content[selectedLang].mTooltip}`;
+      document.querySelector('#A .tooltip').innerHTML = `<b>Achievement</b>: ${content[selectedLang].aTooltip}`;
+      document.getElementById('selectedLang').value = selectedLang;
+      document.getElementById('about').textContent = content[selectedLang].about;
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      changeLanguage();
+    });
+
+    function validateEmail() {
+      const emailInput = document.getElementById('emailInput');
+      const emailError = document.getElementById('emailError');
+      const emailValue = emailInput.value;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailPattern.test(emailValue)) {
+        emailError.style.display = 'block';
+        return false;
       }
-    </script>
+      return true;
+    }
 
-    <!-- Footer -->
-    <footer>
-      <div class="footerContainer">
-        <div class="FooterBottom">
-          <div class="socialIcons">
-            <a
-              href="https://www.instagram.com/opensourcechandigarh"
-              target="_blank">
-              <img src="images/instagram.png" alt="Instagram" />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/open-source-chandigarh"
-              target="_blank">
-              <img src="images/linkedin.png" alt="LinkedIn" />
-            </a>
-            <a href="https://discord.gg/jhFczDDp" target="_blank">
-              <img src="images/discord.png" alt="Discord" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"></script>
-  </body>
+    function hideError() {
+      const emailError = document.getElementById('emailError');
+      emailError.style.display = 'none';
+    }
+  </script>
+</body>
 
 </html>
-
-
-

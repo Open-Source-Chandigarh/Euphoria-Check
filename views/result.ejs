@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result</title>
-    <link rel="stylesheet" href="styles\result.css">
-    <link rel="stylesheet" href="Public\styles\scrollbarStyle.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result</title>
+  <link rel="stylesheet" href="styles\result.css">
+  <link rel="stylesheet" href="Public\styles\scrollbarStyle.css">
 </head>
-<body style="background-image: url(images/vector-purple-light-blue-gradient-260nw-1941567055.jpg);background-repeat: no-repeat;background-position: center;background-size: cover;">
-    <article class="leaderboard">
-        <header>
-      
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;" xml:space="preserve" class="leaderboard__icon">
-            <g>
-              <g>
-                <path d="M466.45,49.374c-7.065-8.308-17.368-13.071-28.267-13.071H402.41v-11.19C402.41,11.266,391.143,0,377.297,0H134.705
+
+<body
+  style="background-image: url(images/vector-purple-light-blue-gradient-260nw-1941567055.jpg);background-repeat: no-repeat;background-position: center;background-size: cover;">
+  <article class="leaderboard">
+    <header>
+
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;"
+        xml:space="preserve" class="leaderboard__icon">
+        <g>
+          <g>
+            <path d="M466.45,49.374c-7.065-8.308-17.368-13.071-28.267-13.071H402.41v-11.19C402.41,11.266,391.143,0,377.297,0H134.705
                   c-13.848,0-25.112,11.266-25.112,25.112v11.19H73.816c-10.899,0-21.203,4.764-28.267,13.071
                   c-6.992,8.221-10.014,19.019-8.289,29.624c9.4,57.8,45.775,108.863,97.4,136.872c4.717,11.341,10.059,22.083,16.008,32.091
                   c19.002,31.975,42.625,54.073,68.627,64.76c2.635,26.644-15.094,51.885-41.794,57.9c-0.057,0.013-0.097,0.033-0.153,0.046
@@ -32,11 +37,11 @@
                   c-24.342-40.961-37.748-95.671-37.748-154.049V25.112c0-0.78,0.634-1.413,1.412-1.413h242.591c0.78,0,1.414,0.634,1.414,1.413
                   V81.803z M451.348,75.192c-6.702,41.208-29.074,78.51-61.569,104.191c8.268-30.283,12.631-63.395,12.631-97.58V60.001h35.773
                   c3.938,0,7.66,1.723,10.214,4.726C450.915,67.688,451.963,71.405,451.348,75.192z" />
-              </g>
-            </g>
-            <g>
-              <g>
-                <path d="M327.941,121.658c-1.395-4.288-5.103-7.414-9.566-8.064l-35.758-5.196l-15.991-32.402
+          </g>
+        </g>
+        <g>
+          <g>
+            <path d="M327.941,121.658c-1.395-4.288-5.103-7.414-9.566-8.064l-35.758-5.196l-15.991-32.402
                   c-1.997-4.044-6.116-6.605-10.626-6.605c-4.511,0-8.63,2.561-10.626,6.605l-15.991,32.402l-35.758,5.196
                   c-4.464,0.648-8.172,3.775-9.566,8.065c-1.393,4.291-0.231,8.999,2.999,12.148l25.875,25.221l-6.109,35.613
                   c-0.763,4.446,1.064,8.938,4.714,11.59c3.648,2.651,8.487,3,12.479,0.902L256,190.32l31.982,16.813
@@ -45,195 +50,276 @@
                   l3.102,18.09l-16.245-8.541c-1.725-0.908-3.62-1.36-5.514-1.36c-1.894,0-3.788,0.454-5.514,1.36l-16.245,8.541l3.102-18.09
                   c0.66-3.844-0.615-7.766-3.408-10.489l-13.141-12.81l18.162-2.64c3.859-0.56,7.196-2.985,8.922-6.482l8.123-16.458l8.122,16.458
                   c1.727,3.497,5.062,5.921,8.922,6.482l18.162,2.64L278.064,146.405z" />
-              </g>
-            </g>
-          </svg>
-      
-          <h1 class="leaderboard__title"><span class="leaderboard__title--top">PERMA</span><span class="leaderboard__title--bottom">Scores</span>
-            <br>
-            <span class="leaderboard__title--bottom">Check Your Email</span>
-          </h1>
-        </header>
-        
-        <main class="leaderboard__profiles">
-          <article class="leaderboard__profile">
-            <div class="circle" id="P">
-              <b>P</b>
-            </div>
-            <span class="leaderboard__name">Positive Emotions</span>
-            <span class="leaderboard__value"><%= pos  %>
-              <% if (pos < 5) { %>
-                <span class="emoji">&#128532;</span> <!-- sad emoji -->
-            <% } else { %>
-                <span class="emoji">&#128522;</span> <!-- happy emoji -->
-            <% } %>
-            </span>
-          </article>
-          
-          <article class="leaderboard__profile">
-            <div class="circle" id="E">
-              <b>E</b>
-            </div>
-            <span class="leaderboard__name">Engagement</span>
-            <span class="leaderboard__value"><%= eng %>
-              <% if (eng < 4) { %>
-                  <span class="emoji">&#128241;</span> <!-- 📱 -->
-              <% } else { %>
-                  <span class="emoji">&#127912;</span> <!-- 🎨 -->
-                  <!-- <span class="emoji">&#127947;&#8205;&#9794;&#65039;</span>  -->
-              <% } %>
-            </span>
-          </article>
-        
-          
-          <article class="leaderboard__profile">
-            <div class="circle" id="R">
-              <b>R</b>
-            </div>
-            <span class="leaderboard__name">Relationships</span>
-            <span class="leaderboard__value"><%= rel  %>
-              <% if (rel < 5) { %>
-                <span class="emoji">&#128694;</span> <!-- 🚶‍♂️ -->
-            <% } else { %>
-                <span class="emoji">&#10084;</span> <!-- ❤️ -->
-            <% } %>
-            </span>
-          </article>
+          </g>
+        </g>
+      </svg>
+      <h1 class="leaderboard__title"><span class="leaderboard__title--top">PERMA</span><span
+          class="leaderboard__title--bottom">Scores</span>
+        <br>
+        <span class="leaderboard__title--bottom" id="check-email"></span>
+      </h1>
+    </header>
 
-          <article class="leaderboard__profile">
-            <div class="circle" id="M">
-              <b>M</b>
-            </div>
-            <span class="leaderboard__name">Meaning</span>
-            <span class="leaderboard__value"><%= mea  %>
-              <% if (rel < 5) { %>
-                <span class="emoji">&#128694;</span> <!-- 🚶‍♂️ -->
-            <% } else { %>
-                <span class="emoji">&#10084;</span> <!-- ❤️ -->
-            <% } %>            
-            </span>
-          </article>
-          
-          <article class="leaderboard__profile">
-            <div class="circle" id="A">
-              <b>A</b>
-            </div>
-            <span class="leaderboard__name">Accomplishment</span>
-            <span class="leaderboard__value"><%= acc  %>
-              <% if (acc < 5) { %>
-                <span class="emoji">&#x1F61E;</span> <!-- 😞 -->
+    <main class="leaderboard__profiles">
+      <article class="leaderboard__profile">
+        <div class="circle" id="P">
+          <b>P</b>
+        </div>
+        <span class="leaderboard__name" id="positive-emotions"></span>
+        <span class="leaderboard__value">
+          <%= pos %>
+            <% if (pos < 5) { %>
+              <span class="emoji">&#128532;</span> <!-- sad emoji -->
               <% } else { %>
-                  <span class="emoji">&#x1F3C6;</span> <!-- 🏆 -->
-              <% } %>
-            </span>
-          
-          </article>
-          <button class="btn-grad" onclick = "window.location.href='/';"">Try Again!!</button>
+                <span class="emoji">&#128522;</span> <!-- happy emoji -->
+                <% } %>
+        </span>
+      </article>
+
+      <article class="leaderboard__profile">
+        <div class="circle" id="E">
+          <b>E</b>
+        </div>
+        <span class="leaderboard__name" id="engagement"></span>
+        <span class="leaderboard__value">
+          <%= eng %>
+            <% if (eng < 4) { %>
+              <span class="emoji">&#128241;</span> <!-- 📱 -->
+              <% } else { %>
+                <span class="emoji">&#127912;</span> <!-- 🎨 -->
+                <!-- <span class="emoji">&#127947;&#8205;&#9794;&#65039;</span>  -->
+                <% } %>
+        </span>
+      </article>
+
+
+      <article class="leaderboard__profile">
+        <div class="circle" id="R">
+          <b>R</b>
+        </div>
+        <span class="leaderboard__name" id="relationships"></span>
+        <span class="leaderboard__value">
+          <%= rel %>
+            <% if (rel < 5) { %>
+              <span class="emoji">&#128694;</span> <!-- 🚶‍♂️ -->
+              <% } else { %>
+                <span class="emoji">&#10084;</span> <!-- ❤️ -->
+                <% } %>
+        </span>
+      </article>
+
+      <article class="leaderboard__profile">
+        <div class="circle" id="M">
+          <b>M</b>
+        </div>
+        <span class="leaderboard__name" id="meaning"></span>
+        <span class="leaderboard__value">
+          <%= mea %>
+            <% if (rel < 5) { %>
+              <span class="emoji">&#128694;</span> <!-- 🚶‍♂️ -->
+              <% } else { %>
+                <span class="emoji">&#10084;</span> <!-- ❤️ -->
+                <% } %>
+        </span>
+      </article>
+
+      <article class="leaderboard__profile">
+        <div class="circle" id="A">
+          <b>A</b>
+        </div>
+        <span class="leaderboard__name" id="accomplishment"></span>
+        <span class="leaderboard__value">
+          <%= acc %>
+            <% if (acc < 5) { %>
+              <span class="emoji">&#x1F61E;</span> <!-- 😞 -->
+              <% } else { %>
+                <span class="emoji">&#x1F3C6;</span> <!-- 🏆 -->
+                <% } %>
+        </span>
+
+      </article>
+      <button class="btn-grad" id="tryagain" onclick="window.location.href='/';""></button>
 
         </main>
-        <section class="recommended-resources">
-          <h2>Recommended Resources</h2>
-          <div class="resource-list">
-            <% if (pos < 5) { %>
-              <article class="resource-card">
-                <h3>Boosting Positivity</h3>
-                <p>Feeling down? Check out these tips for increasing positive emotions.</p>
-                <a href="https://greatergood.berkeley.edu/article/science/what/happiness/how-increase-your-happiness" target="_blank">Visit Resource</a>
-              </article>
-            <% } else if (pos >= 5 && pos <= 7) { %>
-              <article class="resource-card">
-                <h3>Maintaining Positivity</h3>
-                <p>Strategies to keep your positive emotions thriving.</p>
-                <a href="https://www.psychologytoday.com/us/blog/the-athletes-way/201701/9-ways-cultivate-and-maintain-positive-emotions" target="_blank">Visit Resource</a>
-              </article>
-            <% } else { %>
-              <article class="resource-card">
-                <h3>Enhancing Positivity</h3>
-                <p>Take your positive emotions to the next level with these practices.</p>
-                <a href="https://www.headspace.com/science/happiness" target="_blank">Visit Resource</a>
-              </article>
-            <% } %>
+        <section class=" recommended-resources">
+        <h2 id="recommended-resources"></h2>
+        <div class="resource-list" id="resource-list">
+          <% if (pos < 5) { %>
+            <article class="resource-card">
+              <h3>Boosting Positivity</h3>
+              <p>Feeling down? Check out these tips for increasing positive emotions.</p>
+              <a href="https://greatergood.berkeley.edu/article/science/what/happiness/how-increase-your-happiness"
+                target="_blank">Visit Resource</a>
+            </article>
+            <% } else if (pos>= 5 && pos <= 7) { %>
+                <article class="resource-card">
+                  <h3>Maintaining Positivity</h3>
+                  <p>Strategies to keep your positive emotions thriving.</p>
+                  <a href="https://www.psychologytoday.com/us/blog/the-athletes-way/201701/9-ways-cultivate-and-maintain-positive-emotions"
+                    target="_blank">Visit Resource</a>
+                </article>
+                <% } else { %>
+                  <article class="resource-card">
+                    <h3>Enhancing Positivity</h3>
+                    <p>Take your positive emotions to the next level with these practices.</p>
+                    <a href="https://www.headspace.com/science/happiness" target="_blank">Visit Resource</a>
+                  </article>
+                  <% } %>
 
-            <% if (eng < 5) { %>
-              <article class="resource-card">
-                <h3>Spark Engagement</h3>
-                <p>Feeling disengaged? Explore these tips to find activities that light you up.</p>
-                <a href="https://www.helpguide.org/articles/mental-health/finding-purpose-and-meaning-in-life.htm" target="_blank">Visit Resource</a>
-              </article>
-            <% } else if (eng >= 5 && eng <= 7) { %>
-              <article class="resource-card">
-                 <h3>Deepen Engagement</h3>
-                 <p>Take your engagement to the next level with these strategies.</p>
-                 <a href="https://positivepsychology.com/engagement-activities/" target="_blank">Visit Resource</a>
-              </article>
-            <% } else { %>
-              <article class="resource-card">
-                 <h3>Supercharge Engagement</h3>
-                 <p>Learn how to maximize your flow and motivation.</p>
-                 <a href="https://www.ted.com/talks/mihaly_csikszentmihalyi_on_flow_the_secret_to_happiness" target="_blank">Visit Resource</a>
-              </article>
-            <% } %>
+                    <% if (eng < 5) { %>
+                      <article class="resource-card">
+                        <h3>Spark Engagement</h3>
+                        <p>Feeling disengaged? Explore these tips to find activities that light you up.</p>
+                        <a href="https://www.helpguide.org/articles/mental-health/finding-purpose-and-meaning-in-life.htm"
+                          target="_blank">Visit Resource</a>
+                      </article>
+                      <% } else if (eng>= 5 && eng <= 7) { %>
+                          <article class="resource-card">
+                            <h3>Deepen Engagement</h3>
+                            <p>Take your engagement to the next level with these strategies.</p>
+                            <a href="https://positivepsychology.com/engagement-activities/" target="_blank">Visit
+                              Resource</a>
+                          </article>
+                          <% } else { %>
+                            <article class="resource-card">
+                              <h3>Supercharge Engagement</h3>
+                              <p>Learn how to maximize your flow and motivation.</p>
+                              <a href="https://www.ted.com/talks/mihaly_csikszentmihalyi_on_flow_the_secret_to_happiness"
+                                target="_blank">Visit Resource</a>
+                            </article>
+                            <% } %>
 
-            <% if (rel < 5) { %>
-              <article class="resource-card">
-                 <h3>Strengthen Relationships</h3>
-                 <p>Build stronger connections with these tips for fostering healthy relationships.</p>
-                 <a href="https://www.gottman.com/blog/the-four-horsemen-communication-apocalypse/" target="_blank">Visit Resource</a>
-              </article>
-            <% } else if (rel >= 5 && rel <= 7) { %>
-              <article class="resource-card">
-                 <h3>Nurture Relationships</h3>
-                 <p>Learn how to nurture and deepen your existing connections.</p>
-                 <a href="https://www.psychologytoday.com/us/blog/the-athletes-way/201801/6-ways-nurture-your-relationships" target="_blank">Visit Resource</a>
-              </article>
-            <% } else { %>
-              <article class="resource-card">
-                <h3>Thriving Relationships</h3>
-                <p>Explore advanced strategies for building strong and fulfilling relationships.</p>
-                <a href="https://www.gottman.com/blog/what-makes-love-last-2/" target="_blank">Visit Resource</a>
-              </article>
-            <% } %>
+                              <% if (rel < 5) { %>
+                                <article class="resource-card">
+                                  <h3>Strengthen Relationships</h3>
+                                  <p>Build stronger connections with these tips for fostering healthy relationships.</p>
+                                  <a href="https://www.gottman.com/blog/the-four-horsemen-communication-apocalypse/"
+                                    target="_blank">Visit Resource</a>
+                                </article>
+                                <% } else if (rel>= 5 && rel <= 7) { %>
+                                    <article class="resource-card">
+                                      <h3>Nurture Relationships</h3>
+                                      <p>Learn how to nurture and deepen your existing connections.</p>
+                                      <a href="https://www.psychologytoday.com/us/blog/the-athletes-way/201801/6-ways-nurture-your-relationships"
+                                        target="_blank">Visit Resource</a>
+                                    </article>
+                                    <% } else { %>
+                                      <article class="resource-card">
+                                        <h3>Thriving Relationships</h3>
+                                        <p>Explore advanced strategies for building strong and fulfilling relationships.
+                                        </p>
+                                        <a href="https://www.gottman.com/blog/what-makes-love-last-2/"
+                                          target="_blank">Visit Resource</a>
+                                      </article>
+                                      <% } %>
 
-            <% if (mea < 5) { %>
-              <article class="resource-card">
-                <h3>Discover Meaning</h3>
-                <p>Feeling lost? Explore resources to help you find your purpose in life.</p>
-                <a href="https://www.verywellmind.com/how-to-find-meaning-in-life-4160866" target="_blank">Visit Resource</a>
-              </article>
-            <% } else if (mea >= 5 && mea <= 7) { %>
-              <article class="resource-card">
-                <h3>Live a Meaningful Life</h3>
-                <p>Learn how to integrate meaning into your daily life.</p>
-                <a href="https://www.berkeley.edu/greatergood/science/purpose/what-gives-life-meaning" target="_blank">Visit Resource</a>
-              </article>
-            <% } else { %>
-              <article class="resource-card">
-                <h3>Expand Your Purpose</h3>
-                <p>Explore ways to broaden your sense of purpose and make a bigger impact.</p>
-                <a href="https://greatergood.berkeley.edu/article/science/well-being/how-find-your-lifes-purpose" target="_blank">Visit Resource</a>
-              </article>
-            <% } %>
+                                        <% if (mea < 5) { %>
+                                          <article class="resource-card">
+                                            <h3>Discover Meaning</h3>
+                                            <p>Feeling lost? Explore resources to help you find your purpose in life.
+                                            </p>
+                                            <a href="https://www.verywellmind.com/how-to-find-meaning-in-life-4160866"
+                                              target="_blank">Visit Resource</a>
+                                          </article>
+                                          <% } else if (mea>= 5 && mea <= 7) { %>
+                                              <article class="resource-card">
+                                                <h3>Live a Meaningful Life</h3>
+                                                <p>Learn how to integrate meaning into your daily life.</p>
+                                                <a href="https://www.berkeley.edu/greatergood/science/purpose/what-gives-life-meaning"
+                                                  target="_blank">Visit Resource</a>
+                                              </article>
+                                              <% } else { %>
+                                                <article class="resource-card">
+                                                  <h3>Expand Your Purpose</h3>
+                                                  <p>Explore ways to broaden your sense of purpose and make a bigger
+                                                    impact.</p>
+                                                  <a href="https://greatergood.berkeley.edu/article/science/well-being/how-find-your-lifes-purpose"
+                                                    target="_blank">Visit Resource</a>
+                                                </article>
+                                                <% } %>
 
-            <% if (acc < 5) { %>
-              <article class="resource-card">
-                <h3>Boost Accomplishment</h3>
-                <p>Feeling stuck? Discover strategies to set and achieve goals effectively.</p>
-                <a href="https://jamesclear.com/articles/goal-setting/" target="_blank">Visit Resource</a>
-              </article>
-            <% } else if (acc >= 5 && acc <= 7) { %>
-              <article class="resource-card">
-                <h3>Maximize Accomplishment</h3>
-                <p>Take your goal-setting skills to the next level with advanced strategies.</p>
-                <a href="https://www.forbes.com/sites/forbescoachescouncil/2019/01/14/10-powerful-goal-setting-tips-for-maximum-achievement/" target="_blank">Visit Resource</a>
-              </article>
-            <% } else { %>
-              <article class="resource-card">
-                <h3>Breakthrough Accomplishment</h3>
-                <p>Explore strategies for tackling ambitious goals and achieving peak performance.</p>
-                <a href="https://www.entrepreneur.com/article/273150" target="_blank">Visit Resource</a>
-              </article>
-            <% } %>
-          </div>
+                                                  <% if (acc < 5) { %>
+                                                    <article class="resource-card">
+                                                      <h3>Boost Accomplishment</h3>
+                                                      <p>Feeling stuck? Discover strategies to set and achieve goals
+                                                        effectively.</p>
+                                                      <a href="https://jamesclear.com/articles/goal-setting/"
+                                                        target="_blank">Visit Resource</a>
+                                                    </article>
+                                                    <% } else if (acc>= 5 && acc <= 7) { %>
+                                                        <article class="resource-card">
+                                                          <h3>Maximize Accomplishment</h3>
+                                                          <p>Take your goal-setting skills to the next level with
+                                                            advanced strategies.</p>
+                                                          <a href="https://www.forbes.com/sites/forbescoachescouncil/2019/01/14/10-powerful-goal-setting-tips-for-maximum-achievement/"
+                                                            target="_blank">Visit Resource</a>
+                                                        </article>
+                                                        <% } else { %>
+                                                          <article class="resource-card">
+                                                            <h3>Breakthrough Accomplishment</h3>
+                                                            <p>Explore strategies for tackling ambitious goals and
+                                                              achieving peak performance.</p>
+                                                            <a href="https://www.entrepreneur.com/article/273150"
+                                                              target="_blank">Visit Resource</a>
+                                                          </article>
+                                                          <% } %>
+        </div>
         </section>
+        <script>
+          const language = '<%= language %>';
+
+          const translations = {
+            en: {
+              positiveEmotions: 'Positive Emotions',
+              engagement: 'Engagement',
+              relationships: 'Relationships',
+              meaning: 'Meaning',
+              accomplishment: 'Accomplishment',
+              recommendedResources: 'Recommended Resources',
+              checkEmail: 'CHECK YOUR EMAIL',
+              tryagain: 'TRY AGAIN'
+            },
+            hi: {
+              positiveEmotions: 'सकारात्मक भावनाएँ',
+              engagement: 'सगाई',
+              relationships: 'रिश्ते',
+              meaning: 'अर्थ',
+              accomplishment: 'उपलब्धि',
+              recommendedResources: 'अनुशंसित संसाधन',
+              checkEmail: 'अपना ईमेल चेक करें',
+              tryagain: 'पुनः प्रयास करें'
+            },
+            mr: {
+              positiveEmotions: 'सकारात्मक भावना',
+              engagement: 'व्यस्तता',
+              relationships: 'संबंध',
+              meaning: 'अर्थ',
+              accomplishment: 'सिद्धी',
+              recommendedResources: 'शिफारस केलेले संसाधन',
+              checkEmail: 'आपला ईमेल तपासा',
+              tryagain: 'पुन्हा प्रयत्न करा'
+            },
+            ba: {
+              positiveEmotions: 'ইতিবাচক আবেগ',
+              engagement: 'সম্পৃক্ততা',
+              relationships: 'সম্পর্ক',
+              meaning: 'অর্থ',
+              accomplishment: 'সফলতা',
+              recommendedResources: 'প্রস্তাবিত সংস্থান',
+              checkEmail: 'আপনার ইমেল চেক করুন',
+              tryagain: 'আবার চেষ্টা করুন'
+            }
+          };
+
+          document.getElementById('positive-emotions').textContent = translations[language].positiveEmotions;
+          document.getElementById('engagement').textContent = translations[language].engagement;
+          document.getElementById('relationships').textContent = translations[language].relationships;
+          document.getElementById('meaning').textContent = translations[language].meaning;
+          document.getElementById('accomplishment').textContent = translations[language].accomplishment;
+          document.getElementById('recommended-resources').textContent = translations[language].recommendedResources;
+          document.getElementById('check-email').textContent = translations[language].checkEmail;
+          document.getElementById('tryagain').textContent = translations[language].tryagain + ' !!';
+        </script>
 </body>
+
 </html>

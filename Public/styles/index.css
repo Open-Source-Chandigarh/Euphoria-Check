@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
+
 *,
 *::after,
 *::before {
@@ -13,12 +14,17 @@ html {
 
 /* Dark mode body background style */
 body.dark-mode {
-  background-image: radial-gradient(circle, rgb(34, 34, 34), rgb(0, 0, 0)); /* Dark background color */
-  color: white; /* Change text color to white or any other suitable color */
+  background-image: radial-gradient(circle, rgb(34, 34, 34), rgb(0, 0, 0));
+  /* Dark background color */
+  color: white;
+  /* Change text color to white or any other suitable color */
 }
-.cta-card.dark-mode{
-  background-image: radial-gradient(circle, rgb(34, 34, 34), rgb(0, 0, 0)); /* Dark background color */
-  color: white; /* Change text color to white or any other suitable color */
+
+.cta-card.dark-mode {
+  background-image: radial-gradient(circle, rgb(34, 34, 34), rgb(0, 0, 0));
+  /* Dark background color */
+  color: white;
+  /* Change text color to white or any other suitable color */
 }
 
 body {
@@ -31,12 +37,14 @@ body {
 }
 
 .logo2 {
-    height: 70px; 
-    width: 70px; 
-    border: 3px solid black; /* Add black border */
-    border-radius: 50%; 
-    margin-left: 20px; /* Adjust the margin to reduce gap */
-  }
+  height: 70px;
+  width: 70px;
+  border: 3px solid black;
+  /* Add black border */
+  border-radius: 50%;
+  margin-left: 20px;
+  /* Adjust the margin to reduce gap */
+}
 
 .cta-card {
   position: relative;
@@ -46,6 +54,7 @@ body {
   text-align: center;
   background: linear-gradient(to bottom right, #173ab7, #5271e0);
 }
+
 .cta-card::before {
   content: "";
   position: absolute;
@@ -58,26 +67,31 @@ body {
   border-radius: 2rem;
   background-color: #dde5f9;
 }
+
 @media only screen and (max-width: 56.25em) {
   .cta-card::before {
     display: none;
   }
 }
+
 .cta-card__container {
   max-width: 46rem;
   margin: 0 auto;
 }
+
 @media only screen and (max-width: 56.25em) {
   .cta-card__container {
     max-width: 80%;
   }
 }
+
 .cta-card__title {
   margin-bottom: 1rem;
   font-size: 3.6rem;
   font-weight: 700;
   color: #fff;
 }
+
 .cta-card__description {
   max-width: 75%;
   margin: 0 auto;
@@ -90,6 +104,7 @@ body {
 .cta-card__input-box {
   position: relative;
 }
+
 .cta-card__input {
   width: 100%;
   padding: 2.2rem 2.5rem;
@@ -102,16 +117,20 @@ body {
   color: #fff;
   background-color: rgba(243, 248, 254, 0.4);
 }
+
 .cta-card__input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
+
 .cta-card__input::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
+
 .cta-card__input:focus {
   outline: 4px solid rgba(218, 70, 218, 0.4);
   border: 2px solid transparent;
 }
+
 .cta-card__button {
   position: absolute;
   top: 50%;
@@ -128,12 +147,15 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .cta-card__button path {
   transition: all 0.3s ease;
 }
+
 .cta-card__button:hover path {
   stroke: rgb(218, 70, 218);
 }
+
 .cta-card__button:active {
   transform: translate(0.3rem, -50%);
 }
@@ -154,6 +176,7 @@ body {
     transform: none;
   }
 }
+
 @media only screen and (max-width: 37.5em) {
   .cta-card__button {
     position: relative;
@@ -168,6 +191,7 @@ body {
     transform: none;
   }
 }
+
 .cta-card__img-box {
   position: absolute;
   left: 50%;
@@ -177,11 +201,13 @@ body {
   gap: 4rem;
   transform: translate(-50%, 50%);
 }
+
 @media only screen and (max-width: 56.25em) {
   .cta-card__img-box {
     gap: 0;
   }
 }
+
 .cta-card__img {
   /* width: 9.4rem;
   height: 9.4rem; */
@@ -190,30 +216,32 @@ body {
   box-shadow: 0 1.4rem 2.5rem -1.5rem rgba(82, 113, 224, 0.5);
   transition: filter 0.3s ease;
 }
+
 .cta-card__img:hover {
   filter: grayscale(1);
 }
 
-.circle{
+.circle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width:9rem;
-  height:9rem;
+  width: 9rem;
+  height: 9rem;
   background-color: rgb(0, 116, 116);
   border-radius: 50%;
   color: rgb(255, 255, 255);
   border: rgb(255, 255, 255) solid 0.9rem;
   font-size: 5rem;
   font-family: "Mulish", sans-serif;
-  margin:0.05rem;
-  position:relative;
+  margin: 0.05rem;
+  position: relative;
 }
 
-.circle:hover{
+.circle:hover {
   filter: grayscale(1);
   transition: filter 0.3s ease;
 }
+
 .tooltip {
   visibility: hidden;
   width: 200px;
@@ -236,27 +264,27 @@ body {
   opacity: 1;
 }
 
-.rect{
+.rect {
   display: flex;
 }
 
-#P{
+#P {
   background-color: #1E88E5;
 }
 
-#E{
+#E {
   background-color: #4ED2DA;
 }
 
-#R{
+#R {
   background-color: #D71A60;
 }
 
-#M{
+#M {
   background-color: #8E24AA;
 }
 
-#A{
+#A {
   background-color: #0154a4;
 }
 
@@ -265,16 +293,19 @@ body {
     filter: none;
   }
 }
+
 @media only screen and (max-width: 37.5em) {
   .circle:hover {
     transform: none;
   }
 }
+
 @media only screen and (max-width: 56.25em) {
   .circle {
     margin-right: -2.4rem;
   }
 }
+
 @media only screen and (max-width: 37.5em) {
   .circle {
     width: 8.4rem;
@@ -282,16 +313,20 @@ body {
     border: 0.4rem solid #fff;
   }
 }
+
 @media only screen and (max-width: 67.5em) {
   .cta-card {
     width: 90%;
   }
 }
+
 @media only screen and (max-width: 56.25em) {
   .cta-card {
     padding: 6rem 0 8.5rem;
   }
-}/*# sourceMappingURL=index.css.map */
+}
+
+/*# sourceMappingURL=index.css.map */
 
 
 
@@ -371,24 +406,30 @@ nav {
 }
 
 .logo {
-    height: 50px; 
-    width: 50px; 
-    border: 2px solid black; /* Add black border */
-    border-radius: 50%; 
-    margin-left: 20px; /* Adjust the margin to reduce gap */
-  }
-  
-  .title-link {
-    font-size: 3rem; /* Reduce font size */
-    margin-right: 0; /* Remove auto margin-right */
-  }
+  height: 50px;
+  width: 50px;
+  border: 2px solid black;
+  /* Add black border */
+  border-radius: 50%;
+  margin-left: 20px;
+  /* Adjust the margin to reduce gap */
+}
+
+.title-link {
+  font-size: 3rem;
+  /* Reduce font size */
+  margin-right: 0;
+  /* Remove auto margin-right */
+}
 
 nav h1 {
   margin-left: 0.5em;
   font-size: 4rem;
   font-weight: bold;
-  line-height: 5rem; /* Increase the line-height to your preference */
-  height: 5rem; /* Increase the height to match the line-height */
+  line-height: 5rem;
+  /* Increase the line-height to your preference */
+  height: 5rem;
+  /* Increase the height to match the line-height */
 }
 
 nav h1 a {
@@ -414,29 +455,32 @@ nav a {
   color: #333;
   font-weight: bolder;
   font-size: 3rem;
-  font-family:sans-fransis;
-  
+  font-family: sans-fransis;
+
 }
 
 
 
 .socialIcons a img {
-  width: 30px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin: 0 10px; /* Add spacing between icons */
+  width: 30px;
+  /* Adjust the width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+  margin: 0 10px;
+  /* Add spacing between icons */
 }
 
 /* Additional styling for the footer */
 .footerContainer {
   text-align: center;
   /* padding: 20px; */
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0;
   /* Set background color as needed */
 }
 
 .FooterBottom {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   background-color: transparent;
   /* padding: 20px; */
   text-align: center;
@@ -445,5 +489,37 @@ nav a {
 .socialIcons {
   display: flex;
   align-items: center;
-  justify-content:centre;
+  justify-content: centre;
+}
+
+/* Style for the language select dropdown */
+#languageSelect {
+  background-color: #520BCB;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+}
+
+#languageSelect option {
+  background-color: #fff;
+  color: #000;
+}
+
+#languageSelect:hover,
+#languageSelect:focus {
+  background-color: #520BCB;
+  outline: none;
+}
+
+/* Responsive Styling */
+@media only screen and (max-width: 600px) {
+  #languageSelect {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
 }
