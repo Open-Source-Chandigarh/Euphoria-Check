@@ -69,7 +69,7 @@ app.post("/result",async (req,res)=>{
      verdict.push(`Hi ${req.body.username}, It seems like you've been contemplating the bigger picture and searching for a sense of purpose in your life. Finding meaning is a journey that requires self-reflection and exploration of your values and aspirations. Let's work together to uncover your passions and align your actions with what truly matters to you. Discovering your sense of purpose will bring more fulfillment and a greater sense of direction.`)
   }
   else if(a<r && a<p && a<m && a<e ){
-     verdict.push(`Hello ${req.body.username}, I want you to know that i beleive you've achieved some remarkable things, and your hard work is commendable. However, I also sense that you might be setting high expectations for yourself. It's essential to recognize and celebrate your accomplishments, no matter how small they might seem. We'll work on setting realistic and achievable goals, which will give you a sense of progress and success, boosting your self-confidence and well-being.`)
+     verdict.push(`Hello ${req.body.username}, I want you to know that i believe you've achieved some remarkable things, and your hard work is commendable. However, I also sense that you might be setting high expectations for yourself. It's essential to recognize and celebrate your accomplishments, no matter how small they might seem. We'll work on setting realistic and achievable goals, which will give you a sense of progress and success, boosting your self-confidence and well-being.`)
   }
 
 
