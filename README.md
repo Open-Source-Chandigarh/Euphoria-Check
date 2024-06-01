@@ -94,3 +94,21 @@ Happy Hacking!
 - Express JS
 
 Maintained By - Aryan Inguz, Technical Head Open Source Chandigarh (https://github.com/Aryainguz)
+
+<div align="center">
+<h2><font size="6"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="40" height="40" /> Contributors </font></h2>
+</div>
+<br>
+
+- This project thanking all the contributors for having your valuable contribution to our project
+- Make sure you show some love by giving ⭐ to our repository
+
+<br>
+
+<center>
+<a href="https://github.com/Open-Source-Chandigarh/Euphoria-Check/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Open-Source-Chandigarh/Euphoria-Check" />
+</a>
+</center>
+<br>
+<p align="right"><a href="#top">Back to top</a></p>
