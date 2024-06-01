@@ -22,7 +22,7 @@
           <h1 class="header__title"><span class="header__title--top">PERMA</span><span
               class="header__title--bottom">Scores</span>
             <br>
-            <span class="header__title--bottom">Check Your Email</span>
+            <span class="header__title--bottom" id="check-email"></span>
           </h1>
         </section>
 
@@ -30,7 +30,7 @@
 
           <article class="score-card">
             <p class="circle" id="P">P</p>
-            <span class="score-card__title">Positive Emotions</span>
+            <span class="score-card__title" id="positive-emotions">Positive Emotions</span>
             <span class="score-card__value">
               <%= pos %>
                 <% if (pos < 5) { %>
@@ -43,7 +43,7 @@
 
           <article class="score-card">
             <p class="circle" id="E">E</p>
-            <span class="score-card__title">Engagement</span>
+            <span class="score-card__title" id="engagement">Engagement</span>
             <span class="score-card__value">
               <%= eng %>
                 <% if (eng < 4) { %>
@@ -57,7 +57,7 @@
 
           <article class="score-card">
             <p class="circle" id="R">R</p>
-            <span class="score-card__title">Relationships</span>
+            <span class="score-card__title" id="relationships">Relationships</span>
             <span class="score-card__value">
               <%= rel %>
                 <% if (rel < 5) { %>
@@ -70,7 +70,7 @@
 
           <article class="score-card">
             <p class="circle" id="M">M</p>
-            <span class="score-card__title">Meaning</span>
+            <span class="score-card__title" id="meaning">Meaning</span>
             <span class="score-card__value">
               <%= mea %>
                 <% if (rel < 5) { %>
@@ -83,7 +83,7 @@
 
           <article class="score-card">
             <p class="circle" id="A">A</p>
-            <span class="score-card__title">Accomplishment</span>
+            <span class="score-card__title" id="accomplishment">Accomplishment</span>
             <span class="score-card__value">
               <%= acc %>
                 <% if (acc < 5) { %>
@@ -97,13 +97,13 @@
 
         </section>
       </div>
-      <button class="btn-grad" onclick="window.location.href='/';">Try Again <i
+      <button class="btn-grad" onclick="window.location.href='/';"><span id="tryagain"></span><i
           class="fa-solid fa-arrow-rotate-right"></i></button>
-      <button class="btn-grad" id="share-now-button">Share Now <i class="fa-solid fa-share"></i></button>
+      <button class="btn-grad"><span id="share-now-button"></span> <i class="fa-solid fa-share"></i></button>
     </div>
 
     <section class=" recommended-resources">
-      <h2>Recommended Resources</h2>
+      <h2 id="recommended-resources"></h2>
       <div class="resource-list">
         <% if (pos < 5) { %>
           <article class="resource-card">
@@ -272,7 +272,7 @@
         img.style.height = '100%';
         img.style.repeat = 'no-repeat';
         imgContainer.appendChild(img);
-        
+
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
           shareBtn.style.display = "block";
           shareBtn.addEventListener('click', () => {
@@ -316,6 +316,68 @@
       link.click();
       document.body.removeChild(link);
     });
+
+  </script>
+
+  <script>
+    const language = '<%= language %>';
+
+    const translations = {
+      en: {
+        positiveEmotions: 'Positive Emotions',
+        engagement: 'Engagement',
+        relationships: 'Relationships',
+        meaning: 'Meaning',
+        accomplishment: 'Accomplishment',
+        recommendedResources: 'Recommended Resources',
+        checkEmail: 'CHECK YOUR EMAIL',
+        tryagain: 'TRY AGAIN',
+        sharenow: 'SHARE NOW'
+      },
+      hi: {
+        positiveEmotions: 'सकारात्मक भावनाएँ',
+        engagement: 'संबंध',
+        relationships: 'रिश्ते',
+        meaning: 'अर्थ',
+        accomplishment: 'उपलब्धि',
+        recommendedResources: 'अनुशंसित संसाधन',
+        checkEmail: 'अपना ईमेल चेक करें',
+        tryagain: 'पुनः प्रयास करें',
+        sharenow: 'अब शेयर करें'
+      },
+      mr: {
+        positiveEmotions: 'सकारात्मक भावना',
+        engagement: 'व्यस्तता',
+        relationships: 'संबंध',
+        meaning: 'अर्थ',
+        accomplishment: 'सिद्धी',
+        recommendedResources: 'शिफारस केलेले संसाधन',
+        checkEmail: 'आपला ईमेल तपासा',
+        tryagain: 'पुन्हा प्रयत्न करा',
+        sharenow: 'आता शेअर करा'
+      },
+      ba: {
+        positiveEmotions: 'ইতিবাচক আবেগ',
+        engagement: 'সম্পৃক্ততা',
+        relationships: 'সম্পর্ক',
+        meaning: 'অর্থ',
+        accomplishment: 'সফলতা',
+        recommendedResources: 'প্রস্তাবিত সংস্থান',
+        checkEmail: 'আপনার ইমেল চেক করুন',
+        tryagain: 'আবার চেষ্টা করুন',
+        sharenow: 'এখন শেয়ার করুন'
+      }
+    };
+
+    document.getElementById('positive-emotions').textContent = translations[language].positiveEmotions;
+    document.getElementById('engagement').textContent = translations[language].engagement;
+    document.getElementById('relationships').textContent = translations[language].relationships;
+    document.getElementById('meaning').textContent = translations[language].meaning;
+    document.getElementById('accomplishment').textContent = translations[language].accomplishment;
+    document.getElementById('recommended-resources').textContent = translations[language].recommendedResources;
+    document.getElementById('check-email').textContent = translations[language].checkEmail;
+    document.getElementById('tryagain').textContent = translations[language].tryagain + " ";
+    document.getElementById('share-now-button').textContent = translations[language].sharenow + " ";
   </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
