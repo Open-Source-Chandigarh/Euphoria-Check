@@ -5,6 +5,20 @@
   box-sizing: border-box;
 }
 
+/* Scroll bar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:  rgba(252, 70, 128, 0.680637220708596);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
 body {
   background-image: url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);
   background-repeat: no-repeat;
@@ -15,6 +29,53 @@ body {
   justify-content: center;
   align-items: center;
   height: auto;
+}
+
+.light-button {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 15px;
+  margin-top: 12px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-button {
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  margin-left:20px;
+  margin-top:10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.light-button:hover {
+  background-color:  rgba(252, 70, 128, 0.680637220708596);
+  color: #fff;
+}
+
+.dark-button:hover {
+  background-color: rgb(19, 135, 180);
+  color: #000;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .cta-card__input-box {
@@ -59,8 +120,6 @@ body {
   flex-direction: column;
   padding: 32px;
   text-align: center;
-  /* background: rgba(255, 255, 255, 0.279); */
-
   background: rgb(131, 58, 180);
   background: radial-gradient(circle, rgba(131, 58, 180, 1) 5%, rgba(252, 70, 128, 0.680637220708596) 92%);
   color: #3e0446;
@@ -144,7 +203,7 @@ label:hover {
 }
 
 button {
-  --primary-color: #645bff;
+  --primary-color: rgb(131, 58, 180);
   --secondary-color: #fff;
   --hover-color: #111;
   --arrow-width: 10px;
@@ -271,5 +330,5 @@ input[type="radio"] {
   font-size: 18px;
   margin-top: 20px;
   margin-bottom: 50px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }

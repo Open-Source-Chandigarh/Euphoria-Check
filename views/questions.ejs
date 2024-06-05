@@ -5,90 +5,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="styles/question.css">
-
-  
-
+  <link rel="stylesheet" href="styles/question.css" id="light-mode-style">
+  <link rel="stylesheet" href="styles/dark.css" id="dark-mode-style" disabled>
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </head>
-<script src="https://cdn.lordicon.com/lordicon.js"></script>
 
-<body
-  style="background-image: url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);background-repeat: no-repeat;background-position: center;background-size: cover;">
-
-
-<!-- form id added -->
+<body>
   <form action="/result" method="post" id="myForm">
+    <div class="input-container">
+      <button type="button" id="light-mode" class="light-button">Light Mode</button>
+      <input class="cta-card__input" type="text" placeholder="Enter your name" name="username" required />
+      <button type="button" id="dark-mode" class="dark-button">Dark Mode</button>
+    </div>
 
-    <input class="cta-card__input" type="text" placeholder="Enter your name" name="username"
-    required />
-
-		<!-- Iterating through questions and rendering each one -->
-		<% questions?.forEach(function(q, index) { %>
-			<div class="card">
-			<div class="radio-input" id="question<%= index %>"> <!-- Assigning different id's here -->
-				<div class="info">
-
-					<span class="question">
-						<%= q.question %>
-					</span>
-					<span class="steps">
-						<!-- steps like 1/20 -->
-						<%= index+1 %>/<%= questions.length %>
-					</span>
-				</div>
-
-				<!-- First option -->
-				<div class="radio-options">
-					<input type="radio" 
-						id= <%= `option-a-${index}` %>
-						name= <%= `value${index}` %>
-						value= <%= q.options[0].value %>
-					>
-					<label 
-						for=<%=`option-a-${index}` %> >
-							<%= q.options[0].text %>
-					</label>
-				</div>
-
-				<!-- Second option -->
-				<div class="radio-options">
-					<input 
-						type="radio" 
-						id=<%=`option-b-${index}` %> 
-						name=<%= `value${index}` %> 
-						value=<%= q.options[1].value %>
-					>
-					<label 
-						for=<%=`option-b-${index}` %>>
-							<%=q.options[1].text %>
-					</label>
-		
-				</div>
-			</div>
-		</div>
-			<% }); %>
+    <% questions?.forEach(function(q, index) { %>
+    <div class="card">
+      <div class="radio-input" id="question<%= index %>">
+        <div class="info">
+          <span class="question"><%= q.question %></span>
+          <span class="steps"><%= index+1 %>/<%= questions.length %></span>
+        </div>
+        <div class="radio-options">
+          <input type="radio" id="option-a-<%= index %>" name="value<%= index %>" value="<%= q.options[0].value %>">
+          <label for="option-a-<%= index %>"><%= q.options[0].text %></label>
+        </div>
+        <div class="radio-options">
+          <input type="radio" id="option-b-<%= index %>" name="value<%= index %>" value="<%= q.options[1].value %>">
+          <label for="option-b-<%= index %>"><%= q.options[1].text %></label>
+        </div>
+      </div>
+    </div>
+    <% }); %>
 
     <div style="margin-left: 40vw; margin-bottom: 20px;">
       <button class="submit" type="submit">
         Submit and Calculate
         <div class="arrow-wrapper">
           <div class="arrow"></div>
-
         </div>
       </button>
-      <!-- button to to take user to the top -->
-      
-        <lord-icon id="go-to-top-button" class="btn hidden"
-            src="https://cdn.lordicon.com/ternnbni.json"
-            trigger="hover"
-            colors="primary:#3080e8"
-            style="width:50px;height:50px">
-        </lord-icon>
-      
+      <lord-icon id="go-to-top-button" class="btn hidden" src="https://cdn.lordicon.com/ternnbni.json" trigger="hover" colors="primary:#ffffff" style="width:50px;height:50px"></lord-icon>
+    </div>
   </form>
-  </div>
 
   <script>
+    document.getElementById('light-mode').addEventListener('click', function () {
+      document.getElementById('light-mode-style').disabled = false;
+      document.getElementById('dark-mode-style').disabled = true;
+    });
+
+    document.getElementById('dark-mode').addEventListener('click', function () {
+      document.getElementById('light-mode-style').disabled = true;
+      document.getElementById('dark-mode-style').disabled = false;
+    });
+
     let a = document.getElementsByTagName("label")
     for (let i = 0; i < a.length; i++) {
       a[i].addEventListener("click", () => {
@@ -101,104 +71,97 @@
       })
     }
   </script>
-  
-<!-- script to handle default clearance of radio buttons issue#50 -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('myForm');
-    const radios = form.querySelectorAll('input[type="radio"]');
-    let selectedRadioIds = [];
 
-    radios.forEach(radio => {
-      radio.addEventListener('change', () => {
-        selectedRadioIds = []; // Clear the array
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('myForm');
+      const radios = form.querySelectorAll('input[type="radio"]');
+      let selectedRadioIds = [];
+
+      radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+          selectedRadioIds = [];
+          radios.forEach(radio => {
+            if (radio.checked) {
+              selectedRadioIds.push(radio.id);
+            }
+          });
+          sessionStorage.setItem('selectedRadioIds', JSON.stringify(selectedRadioIds));
+
+          setTimeout(() => {
+            sessionStorage.removeItem('selectedRadioIds');
+            radios.forEach(radio => {
+              radio.checked = false;
+            });
+          }, 5 * 60 * 1000);
+        });
+      });
+
+      const storedSelectedRadioIds = sessionStorage.getItem('selectedRadioIds');
+      if (storedSelectedRadioIds) {
+        selectedRadioIds = JSON.parse(storedSelectedRadioIds);
         radios.forEach(radio => {
-          if (radio.checked) {
-            selectedRadioIds.push(radio.id);
+          if (selectedRadioIds.includes(radio.id)) {
+            radio.checked = true;
           }
         });
+      }
+
+      form.addEventListener('submit', () => {
         sessionStorage.setItem('selectedRadioIds', JSON.stringify(selectedRadioIds));
-
-        // Set a timeout to clear session storage after 5 minutes
-        setTimeout(() => {
-          sessionStorage.removeItem('selectedRadioIds');
-          radios.forEach(radio => {
-            radio.checked = false; // Uncheck all radio buttons
-          });
-        }, 5 * 60 * 1000); 
       });
     });
+  </script>
 
-    // Check if there are selected radio button IDs in sessionStorage
-    const storedSelectedRadioIds = sessionStorage.getItem('selectedRadioIds');
-    if (storedSelectedRadioIds) {
-      selectedRadioIds = JSON.parse(storedSelectedRadioIds);
+  <script>
+    const goToTopBtn = document.getElementById("go-to-top-button")
+
+    window.onscroll = () => {
+      scrollFunction();
+    }
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        goToTopBtn.style.display = "block";
+      } else {
+        goToTopBtn.style.display = "none";
+      }
+      goToTopBtn.onclick = () => {
+        goToTopBtn.style.display = "none"
+        window.scroll({
+          top: 0,
+          behavior: "smooth"
+        })
+      }
+    }
+  </script>
+
+  <script>
+    function scrollToNext(nextQuestionId) {
+      const nextElement = document.getElementById(nextQuestionId);
+      if (nextElement) {
+        nextElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('myForm');
+      const radios = form.querySelectorAll('input[type="radio"]');
+
       radios.forEach(radio => {
-        if (selectedRadioIds.includes(radio.id)) {
-          radio.checked = true;
-        }
-      });
-    }
+        radio.addEventListener('change', (event) => {
+          const currentId = event.target.id;
+          const currentIndex = parseInt(currentId.split('-')[2]);
+          const nextQuestionId = `question${currentIndex + 1}`;
 
-    form.addEventListener('submit', () => {
-      sessionStorage.setItem('selectedRadioIds', JSON.stringify(selectedRadioIds));
-    });
-  });
-</script>
-<script>
-  const goToTopBtn = document.getElementById("go-to-top-button")
-
-  window.onscroll = () =>{
-    scrollFunction();
-  }
-  function scrollFunction() {
-    if(document.body.scrollTop > 300 || document.documentElement.scrollTop > 300){
-      goToTopBtn.style.display = "block";
-    } else {
-      goToTopBtn.style.display = "none";
-    }
-    goToTopBtn.onclick = () =>{
-      goToTopBtn.style.display = "none"
-      window.scroll({
-        top: 0,
-        behavior: "smooth"
-      })
-
-    }
-
-  }
-</script>
-
-<!-- script to Implement Smooth Scrolling to Next Question on Radio Button Selection #111 -->
-<script>
-  function scrollToNext(nextQuestionId) {
-    const nextElement = document.getElementById(nextQuestionId);
-    if (nextElement) {
-      nextElement.scrollIntoView(
-        {
-          behavior: 'smooth', 
-          block: 'start'  // Scroll to the top of the element
-        }
-      ); 
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('myForm');
-    const radios = form.querySelectorAll('input[type="radio"]');
-
-    radios.forEach(radio => {
-      radio.addEventListener('change', (event) => {
-        const currentId = event.target.id;
-        const currentIndex = parseInt(currentId.split('-')[2]);
-        const nextQuestionId = `question${currentIndex + 1}`;
-
-        setTimeout(() => scrollToNext(nextQuestionId), 300); // slight delay for visual effect
+          setTimeout(() => scrollToNext(nextQuestionId), 300);
+        });
       });
     });
-  });
-</script>
-
+  </script>
 </body>
 
 </html>
