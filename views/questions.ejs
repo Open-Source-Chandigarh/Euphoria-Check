@@ -169,7 +169,7 @@
   }
 </script>
 
-<!-- script to Implement Smooth Scrolling to Next Question on Radio Button Selection #111 -->
+<!-- script to Implement Smooth Scrolling to Next Question  -->
 <script>
   function scrollToNext(nextQuestionId) {
     const nextElement = document.getElementById(nextQuestionId);
@@ -192,8 +192,7 @@
         const currentId = event.target.id;
         const currentIndex = parseInt(currentId.split('-')[2]);
         const nextQuestionId = `question${currentIndex + 1}`;
-
-        setTimeout(() => scrollToNext(nextQuestionId), 300); // slight delay for visual effect
+        scrollToNext(nextQuestionId);
       });
     });
   });
