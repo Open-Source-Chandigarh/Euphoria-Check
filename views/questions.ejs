@@ -23,50 +23,113 @@
     required />
 
 		<!-- Iterating through questions and rendering each one -->
-		<% questions?.forEach(function(q, index) { %>
-			<div class="card">
-			<div class="radio-input" id="question<%= index %>"> <!-- Assigning different id's here -->
-				<div class="info">
-
-					<span class="question">
-						<%= q.question %>
-					</span>
-					<span class="steps">
-						<!-- steps like 1/20 -->
-						<%= index+1 %>/<%= questions.length %>
-					</span>
-				</div>
-
-				<!-- First option -->
-				<div class="radio-options">
-					<input type="radio" 
-						id= <%= `option-a-${index}` %>
-						name= <%= `value${index}` %>
-						value= <%= q.options[0].value %>
-					>
-					<label 
-						for=<%=`option-a-${index}` %> >
-							<%= q.options[0].text %>
-					</label>
-				</div>
-
-				<!-- Second option -->
-				<div class="radio-options">
-					<input 
-						type="radio" 
-						id=<%=`option-b-${index}` %> 
-						name=<%= `value${index}` %> 
-						value=<%= q.options[1].value %>
-					>
-					<label 
-						for=<%=`option-b-${index}` %>>
-							<%=q.options[1].text %>
-					</label>
-		
-				</div>
-			</div>
-		</div>
-			<% }); %>
+    <% questions?.forEach(function(q, index) { %>
+      <div class="card">
+          <div class="radio-input" id="question<%= index %>">
+              <div class="info">
+                  <span class="question">
+                      <%= q.question %>
+                  </span>
+                  <span class="steps">
+                      <%= index+1 %>/<%= questions.length %>
+                  </span>
+              </div>
+  
+              <% if(q.options.length > 2) { %>
+                  <!-- First option -->
+                  <div class="radio-options">
+                      <input type="radio" 
+                          id= <%= `option-a-${index}` %>
+                          name= <%= `value${index}` %>
+                          value= <%= q.options[0].value %>
+                      >
+                      <label for=<%=`option-a-${index}` %>>
+                          <%= q.options[0].text %>
+                      </label>
+                  </div>
+  
+                  <!-- Second option -->
+                  <div class="radio-options">
+                      <input 
+                          type="radio" 
+                          id=<%=`option-b-${index}` %> 
+                          name=<%= `value${index}` %> 
+                          value=<%= q.options[1].value %>
+                      >
+                      <label 
+                          for=<%=`option-b-${index}` %>>
+                          <%=q.options[1].text %>
+                      </label>
+                  </div>
+  
+                  <!-- Third option -->
+                  <div class="radio-options">
+                      <input 
+                          type="radio" 
+                          id=<%=`option-c-${index}` %> 
+                          name=<%= `value${index}` %> 
+                          <% if(q.options[2]) { %>
+                              value=<%= q.options[2].value %>
+                          <% } else { %>
+                              value=""
+                          <% } %>
+                      >
+                      <% if(q.options[2]) { %>
+                          <label for=<%=`option-c-${index}` %>>
+                              <%= q.options[2].text %>
+                          </label>
+                      <% } %>
+                  </div>
+                  
+                  <!-- Fourth option -->
+                  <div class="radio-options">
+                      <input 
+                          type="radio" 
+                          id=<%=`option-d-${index}` %> 
+                          name=<%= `value${index}` %> 
+                          <% if(q.options[3]) { %>
+                              value=<%= q.options[3].value %>
+                          <% } else { %>
+                              value=""
+                          <% } %>
+                      >
+                      <% if(q.options[3]) { %>
+                          <label for=<%=`option-d-${index}` %>>
+                              <%= q.options[3].text %>
+                          </label>
+                      <% } %>
+                  </div>
+              <% } else { %>
+                  <!-- First option -->
+                  <div class="radio-options">
+                      <input type="radio" 
+                          id= <%= `option-a-${index}` %>
+                          name= <%= `value${index}` %>
+                          value= <%= q.options[0].value %>
+                      >
+                      <label for=<%=`option-a-${index}` %>>
+                          <%= q.options[0].text %>
+                      </label>
+                  </div>
+  
+                  <!-- Second option -->
+                  <div class="radio-options">
+                      <input 
+                          type="radio" 
+                          id=<%=`option-b-${index}` %> 
+                          name=<%= `value${index}` %> 
+                          value=<%= q.options[1].value %>
+                      >
+                      <label 
+                          for=<%=`option-b-${index}` %>>
+                          <%=q.options[1].text %>
+                      </label>
+                  </div>
+              <% } %>
+          </div>
+      </div>
+  <% }); %>
+  
 
     <div class="submit-wrapper">
       <button class="submit" type="submit">
@@ -89,7 +152,7 @@
   </div>
 
   <script>
-    let a = document.getElementsByTagName("label")
+  let a = document.getElementsByTagName("label")
     for (let i = 0; i < a.length; i++) {
       a[i].addEventListener("click", () => {
         a[i].style.backgroundColor = "#bbb";
@@ -100,6 +163,7 @@
         }
       })
     }
+
   </script>
   
 <!-- script to handle default clearance of radio buttons issue#50 -->

@@ -3,6 +3,8 @@ const questions = [
     question: "How often do you find yourself happy?",
     options: [
       { value: 5, text: "Frequently" },
+      { value: 3, text: "Sometimes" },
+      { value: 1, text: "Neutral" },
       { value: 0, text: "Rarely" },
     ],
   },
@@ -10,6 +12,8 @@ const questions = [
     question: "Do you often experience feelings of excitement and enthusiasm?",
     options: [
       { value: 5, text: "Frequently" },
+      { value: 3, text: "Sometimes" },
+      { value: 1, text: "Neutral" },
       { value: 0, text: "Rarely" },
     ],
   },
@@ -18,6 +22,8 @@ const questions = [
       "How frequently do you feel grateful for the good things in your life?",
     options: [
       { value: 5, text: "Frequently" },
+      { value: 3, text: "Sometimes" },
+      { value: 1, text: "Neutral" },
       { value: 0, text: "Rarely" },
     ],
   },
@@ -33,6 +39,8 @@ const questions = [
       "Do you actively seek out new challenges to keep yourself engaged?",
     options: [
       { value: 5, text: "Frequently" },
+      { value: 3, text: "Sometimes" },
+      { value: 1, text: "Neutral" },
       { value: 0, text: "Rarely" },
     ],
   },
@@ -41,6 +49,8 @@ const questions = [
       "How often do you lose track of time, when you're doing activities you enjoy?",
     options: [
       { value: 5, text: "Frequently" },
+      { value: 3, text: "Sometimes" },
+      { value: 1, text: "Neutral" },
       { value: 0, text: "Rarely" },
     ],
   },
@@ -48,6 +58,8 @@ const questions = [
     question: "How often do you get completely absorbed in what you're doing?",
     options: [
       { value: 5, text: "Frequently" },
+      { value: 3, text: "Sometimes" },
+      { value: 1, text: "Neutral" },
       { value: 0, text: "Rarely" },
     ],
   },
@@ -71,6 +83,8 @@ const questions = [
       "How often do you spend quality time with people who uplift and inspire you?",
     options: [
       { value: 5, text: "Frequently" },
+      { value: 3, text: "Sometimes" },
+      { value: 1, text: "Neutral" },
       { value: 0, text: "Rarely" },
     ],
   },
