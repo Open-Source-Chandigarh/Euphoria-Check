@@ -330,5 +330,19 @@ input[type="radio"] {
   font-size: 18px;
   margin-top: 20px;
   margin-bottom: 50px;
-  /* margin-right: 10px; */
+  margin-right: 10px;
+  width:auto
+}
+.submit-wrapper{
+  margin-left: 40vw; 
+  margin-bottom: 20px; 
+}
+@media (max-width:600px) {
+  .submit{
+    margin-left: 10vw;
+  }
+  .submit-wrapper{
+    margin-left: 0;
+    margin-bottom: 0;
+  }
 }
