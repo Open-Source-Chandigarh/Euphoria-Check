@@ -334,8 +334,12 @@ input[type="radio"] {
   width:auto
 }
 .submit-wrapper{
+<<<<<<< HEAD
   margin-left: 40vw; 
   margin-bottom: 20px; 
+=======
+  margin-left: 40vw; margin-bottom: 20px; 
+>>>>>>> aada600961a1f0953038b8dc8456ba78e0080bda
 }
 @media (max-width:600px) {
   .submit{
