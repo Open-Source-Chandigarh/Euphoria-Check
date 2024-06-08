@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Question</title>
   <link rel="stylesheet" href="styles/question.css">
 </head>
 
@@ -14,12 +14,15 @@
 
 <!-- form id added -->
   <form action="/result" method="post" id="myForm">
-
-    <input class="cta-card__input" type="text" placeholder="Enter your name" name="username"
-    required />
-
-
-    <div class="radio-input">
+<div class="nameInput page" id="page-1">
+  <input class="cta-card__input" type="text" placeholder="Enter your name" name="username" required />
+  <button type="button" id="nextArrowBtn" class="arrow-next" onclick="changePage(1)">
+    <div class="arrow"></div>
+  </button>
+</div>
+    
+    <div class="page" id="page-2">
+      <div class="radio-input">
       <div class="info">
         <span class="question">How often do you find yourself happy?</span>
         <span class="steps">1/20</span>
@@ -35,8 +38,7 @@
 
       </div>
     </div>
-
-    <div class="radio-input">
+  <div class="radio-input">
       <div class="info">
         <span class="question">Do you often experience feelings of excitement and enthusiasm ?</span>
         <span class="steps">2/20</span>
@@ -52,8 +54,7 @@
 
       </div>
     </div>
-
-    <div class="radio-input">
+  <div class="radio-input">
       <div class="info">
         <span class="question">How frequently do you feel grateful for the good things in your life?</span>
         <span class="steps">3/20</span>
@@ -69,8 +70,7 @@
 
       </div>
     </div>
-
-    <div class="radio-input">
+ <div class="radio-input">
       <div class="info">
         <span class="question">Do you feel jealous at some times ?</span>
         <span class="steps">4/20</span>
@@ -86,11 +86,26 @@
 
       </div>
     </div>
-
-
-
-
     <div class="radio-input">
+      <div class="info">
+        <span class="question">Do you think you have done good in your life so far ?</span>
+        <span class="steps">20/20</span>
+      </div>
+      <div class="radio-options">
+        <input type="radio" id="value-2t" name="tvalue" value=5>
+        <label for="value-2t">Affirmative</label>
+
+      </div>
+      <div class="radio-options">
+        <input type="radio" id="value-1t" name="tvalue" value=0>
+        <label for="value-1t">Negative</label>
+
+      </div>
+    </div>
+    </div>
+    
+<div class="page" id="page-3">
+  <div class="radio-input">
       <div class="info">
         <span class="question">Do you actively seek out new challenges to keep yourself engaged?</span>
         <span class="steps">5/20</span>
@@ -174,7 +189,12 @@
 
       </div>
     </div>
-    <div class="radio-input">
+</div>
+
+
+    <div class="page" id="page-4">
+
+      <div class="radio-input">
       <div class="info">
         <span class="question">How often do you spend quality time with people who uplift and inspire you?</span>
         <span class="steps">10/20</span>
@@ -222,11 +242,6 @@
 
       </div>
     </div>
-
-
-
-
-
     <div class="radio-input">
       <div class="info">
         <span class="question">Do you feel a sense of purpose and direction in your life?</span>
@@ -259,7 +274,9 @@
 
       </div>
     </div>
-    <div class="radio-input">
+    </div>
+    <div class="page" id="page-5">
+      <div class="radio-input">
       <div class="info">
         <span class="question">Do you spend negative time on socials? ?</span>
         <span class="steps">15/20</span>
@@ -341,37 +358,30 @@
 
       </div>
     </div>
-    <div class="radio-input">
-      <div class="info">
-        <span class="question">Do you think you have done good in your life so far ?</span>
-        <span class="steps">20/20</span>
-      </div>
-      <div class="radio-options">
-        <input type="radio" id="value-2t" name="tvalue" value=5>
-        <label for="value-2t">Affirmative</label>
-
-      </div>
-      <div class="radio-options">
-        <input type="radio" id="value-1t" name="tvalue" value=0>
-        <label for="value-1t">Negative</label>
-
-      </div>
     </div>
+    <div class="pagination">
 
-    <div style="margin-left: 40vw; margin-bottom: 20px;">
-      <button class="submit" type="submit">
+     <button type="button" id="prevBtn" onclick="changePage(-1)">Previous</button>
+      <div id="dotsContainer"></div>
+      <button type="button" id="nextBtn" onclick="changePage(1)">Next</button>
+    </div>
+    
+
+    <div style="margin-left: 20vw; margin-bottom: 20px">
+      <button class="submit " type="submit" id="submitBtn">
         Submit and Calculate
         <div class="arrow-wrapper">
           <div class="arrow"></div>
-
+ 
         </div>
       </button>
       <!-- button to to take user to the top -->
       <button id="go-to-top-button" class="btn hidden">
         Go To Top
       </button>
+    </div>
   </form>
-  </div>
+  
 
   <script>
     let a = document.getElementsByTagName("label")
@@ -453,6 +463,69 @@
 
   }
 </script>
+ <!-- Script to handle placeholder visibility on focus and blur -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const inputField = document.querySelector('.cta-card__input');
+
+      inputField.addEventListener('focus', function () {
+        this.setAttribute('data-placeholder', this.getAttribute('placeholder'));
+        this.setAttribute('placeholder', '');
+      });
+
+      inputField.addEventListener('blur', function () {
+        if (this.value === '') {
+          this.setAttribute('placeholder', this.getAttribute('data-placeholder'));
+        }
+      });
+    });
+  </script>
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+  const pages = document.querySelectorAll('.page');
+  let currentPage = 0;
+
+  function showPage(pageIndex) {
+    pages.forEach((page, index) => {
+      page.style.display = index === pageIndex ? 'block' : 'none';
+    });
+    updateDots(pageIndex);
+    updateButtons(pageIndex);
+  }
+
+  function updateDots(pageIndex) {
+    const dotsContainer = document.getElementById('dotsContainer');
+    dotsContainer.innerHTML = '';
+    pages.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (index === pageIndex) {
+        dot.classList.add('active');
+      }
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function updateButtons(pageIndex) {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+
+    prevBtn.style.display = pageIndex === 0 ? 'none' : 'inline';
+    nextBtn.style.display = pageIndex === pages.length - 1 ? 'none' : 'inline';
+    submitBtn.style.display = pageIndex === pages.length - 1 ? 'inline' : 'none';
+  }
+
+  window.changePage = function (direction) {
+    currentPage += direction;
+    showPage(currentPage);
+  }
+
+  showPage(currentPage);
+});
+
+
+  </script>
 
 
 

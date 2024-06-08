@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+ 
 }
 
 body {
@@ -17,14 +18,21 @@ body {
   height: auto;
 }
 
-.cta-card__input-box {
+
+/* Container for the input and button */
+.nameInput {
   position: relative;
+  width: calc(100% - 70px); /* Adjust width to fit the container */
+  margin-left: 35px;
+  margin-top:150px;
+
 }
+
+/* Styling for the input */
 .cta-card__input {
-  margin-top: 1rem;
-  width: 96%;
+  width: 100%; /* Ensure the input takes full width of the container */
+  padding-right: 50px; /* Add padding to the right to make space for the button */
   padding: 1rem 1rem;
-  display: inline-block;
   outline: none;
   border: 2px solid rgba(243, 248, 254, 0.096);
   border-radius: 3rem;
@@ -33,6 +41,31 @@ body {
   color: #fff;
   background-color: rgba(243, 248, 254, 0.144);
 }
+
+/* Styling for the button */
+.arrow-next {
+  position: absolute;
+  right: 15px; /* Adjust to position the button correctly */
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+}
+
+.arrow-next:hover {
+  background-color:  rgba(252,70,128,0.680637220708596);
+}
+
 .cta-card__input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -62,8 +95,9 @@ background: radial-gradient(circle, rgba(131,58,180,1) 5%, rgba(252,70,128,0.680
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   margin-bottom: 15px;
   margin-top: 15px;
-  margin-left: 10px;  //added equal margins instead of only rigth
+  margin-left: 10px;  
   margin-right: 10px;
+  justify-content: center;
 }
 
 .info {
@@ -130,27 +164,31 @@ button {
   padding: 1em 1.8em;
   background: var(--primary-color);
   display: flex;
+  
   transition: 0.2s background;
   align-items: center;
   gap: 0.6em;
   font-weight: bold;
   cursor: pointer;
   outline: none;
+  
 }
 
 button .arrow-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-left: 200px;
+ 
+  
 }
 
 button .arrow {
-  margin-top: 1px;
+ 
   width: var(--arrow-width);
   background: var(--primary-color);
   height: var(--arrow-stroke);
   position: relative;
   transition: 0.2s;
+  
 }
 
 button .arrow::before {
@@ -247,3 +285,57 @@ input[type="radio"] {
 .submit{
   font-size: 18px;
 }
+
+
+
+/*For pagination*/
+/* Add necessary styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+#dotsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.hidden {
+  display: none;
+}
+#prevBtn,
+#nextBtn {
+  /* Add styles for the previous and next buttons */
+  background-color: #645bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px; /* Adjust margin as needed */
+}
+
+#prevBtn:hover,
+#nextBtn:hover {
+  background-color: #4c47ff; /* Change color on hover */
+}
+
