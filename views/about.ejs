@@ -5,8 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Euphoria Check</title>
     <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="Public\styles\scrollbarStyle.css">
     
 </head>
+<style>
+    .about-us {
+    display: block;
+    margin: auto;
+    height: 100%;
+    background-color: white;
+}
+
+.about-us-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.about-us-block {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.about-us-community, .about-us-product, .about-us-event, .about-us-location {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 40%;
+    height: 12rem;
+    border: 1px solid rgba(206, 212, 218, 1);
+    border-radius: 8px;
+    margin-bottom: 21px;
+}
+
+.about-us-community {
+    border: 2px solid rgba(128, 100, 162, 1);
+}
+
+.about-us-community:hover {
+    background: rgba(128, 100, 162, 1);
+    color: white;
+}
+
+.about-us-location {
+    border: 2px solid rgba(128, 100, 162, 1);
+}
+
+.about-us-location:hover {
+    background: rgba(128, 100, 162, 1);
+    color: white;
+}
+
+.about-us-product {
+    border: 2px solid rgba(128, 100, 162, 1);
+}
+
+.about-us-product:hover {
+    background: rgba(128, 100, 162, 1);
+    color: white;
+}
+
+.about-us-event {
+    border: 2px solid rgba(128, 100, 162, 1);
+}
+
+.about-us-event:hover {
+    background: rgba(128, 100, 162, 1);
+    color: white;
+}
+
+.about-us-blk-text {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.about-us-blk-para {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .about-us-block {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-us-community, .about-us-event, .about-us-location, .about-us-product {
+        width: 90%;
+        height: 100%;
+        padding: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 1020px) {
+    .about-us-block {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-us-community, .about-us-event, .about-us-location, .about-us-product {
+        width: 90% !important;
+        height: 100%;
+        padding: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .about-us-community, .about-us-event, .about-us-location, .about-us-product {
+        width: 45%;
+    }
+}
+
+</style>
 <body>
 
     <header>
@@ -65,14 +186,44 @@
         <p>Answer a series of questions and receive a personalized PERMA score, along with insights and a goal-setting email to help you on your journey to greater happiness.</p>
     </section>
 
-    <section class="features">
-        <h2>Key Features</h2>
-        <ul>
-            <li>📊 <strong>Happiness Assessment:</strong> Understand your well-being through a comprehensive assessment.</li>
-            <li>📈 <strong>Personalized Insights:</strong> Receive insights based on your PERMA score for targeted improvement.</li>
-            <li>🎯 <strong>Goal Setting:</strong> Set personalized goals to enhance your overall happiness and well-being.</li>
-        </ul>
-    </section>
+        <!-- Key Features Card -->
+        <section class="features">
+    <div id="about-us">
+        <h1 class="about-us-heading">Key Features</h1>
+        <div class="about-us-block">
+            <div class="about-us-community">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <img id="community-img" src="../images/happy.png" alt="" style="margin-left: 1rem; margin-top: 1rem; width: 3rem;">
+                    <div class="about-us-blk-text">Happiness Assessment</div>
+                </div>
+                <p class="about-us-blk-para">Evaluate your happiness levels using our comprehensive tool, gaining insights into your emotional well-being.</p>
+            </div>
+            <div class="about-us-product">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <img id="product-img" src="../images/report.png" alt="" style="margin-left: 1rem; margin-top: 1rem; width: 3rem;">
+                    <div class="about-us-blk-text">Personalized Insights</div>
+                </div>
+                <p class="about-us-blk-para">Receive a customized, detailing insights from your assessment and suggesting areas for personal growth. </p>
+            </div>
+        </div>
+        <div class="about-us-block">
+            <div class="about-us-location">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <img id="location-img" src="../images/goal.png" alt="" style="margin-left: 1rem; margin-top: 1rem; width: 3rem;">
+                    <div class="about-us-blk-text">Goal Setting</div>
+                </div>
+                <p class="about-us-blk-para">Set goals aligned with the PERMA model, fostering a sense of purpose and direction in your pursuit of happiness.</p>
+            </div>
+            <div class="about-us-event">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <img id="event-img" src="../images/mail.png" alt="" style="margin-left: 1rem; margin-top: 1rem; width: 3rem;">
+                    <div class="about-us-blk-text">Email Report Delivery</div>
+                </div>
+                <p class="about-us-blk-para">Get your personalized happiness report delivered to your inbox, ensuring privacy and accessibility to your results.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section class="mission">
         <h2>Our Mission</h2>

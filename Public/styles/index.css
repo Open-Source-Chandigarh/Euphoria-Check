@@ -11,13 +11,32 @@ html {
   font-size: 62.5%;
 }
 
+/* Dark mode body background style */
+body.dark-mode {
+  background-image: radial-gradient(circle, rgb(34, 34, 34), rgb(0, 0, 0)); /* Dark background color */
+  color: white; /* Change text color to white or any other suitable color */
+}
+.cta-card.dark-mode{
+  background-image: radial-gradient(circle, rgb(34, 34, 34), rgb(0, 0, 0)); /* Dark background color */
+  color: white; /* Change text color to white or any other suitable color */
+}
+
 body {
+  background-image: radial-gradient(circle, rgb(34, 34, 210), rgb(95, 4, 200));
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 300vh;
   font-family: "Mulish", sans-serif;
 }
+
+.logo2 {
+    height: 70px; 
+    width: 70px; 
+    border: 3px solid black; /* Add black border */
+    border-radius: 50%; 
+    margin-left: 20px; /* Adjust the margin to reduce gap */
+  }
 
 .cta-card {
   position: relative;
@@ -164,8 +183,8 @@ body {
   }
 }
 .cta-card__img {
-  width: 9.4rem;
-  height: 9.4rem;
+  /* width: 9.4rem;
+  height: 9.4rem; */
   border: 0.8rem solid #fff;
   border-radius: 50%;
   box-shadow: 0 1.4rem 2.5rem -1.5rem rgba(82, 113, 224, 0.5);
@@ -188,11 +207,33 @@ body {
   font-size: 5rem;
   font-family: "Mulish", sans-serif;
   margin:0.05rem;
+  position:relative;
 }
 
 .circle:hover{
   filter: grayscale(1);
   transition: filter 0.3s ease;
+}
+.tooltip {
+  visibility: hidden;
+  width: 200px;
+  background-color: rgb(52, 52, 52);
+  color: white;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 15px;
+}
+
+.circle:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 .rect{
@@ -326,12 +367,24 @@ nav {
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
+.logo {
+    height: 50px; 
+    width: 50px; 
+    border: 2px solid black; /* Add black border */
+    border-radius: 50%; 
+    margin-left: 20px; /* Adjust the margin to reduce gap */
+  }
+  
+  .title-link {
+    font-size: 3rem; /* Reduce font size */
+    margin-right: 0; /* Remove auto margin-right */
+  }
+
 nav h1 {
-  margin-left: 2em;
+  margin-left: 0.5em;
   font-size: 4rem;
   font-weight: bold;
   line-height: 5rem; /* Increase the line-height to your preference */
@@ -348,6 +401,7 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
+  margin-left: auto;
 }
 
 nav ul li {
@@ -358,8 +412,10 @@ nav ul li {
 nav a {
   text-decoration: none;
   color: #333;
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 3rem;
+  font-family:sans-fransis;
+  
 }
 
 
@@ -389,4 +445,5 @@ nav a {
 .socialIcons {
   display: flex;
   align-items: center;
+  justify-content:centre;
 }

@@ -28,6 +28,7 @@ body {
 
 }
 
+
 /* Styling for the input */
 .cta-card__input {
   width: 100%; /* Ensure the input takes full width of the container */
@@ -40,7 +41,9 @@ body {
   font-family: "Mulish", sans-serif;
   color: #fff;
   background-color: rgba(243, 248, 254, 0.144);
+  margin-left: 10px;
 }
+
 
 /* Styling for the button */
 .arrow-next {
@@ -66,12 +69,15 @@ body {
   background-color:  rgba(252,70,128,0.680637220708596);
 }
 
+
 .cta-card__input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
+
 .cta-card__input::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
+
 .cta-card__input:focus {
   outline: 4px solid rgba(218, 70, 218, 0.4);
   border: 2px solid transparent;
@@ -88,18 +94,45 @@ body {
   padding: 32px;
   text-align: center;
   /* background: rgba(255, 255, 255, 0.279); */
-background: rgb(131,58,180);
-background: radial-gradient(circle, rgba(131,58,180,1) 5%, rgba(252,70,128,0.680637220708596) 92%);
+
+  background: rgb(131, 58, 180);
+  background: radial-gradient(circle, rgba(131, 58, 180, 1) 5%, rgba(252, 70, 128, 0.680637220708596) 92%);
   color: #3e0446;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
   margin-bottom: 15px;
-  margin-top: 15px;
+  
   margin-left: 10px;  
   margin-right: 10px;
   justify-content: center;
+  margin-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  transition: all .2s;
+  width: 100%;
+  height: 100%;
 }
+.radio-input:hover{
+  border-radius: 20px;
+  transform: scale(0.98);
+  width: 100%;
+  height:99%
+}
+.card{
+  background-image: linear-gradient(163deg, rgb(235, 226, 226) 0%, #efa2a4 100%);
+  border-radius: 20px;
+  transition: all .3s;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right:10px
+}
+.card:hover{
+  box-shadow: 0px 0px 30px 1px white;
 
+}
 .info {
   margin-bottom: 10px;
   display: flex;
@@ -203,7 +236,7 @@ button .arrow::before {
   transition: 0.2s;
   padding: 3px;
   transform: rotate(-45deg);
-  
+
 }
 
 button:hover {
@@ -217,6 +250,7 @@ button:hover .arrow {
 button:hover .arrow:before {
   right: 0;
 }
+
 .radio-options {
   display: flex;
 }
@@ -225,7 +259,7 @@ button:hover .arrow:before {
 .radio-options label {
   /* display: flex; */
   background-color: #ffffff8c;
-    /* margin: 8px 0 0 0; */
+  /* margin: 8px 0 0 0; */
   font-size: 18px;
   font-weight: 600;
   border-radius: 10px;
@@ -236,17 +270,19 @@ button:hover .arrow:before {
   margin-left: 1rem;
   margin-bottom: .5rem;
   /* display: block; */
-  
+
 }
 
 .radio-options label:hover {
   background-color: rgba(24, 24, 24, 0.13);
   border: 1px solid #bbb;
-  color: #1bd246;
+  color:#16b73b;
 }
 
-.radio-options input[type="radio"]:checked + label {
+
+.radio-options input[type="radio"]:checked+label {
   background-color: #1bd246;
+
   color: white;
   border: 2px solid #047a20;
 
@@ -254,18 +290,12 @@ button:hover .arrow:before {
 
 #go-to-top-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  --primary-color: #645bff;
-  --secondary-color: #fff;
-  --hover-color: #111;
-  color: white;
-  opacity: 0.5;
+  bottom: 37px;
+  right: 85px;
   border: none;
-  border-radius: 20px;
+  border-radius: 60px;
   padding: 10px 20px;
   cursor: pointer;
-  box-shadow: 5px 2px 4px rgb(0, 0, 0, 0.5);
   transition: all o.2s linear;
 }
 
@@ -282,8 +312,9 @@ input[type="radio"] {
   margin-right: 6px;
 }
 
-.submit{
+.submit {
   font-size: 18px;
+
 }
 
 
@@ -337,5 +368,23 @@ input[type="radio"] {
 #prevBtn:hover,
 #nextBtn:hover {
   background-color: #4c47ff; /* Change color on hover */
+}
+
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-right: 10px;
+  width:auto
+}
+.submit-wrapper{
+  margin-left: 40vw; margin-bottom: 20px; 
+}
+@media (max-width:600px) {
+  .submit{
+    margin-left: 10vw;
+  }
+  .submit-wrapper{
+    margin-left: 0;
+    margin-bottom: 0;
+  }
 }
 

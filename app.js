@@ -2,6 +2,8 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const axios = require("axios")
 const sgMail = require("@sendgrid/mail")
+const questionsJSON = require("./questions")
+const ExpressError=require("./utils/ExpressError.js")
 
 require("dotenv").config()
 
@@ -33,15 +35,25 @@ app.get("/about",(req,res)=>{
 app.post("/question",(req,res)=>{
     const reciever = req.body.reciever_email
     reciever_email.push(reciever)
-    res.render("questions")
+    res.render("questions", {questions: questionsJSON})
 })
 
 app.post("/result",async (req,res)=>{
-  let p = (parseFloat(req.body.avalue)+parseFloat(req.body.bvalue)+parseFloat(req.body.cvalue)+parseFloat(req.body.dvalue))/2
-  let e = (parseFloat(req.body.evalue)+parseFloat(req.body.fvalue)+parseFloat(req.body.gvalue)+parseFloat(req.body.hvalue))/2
-  let r = (parseFloat(req.body.ivalue)+parseFloat(req.body.jvalue)+parseFloat(req.body.kvalue)+parseFloat(req.body.lvalue))/2
-  let m = (parseFloat(req.body.mvalue)+parseFloat(req.body.nvalue)+parseFloat(req.body.ovalue)+parseFloat(req.body.pvalue))/2
-  let a = (parseFloat(req.body.qvalue)+parseFloat(req.body.rvalue)+parseFloat(req.body.svalue)+parseFloat(req.body.tvalue))/2
+	const {
+		value0, value1, value2, value3, value4, value5, value6, value7, value8, value9, value10, value11, value12, value13, value14, value15, value16, value17, value18, value19
+	} = req.body
+	let p = [ value0,  value1,  value2,  value3].map(n => parseFloat(n)).reduce((a, b) => a + b, 0) / 2
+	let e = [ value4,  value5,  value6,  value7].map(n => parseFloat(n)).reduce((a, b) => a + b, 0) / 2
+	let r = [ value8,  value9, value10, value11].map(n => parseFloat(n)).reduce((a, b) => a + b, 0) / 2
+	let m = [value12, value13, value14, value15].map(n => parseFloat(n)).reduce((a, b) => a + b, 0) / 2
+	let a = [value16, value17, value18, value19].map(n => parseFloat(n)).reduce((a, b) => a + b, 0) / 2
+	
+	console.log(p, e, r, m, a);
+  // let p = (parseFloat(req.body.avalue)+parseFloat(req.body.bvalue)+parseFloat(req.body.cvalue)+parseFloat(req.body.dvalue))/2
+  // let e = (parseFloat(req.body.evalue)+parseFloat(req.body.fvalue)+parseFloat(req.body.gvalue)+parseFloat(req.body.hvalue))/2
+  // let r = (parseFloat(req.body.ivalue)+parseFloat(req.body.jvalue)+parseFloat(req.body.kvalue)+parseFloat(req.body.lvalue))/2
+  // let m = (parseFloat(req.body.mvalue)+parseFloat(req.body.nvalue)+parseFloat(req.body.ovalue)+parseFloat(req.body.pvalue))/2
+  // let a = (parseFloat(req.body.qvalue)+parseFloat(req.body.rvalue)+parseFloat(req.body.svalue)+parseFloat(req.body.tvalue))/2
 
 // console.log(req.body.username)
   if(p<e && p<r && p<m && p<a ){
@@ -57,7 +69,7 @@ app.post("/result",async (req,res)=>{
      verdict.push(`Hi ${req.body.username}, It seems like you've been contemplating the bigger picture and searching for a sense of purpose in your life. Finding meaning is a journey that requires self-reflection and exploration of your values and aspirations. Let's work together to uncover your passions and align your actions with what truly matters to you. Discovering your sense of purpose will bring more fulfillment and a greater sense of direction.`)
   }
   else if(a<r && a<p && a<m && a<e ){
-     verdict.push(`Hello ${req.body.username}, I want you to know that i beleive you've achieved some remarkable things, and your hard work is commendable. However, I also sense that you might be setting high expectations for yourself. It's essential to recognize and celebrate your accomplishments, no matter how small they might seem. We'll work on setting realistic and achievable goals, which will give you a sense of progress and success, boosting your self-confidence and well-being.`)
+     verdict.push(`Hello ${req.body.username}, I want you to know that i believe you've achieved some remarkable things, and your hard work is commendable. However, I also sense that you might be setting high expectations for yourself. It's essential to recognize and celebrate your accomplishments, no matter how small they might seem. We'll work on setting realistic and achievable goals, which will give you a sense of progress and success, boosting your self-confidence and well-being.`)
   }
 
 
@@ -85,3 +97,12 @@ app.post("/result",async (req,res)=>{
 app.listen(process.env.PORT || 3000,function(){
   console.log("Server Started Sucessfully")
 })
+
+app.all("*",(req,res,next)=>{
+  next(new ExpressError(404,"Page not found!"));
+});
+
+app.use((err,req,res,next)=>{
+  let {statusCode=500,message="Something Went Wrong"}=err;
+  res.render("customError.ejs",{message});
+});

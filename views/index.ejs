@@ -1,53 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Euphoria Check</title>
+    <link rel="stylesheet" href="styles/index.css" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Euphoria Check</title>
-  <link rel="stylesheet" href="styles/index.css" type="text/css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
 
-<body
-  style="background-image: url(images/vector-purple-light-blue-gradient-260nw-1941567055.jpg);background-repeat: no-repeat;background-position: center;background-size: cover;">
-  <nav>
-    <h1><a href="/">Euphoria-Check</a></h1>
-    <ul>
-      <li><a href="/about">About Us</a></li>
-    </ul>
-  </nav>
-  <section class="cta-card">
-    <div class="cta-card__container">
-      <header class="cta-card__header">
-        <p class="cta-card__title">Euphoria Check</p>
-        <p class="cta-card__description">
-          An Advance PERMA meter to check your Euphoria and Evolve!
-        </p>
-      </header>
-      <div class="cta-card__input-box">
-        <form action="/question" method="post" onsubmit="return validateEmail()">
-          <input class="cta-card__input" type="email"  id="emailInput" placeholder="youremail@address.com" name="reciever_email"
-            required onfocus="hideError()" />
-            <button class="cta-card__button" type="submit"  onsubmit="return validateEmail()">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.66669 16H25.3334" stroke="#3D476D" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-                <path d="M20 21.3333L25.3333 16" stroke="#3D476D" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-                <path d="M20 10.6667L25.3333 16" stroke="#3D476D" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
+
+  <body
+    style="
+      background-image: radial-gradient(
+        circle,
+        rgb(34, 34, 210),
+        rgb(95, 4, 200)
+      );
+    ">
+    <!-- style="background-image: url(images/vector-purple-light-blue-gradient-260nw-1941567055.jpg);background-repeat: no-repeat;background-position: center;background-size: cover;"> -->
+
+    <nav>
+      <h1><a href="/">Euphoria-Check</a></h1>
+      <ul>
+        <li><a href="/about">About Us</a></li>
+      </ul>
+    </nav>
+    <section class="cta-card">
+      <div class="cta-card__container">
+        <header class="cta-card__header">
+          <p class="cta-card__title">Euphoria Check</p>
+          <p class="cta-card__description">
+            An Advance PERMA meter to check your Euphoria and Evolve!
+          </p>
+        </header>
+        <div class="cta-card__input-box">
+          <form
+            action="/question"
+            method="post"
+            onsubmit="return validateEmail()">
+            <input
+              class="cta-card__input"
+              type="email"
+              id="emailInput"
+              placeholder="youremail@address.com"
+              name="reciever_email"
+              required
+              onfocus="hideError()" />
+            <button
+              class="cta-card__button"
+              type="submit"
+              onsubmit="return validateEmail()">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6.66669 16H25.3334"
+                  stroke="#3D476D"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M20 21.3333L25.3333 16"
+                  stroke="#3D476D"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M20 10.6667L25.3333 16"
+                  stroke="#3D476D"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+
+
               </svg>
             </button>
+
             <div id="emailError" class="error__description"  style="display: none">Please enter a valid email address.</div>
 
         </form>
       </div>
       <div class="cta-card__img-box">
         <!-- <img class="cta-card__img"
+
+            <div
+              id="emailError"
+              class="error__description"
+              style="display: none">
+              Please enter a valid email address.
+            </div>
+          </form>
+        </div>
+        <div class="cta-card__img-box">
+          <!-- <img class="cta-card__img"
+
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrc-7xqfTdSqdX2PgGxAjC3dsX4E74g-N3wff2xz-ejc_teYwx8MyCXTPgSpfcAXCA8iQ&usqp=CAU"
           alt="User" />
         <img class="cta-card__img"
@@ -64,77 +124,111 @@
           alt="User" /> -->
           <div class="circle" id="P">
             <b>P</b>
-        </div>
-        <div class="circle" id="E">
+            <br />
+            <div class="tooltip" style="font-size: small; text-align: center">
+              <b>Positive Emotions</b>: Experiencing positive feelings such as
+              joy, hope, inspiration and love
+            </div>
+          </div>
+          <div class="circle" id="E">
             <b>E</b>
-        </div>
-        <div class="circle" id="R">
+            <br />
+            <div class="tooltip" style="font-size: small; text-align: center">
+              <b>Engagement</b> : Being fully involved and absorbed in
+              activities
+            </div>
+          </div>
+          <div class="circle" id="R">
             <b>R</b>
-        </div>
-        <div class="circle" id="M">
+            <br />
+            <div class="tooltip" style="font-size: small; text-align: center">
+              <b>Relationships</b> : Connections we have with others, including
+              family, friends, colleagues, and the broader community
+            </div>
+          </div>
+          <div class="circle" id="M">
             <b>M</b>
-        </div>
-        <div class="circle" id="A">
+            <br />
+            <div class="tooltip" style="font-size: small; text-align: center">
+              <b>Meaning</b> : Having a sense of purpose and direction in life
+            </div>
+          </div>
+          <div class="circle" id="A">
             <b>A</b>
+            <br />
+            <div class="tooltip" style="font-size: small; text-align: center">
+              <b>Achievement</b> : Setting and pursuing goals that are
+              personally meaningful and important
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <script>
-    $('.card').on('click', function () {
-      if ($(this).hasClass('open')) {
-        $('.card').removeClass('open');
-        $('.card').removeClass('shadow-2');
-        $(this).addClass('shadow-1');
-        return false;
-      } else {
-        $('.card').removeClass('open');
-        $('.card').removeClass('shadow-2');
-        $(this).addClass('open');
-        $(this).addClass('shadow-2');
-      }
-    });
-    function validateEmail() {
 
-      var email = document.getElementById("emailInput").value;
-      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-      var emailError = document.getElementById("emailError")
-      if (!emailRegex.test(email)) {
-        emailError.style.display = "block"; // Show error message
-        return false; // Prevent form submission
-      } else {
+    </section>
+    <script>
+      $(".card").on("click", function () {
+        if ($(this).hasClass("open")) {
+          $(".card").removeClass("open");
+          $(".card").removeClass("shadow-2");
+          $(this).addClass("shadow-1");
+          return false;
+        } else {
+          $(".card").removeClass("open");
+          $(".card").removeClass("shadow-2");
+          $(this).addClass("open");
+          $(this).addClass("shadow-2");
+        }
+      });
+      function validateEmail() {
+        var email = document.getElementById("emailInput").value;
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        var emailError = document.getElementById("emailError");
+        if (!emailRegex.test(email)) {
+          emailError.style.display = "block"; // Show error message
+          return false; // Prevent form submission
+        } else {
+          emailError.style.display = "none"; // Hide error message
+          return true; // Allow form submission
+        }
+
+      }
+
+      function hideError() {
+        var emailError = document.getElementById("emailError");
         emailError.style.display = "none"; // Hide error message
-        return true; // Allow form submission
       }
-    }
+    </script>
 
-    function hideError() {
-      var emailError = document.getElementById("emailError");
-      emailError.style.display = "none"; // Hide error message
-    }
-    
-  </script>
-
-
-  <!-- Footer -->
-  <footer>
-    <div class="footerContainer">
-      <div class="FooterBottom">
-        <div class="socialIcons">
-          <a href="https://www.instagram.com/opensourcechandigarh" target="_blank">
-            <img src="images/instagram.png" alt="Instagram">
-          </a>
-          <a href="https://www.linkedin.com/company/open-source-chandigarh" target="_blank">
-            <img src="images/linkedin.png" alt="LinkedIn">
-          </a>
-          <a href="https://discord.gg/jhFczDDp" target="_blank">
-            <img src="images/discord.png" alt="Discord">
-          </a>
+    <!-- Footer -->
+    <footer>
+      <div class="footerContainer">
+        <div class="FooterBottom">
+          <div class="socialIcons">
+            <a
+              href="https://www.instagram.com/opensourcechandigarh"
+              target="_blank">
+              <img src="images/instagram.png" alt="Instagram" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/open-source-chandigarh"
+              target="_blank">
+              <img src="images/linkedin.png" alt="LinkedIn" />
+            </a>
+            <a href="https://discord.gg/jhFczDDp" target="_blank">
+              <img src="images/discord.png" alt="Discord" />
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+  </body>
 
 </html>
+
+
+
