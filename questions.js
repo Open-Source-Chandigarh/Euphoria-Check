@@ -24,7 +24,7 @@ const questions = [
   {
     question: "Do you feel jealous at some times?",
     options: [
-      { value: 0, text: "Affermative" },
+      { value: 0, text: "Affirmative" },
       { value: 5, text: "Negative" },
     ],
   },
@@ -54,7 +54,7 @@ const questions = [
   {
     question: "Can you dance without fear in public?",
     options: [
-      { value: 5, text: "Affermative" },
+      { value: 5, text: "Affirmative" },
       { value: 0, text: "Negative" },
     ],
   },
@@ -62,7 +62,7 @@ const questions = [
     question:
       "Do you feel like you have a support system of friends and family?",
     options: [
-      { value: 5, text: "Affermative" },
+      { value: 5, text: "Affirmative" },
       { value: 0, text: "Negative" },
     ],
   },
@@ -78,21 +78,21 @@ const questions = [
     question:
       "Do you feel comfortable sharing your thoughts and feelings with others?",
     options: [
-      { value: 5, text: "Affermative" },
+      { value: 5, text: "Affirmative" },
       { value: 0, text: "Negative" },
     ],
   },
   {
     question: "Do you feel you need a partner?",
     options: [
-      { value: 0, text: "Affermative" },
+      { value: 0, text: "Affirmative" },
       { value: 5, text: "Negative" },
     ],
   },
   {
     question: "Do you feel a sense of purpose and direction in your life?",
     options: [
-      { value: 6, text: "Affermative" },
+      { value: 6, text: "Affirmative" },
       { value: 0, text: "Negative" },
     ],
   },
@@ -100,49 +100,49 @@ const questions = [
     question:
       "Do you feel that your life has a deeper meaning beyond just day-to-day activities?",
     options: [
-      { value: 5, text: "Affermative" },
+      { value: 5, text: "Affirmative" },
       { value: 0, text: "Negative" },
     ],
   },
   {
     question: "Do you spend negative time on socials?",
     options: [
-      { value: 0, text: "Affermative" },
+      { value: 0, text: "Affirmative" },
       { value: 5, text: "Rarely" },
     ],
   },
   {
     question: "Do you like going to college/school/office?",
     options: [
-      { value: 5, text: "Affermative" },
+      { value: 5, text: "Affirmative" },
       { value: 0, text: "Negative" },
     ],
   },
   {
     question: "Have you achieved any major goals?",
     options: [
-      { value: 5, text: "Affermative" },
+      { value: 5, text: "Affirmative" },
       { value: 0, text: "Negative" },
     ],
   },
   {
     question: "Do you think your Parents are proud of you?",
     options: [
-      { value: 5, text: "Affermative" },
+      { value: 5, text: "Affirmative" },
       { value: 0, text: "Negative" },
     ],
   },
   {
     question: "Do you think people respect you?",
     options: [
-      { value: 5, text: "Affermative" },
+      { value: 5, text: "Affirmative" },
       { value: 0, text: "Negative" },
     ],
   },
   {
     question: "Do you think you have done good in your life so far?",
     options: [
-      { value: 5, text: "Affermative" },
+      { value: 5, text: "Affirmative" },
       { value: 0, text: "Negative" },
     ],
   },

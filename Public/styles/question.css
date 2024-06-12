@@ -16,6 +16,37 @@ body {
   align-items: center;
   height: auto;
 }
+.progress-container {
+  position: relative;
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 20px 0;
+  height: 30px;
+}
+
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, red, yellow, green);
+  transition: width 0.5s;
+}
+
+
+.progress-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  line-height: 30px;
+  font-weight: bold;
+  color: #000;
+}
+
+
 
 .cta-card__input-box {
   position: relative;
