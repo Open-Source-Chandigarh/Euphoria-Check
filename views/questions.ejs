@@ -12,12 +12,17 @@
 </head>
 <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
+
 <body
   style="background-image: url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);background-repeat: no-repeat;background-position: center;background-size: cover;">
 
 
 <!-- form id added -->
   <form action="/result" method="post" id="myForm">
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+      <div class="progress-text" id="progress-text">0/20</div>
+  </div>
 
     <input class="cta-card__input" type="text" placeholder="Enter your name" name="username"
     required />
@@ -101,7 +106,59 @@
       })
     }
   </script>
-  
+<script>
+  // script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('myForm');
+  const radios = form.querySelectorAll('input[type="radio"]');
+  const progressBar = document.getElementById('progress-bar');
+  const progressText = document.getElementById('progress-text');
+  const totalQuestions = radios.length / 2;  // Assuming each question has two radio buttons
+  let answeredQuestions = 0;
+
+  // Function to update the progress bar and text
+  function updateProgressBar() {
+      const progress = (answeredQuestions / totalQuestions) * 100;
+      progressBar.style.width = progress + '%';
+      progressText.textContent = `${answeredQuestions}/${totalQuestions}`;
+  }
+
+  radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+          if (!radio.parentElement.parentElement.classList.contains('answered')) {
+              answeredQuestions++;
+              radio.parentElement.parentElement.classList.add('answered');
+              updateProgressBar();
+          }
+      });
+  });
+
+  updateProgressBar();
+
+  // Smooth scrolling to the next question on selection
+  function scrollToNext(nextQuestionId) {
+      const nextElement = document.getElementById(nextQuestionId);
+      if (nextElement) {
+          nextElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+          });
+      }
+  }
+
+  radios.forEach(radio => {
+      radio.addEventListener('change', (event) => {
+          const currentId = event.target.id;
+          const currentIndex = parseInt(currentId.split('-')[2]);
+          const nextQuestionId = `question${currentIndex + 1}`;
+
+          setTimeout(() => scrollToNext(nextQuestionId), 300);
+      });
+  });
+});
+
+</script>
 <!-- script to handle default clearance of radio buttons issue#50 -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -198,6 +255,7 @@
     });
   });
 </script>
+
 
 </body>
 
