@@ -237,7 +237,7 @@ main {
 
 .resource-card {
   display: inline-block;
-  width: calc(40% - 1rem);
+  width: 450px;
   margin: 0.5rem;
   padding: 1rem;
   border: 1px solid #ddd;
