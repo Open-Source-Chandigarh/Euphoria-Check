@@ -109,7 +109,7 @@ body {
 
 /* Button Styles */
 button {
-  --primary-color: #645bff;
+  --primary-color: #61075c;
   --secondary-color: #fff;
   --hover-color: #111;
   --arrow-width: 10px;
@@ -122,7 +122,7 @@ button {
   background: var(--primary-color);
   display: flex;
   transition: 0.2s background;
-  align-items: center;
+  align-items: right;
   gap: 0.6em;
   font-weight: bold;
   cursor: pointer;
