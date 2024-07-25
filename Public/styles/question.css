@@ -173,7 +173,7 @@ button:hover .arrow:before {
 @media (max-width: 600px) {
   .radio-input {
     width: 90vw;
-    margin-left: 5vw;
+    /* margin-left: 5vw; */ 
   }
   .flasherror {
     margin-left: auto;
