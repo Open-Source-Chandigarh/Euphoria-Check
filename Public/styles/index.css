@@ -41,7 +41,7 @@ body {
 .cta-card {
   position: relative;
   width: 100rem;
-  border-radius: 3rem;
+  border-radius: 3.5rem;
   padding: 8.5rem;
   text-align: center;
   background: linear-gradient(to bottom right, #173ab7, #5271e0);
