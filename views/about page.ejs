@@ -4,56 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Euphoria-Check</title>
-    <link rel="stylesheet" href="Public\styles\about page style.css">
-    <link rel="stylesheet" href="Public\styles\scrollbarStyle.css">
+    <link rel="stylesheet" href="Public/styles/about-page-style.css">
+    <link rel="stylesheet" href="Public/styles/scrollbarStyle.css">
 </head>
 <body>
     <nav class="navbar" style="margin-bottom: 20px;">
         <h1>About Euphoria Check</h1>
     </nav>
 
-<!-- Image Slidebar -->
-<section class="container">
-    <div class="slider-wrapper">
-        <div class="slider">
-            <img id="slide-1" src="Public\images\resized_image_euphoria.png" />
-            <img id="slide-2" src="Public\images\resized_image open source chandigarh og.jpeg" />
-            <img id="slide-3" src="Public\images\open source chandigarh.jpeg">
+    <!-- Hamburger Menu Icon -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        &#9776;
+    </div>
+
+    <!-- Hamburger Menu -->
+    <div id="hamburger-menu" class="hamburger-menu">
+        <!-- Key Features Section -->
+        <div id="key-features" class="card key-features">
+            <h2 style="font-size: 28px;">Key Features</h2>
+            <ul>
+                <li style="font-size: 20px;">📊 Assess Your Well-Being</li>
+                <li style="font-size: 20px;">📈 Receive a PERMA Score</li>
+                <li style="font-size: 20px;">💌 Personalized Improvement Plan</li>
+            </ul>
         </div>
-        <div class="slider-dots">
-            <a href="#" data-slide="1" class="slider-dot active"></a>
-            <a href="#" data-slide="2" class="slider-dot"></a>
-            <a href="#" data-slide="3" class="slider-dot"></a>
+
+        <!-- Hacktoberfest 2023 Card -->
+        <div class="card">
+            <h2>Hacktoberfest 2023</h2>
+            <p> Euphoria-Check is a part of Hacktoberfest 2023, an annual celebration of open-source contributions. You can contribute to Euphoria-Check by participating in Hacktoberfest. Whether you're a seasoned developer or just starting your open-source journey, your contributions are always welcomed by Open Source Chandigarh!</p>
+        </div>
+
+        <!-- Open Source Chandigarh's Initiative Card -->
+        <div class="card">
+            <h2>About Open Source Chandigarh's Initiative</h2>
+            <p>Hey Tech Enthusiasts!</p>
+            <p>We're thrilled to announce the grand celebration of Hacktoberfest 2023 with Open Source Chandigarh, powered by Chitkara University, Punjab!</p>
+            <p>Supported by industry giants like GitHub, Apache Local Community Indore, Collabnix, Docker, Inc., Webiny, and OpsTree Solutions, Open Source Chandigarh is a dynamic and vibrant tech community that brings together passionate individuals, students, and Open Source contributors.</p>
+            <p>Our aim is to learn, foster, and express.</p>
+            <p>What's in Store for Hacktoberfest 2023?</p>
+            <p>Get ready to dive into the world of Open Source collaboration as we host a series of exciting projects on our GitHub page! From beginner-friendly tasks to advanced challenges, there's something for everyone. Whether you're a student eager to learn or an experienced developer looking for a new adventure, Hacktoberfest with Open Source Chandigarh is the place to be.</p>
         </div>
     </div>
-</section>
 
-    <!-- Key Features Card -->
-    <div class="card">
-        <h2 style="font-size: 28px;">Key Features</h2>
-        <ul>
-            <li style="font-size: 20px;">📊 Assess Your Well-Being</li>
-            <li style="font-size: 20px;">📈 Receive a PERMA Score</li>
-            <li style="font-size: 20px;">💌 Personalized Improvement Plan</li>
-        </ul>
-    </div>
+    <!-- Image Slidebar -->
+    <section class="container">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img id="slide-1" src="Public/images/resized_image_euphoria.png" />
+                <img id="slide-2" src="Public/images/resized_image open source chandigarh og.jpeg" />
+                <img id="slide-3" src="Public/images/open source chandigarh.jpeg">
+            </div>
+            <div class="slider-dots">
+                <a href="#" data-slide="1" class="slider-dot active"></a>
+                <a href="#" data-slide="2" class="slider-dot"></a>
+                <a href="#" data-slide="3" class="slider-dot"></a>
+            </div>
+        </div>
+    </section>
 
-    <!-- Hacktoberfest 2023 Card -->
-    <div class="card">
-        <h2>Hacktoberfest 2023</h2>
-        <p> Euphoria-Check is a part of Hacktoberfest 2023, an annual celebration of open-source contributions. You can contribute to Euphoria-Check by participating in Hacktoberfest. Whether you're a seasoned developer or just starting your open-source journey, your contributions are always welcomed by Open Source Chandigarh!</p>
-    </div>
-
-    <!-- Open Source Chandigarh's Initiative Card -->
-    <div class="card">
-        <h2>About Open Source Chandigarh's Initiative</h2>
-        <p>Hey Tech Enthusiasts!</p>
-        <p>We're thrilled to announce the grand celebration of Hacktoberfest 2023 with Open Source Chandigarh, powered by Chitkara University, Punjab!</p>
-        <p>Supported by industry giants like GitHub, Apache Local Community Indore, Collabnix, Docker, Inc., Webiny, and OpsTree Solutions, Open Source Chandigarh is a dynamic and vibrant tech community that brings together passionate individuals, students, and Open Source contributors.</p>
-        <p>Our aim is to learn, foster, and express.</p>
-        <p>What's in Store for Hacktoberfest 2023?</p>
-        <p>Get ready to dive into the world of Open Source collaboration as we host a series of exciting projects on our GitHub page! From beginner-friendly tasks to advanced challenges, there's something for everyone. Whether you're a student eager to learn or an experienced developer looking for a new adventure, Hacktoberfest with Open Source Chandigarh is the place to be.</p>
-    </div>
-    <script src="C:\\Users\\hp\\OneDrive\\Desktop\\Euphoria-Check\\Public\\javascript\\about page javascript.js"></script>
+    <script src="Public/javascript/about-page-javascript.js"></script>
 </body>
 </html>
+
+
+
+

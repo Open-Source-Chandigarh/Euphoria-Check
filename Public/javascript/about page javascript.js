@@ -1,3 +1,5 @@
+// about-page-javascript.js
+
 const sliderImages = document.querySelectorAll('.slider img');
 const sliderDots = document.querySelectorAll('.slider-dot');
 
@@ -15,3 +17,13 @@ sliderDots.forEach((dot) => {
         dot.classList.add('active');
     });
 });
+
+// Function to toggle the hamburger menu
+function toggleMenu() {
+    const menu = document.getElementById('hamburger-menu');
+    if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+    } else {
+        menu.style.display = 'block';
+    }
+}

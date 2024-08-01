@@ -1,140 +1,112 @@
+/* about-page-style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,300&display=swap');
+
 body {
-    font-family: "Arial, sans-serif";
-    background: url('background image.jpg') center/cover no-repeat; /* Set the background image */
-    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-}s
-
-.navbar {
-    background: #282c35; /* Dark blue background color */
-    color: #fff; /* White text color */
-    padding: 20px 0; /* Increase top and bottom padding for more style */
-    text-align: center;
-    font-family: 'Proxima Nova', sans-serif;
-    font-size: 28px; /* Slightly larger font size */
-    font-weight: 600; /* Increase font weight for a bolder look */
-    text-transform: uppercase;
-    letter-spacing: 2px; /* Wider letter spacing for a modern touch */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
-    position: fixed; /* Fixed position for always visible navigation */
-    top: 0; /* Stick to the top of the viewport */
-    left: 0;
-    right: 0;
-    z-index: 1000; /* Ensure it appears above other content */
-    transition: background 0.3s; /* Smooth color transition on hover */
+    background-image: url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-.navbar:hover {
-    background: #0078d4; /* Light blue background color on hover */
-    transition: background 0.3s;
-}
-
-.navbar h1 {
-    margin: 0;
-}
-
-h1 {
-    font-family: "Verdana, sans-serif";
-    background-color: #0078d4;
+header {
+    background-image: url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     color: #fff;
-    font-size: 32px;
-    padding: 10px;
     text-align: center;
-    margin: 0;
-    letter-spacing: 1px;
+    padding: 1em 0;
+    border-bottom: 2px solid white;
 }
 
-.card {
-    background-color: #fff; /* White card background color */
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    text-align: right;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed; /* Fixed position */
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    z-index: 1001; /* Ensure it's on top */
+}
+
+.hamburger-menu {
+    display: block; /* Visible by default */
+    position: fixed;
+    top: 50px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.hamburger-menu .card {
+    margin: 0;
+    padding: 10px;
+}
+
+.key-features {
+    display: block; /* Ensure this is set to block to display the key features */
+    margin-top: 20px;
+}
+
+.home {
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    text-decoration: none;
+    display: inline;
+}
+
+.intro,
+.features,
+.mission,
+.opensource {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    padding: 20px;
+    color: #333;
 }
 
-h2 {
-    font-family: "Georgia, serif";
-    font-size: 26px;
-    color: #0078d4;
-    margin-top: 0;
-    font-weight: bold;
-    text-transform: uppercase;
+.features ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-p {
-    font-family: 'Arial, sans-serif'; /* Use Arial for consistency */
-    font-size: 20px; /* Slightly smaller font size */
-    line-height: 1.8; /* Increased line height for better readability */
-    color: #333; /* Dark text color */
-    margin-top: 15px; /* Increased top margin for spacing */
-    text-align: left; /* Text alignment to the left for readability */
+.features li {
+    margin-bottom: 10px;
 }
 
-p:first-of-type {
-    margin-top: 0; /* Remove top margin for the first paragraph */
+footer {
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid white;
+    color: #fff;
+    background-image: url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-p:last-of-type {
-    margin-bottom: 20px; /* Add a margin at the bottom of the last paragraph */
-}
-
-ul {
-    list-style: none;
-}
-
-ul li::before {
-    content: '🌟';
-    margin-right: 10px;
-    font-family: "Times New Roman, serif";
-    font-size: 18px;
-}
-
-/* Image Slidebar */
-.slider-wrapper {
-    position: relative;
-    max-width: 48rem;
+.osch-logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
     margin: 0 auto;
-    overflow: hidden; /* Hide overflow to restrict the view */
 }
 
-.slider {
-    display: flex;
-    aspect-ratio: 16/9;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-    border-radius: 0.5rem;
-    background-color: #333; /* Dark background color for slider */
-}
-
-.slider img {
-    flex: 1 0 100%;
-    scroll-snap-align: start;
-    object-fit: cover;
-    object-position: center; /* Center the view of the image */
-}
-
-.slider-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.slider-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #fff;
-    opacity: 0.5;
-    cursor: pointer;
-    transition: opacity 250ms;
-    margin: 0 5px;
-}
-
-.slider-dot.active {
-    opacity: 1;
+.logo-container {
+    width: 100%;
+    margin: 0 auto;
 }
