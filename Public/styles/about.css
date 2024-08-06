@@ -1,8 +1,6 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,300&display=swap');
 
 body {
-    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
@@ -14,7 +12,6 @@ body {
 }
 
 header {
-    /* background-color: #5f1f63; */
     background-image: url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);
     background-repeat: no-repeat;
     background-position: center;
@@ -24,20 +21,31 @@ header {
     padding: 1em 0;
     border-bottom: 2px solid white;
 }
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    text-align: right;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.key-features {
+    display: none;
+    margin-top: 20px;
+}
+
 .home{
     color: #fff;
     text-align: center;
     padding: 1em 0;
     text-decoration: none;
     display: inline;
-
 }
 
 .intro,
 .features,
 .mission,
-
-
 .opensource {
     max-width: 800px;
     margin: 20px auto;
@@ -61,21 +69,21 @@ footer {
     text-align: center;
     padding: 10px;
     border-top: 2px solid white;
-    /* background-color: #333; */
     color: #fff;
     background-image: url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
+
 .osch-logo {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto; /* Center the image */
+    margin: 0 auto;
 }
 
 .logo-container {
-    width: 100%; /* Adjust the max-width as needed */
+    width: 100%;
     margin: 0 auto;
 }
